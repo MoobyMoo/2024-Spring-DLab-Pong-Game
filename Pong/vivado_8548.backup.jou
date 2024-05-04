@@ -1,0 +1,114 @@
+#-----------------------------------------------------------
+# Vivado v2023.2.2 (64-bit)
+# SW Build 4126759 on Thu Feb  8 23:53:51 MST 2024
+# IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+# SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+# Start of session at: Thu May  2 21:42:09 2024
+# Process ID: 8548
+# Current directory: C:/Users/asian/Desktop/School/D_lab/final_project/Pong
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27900 C:\Users\asian\Desktop\School\D_lab\final_project\Pong\Pong.xpr
+# Log file: C:/Users/asian/Desktop/School/D_lab/final_project/Pong/vivado.log
+# Journal file: C:/Users/asian/Desktop/School/D_lab/final_project/Pong\vivado.jou
+# Running On: Moo_Laptop, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 16, Host memory: 16366 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.xpr
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close [ open C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Hsync_Vsync_Pulse_Generator.v w ]
+add_files C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Hsync_Vsync_Pulse_Generator.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Hsync_Vsync_Pulse_Generator.v] -no_script -reset -force -quiet
+remove_files  C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Hsync_Vsync_Pulse_Generator.v
+close [ open C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v w ]
+add_files C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulses.v] -no_script -reset -force -quiet
+remove_files  C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulses.v
+close [ open C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/Draw.v w ]
+add_files C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/sources_1/new/Draw.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_property iostandard LVCMOS33 [get_ports [list {out_Blue[3]} {out_Blue[2]} {out_Blue[1]} {out_Blue[0]} {out_Green[3]} {out_Green[2]} {out_Green[1]} {out_Green[0]} {out_Red[3]} {out_Red[2]} {out_Red[1]} {out_Red[0]} clock out_Hsync out_Vsync p1_down p1_up p2_down p2_up start]]
+set_property drive 12 [get_ports [list {out_Blue[3]} {out_Blue[2]} {out_Blue[1]} {out_Blue[0]} {out_Green[3]} {out_Green[2]} {out_Green[1]} {out_Green[0]} {out_Red[3]} {out_Red[2]} {out_Red[1]} {out_Red[0]} out_Hsync out_Vsync]]
+set_property slew SLOW [get_ports [list {out_Blue[3]} {out_Blue[2]} {out_Blue[1]} {out_Blue[0]} {out_Green[3]} {out_Green[2]} {out_Green[1]} {out_Green[0]} {out_Red[3]} {out_Red[2]} {out_Red[1]} {out_Red[0]} out_Hsync out_Vsync]]
+place_ports {out_Blue[3]} D8
+place_ports {out_Blue[2]} D7
+place_ports {out_Blue[1]} C7
+place_ports {out_Blue[0]} B7
+place_ports {out_Green[3]} A6
+place_ports {out_Green[2]} B6
+place_ports {out_Green[1]} A5
+place_ports {out_Green[0]} C6
+place_ports {out_Red[3]} A4
+place_ports {out_Red[2]} C5
+startgroup
+set_property package_pin "" [get_ports [list  {out_Blue[0]}]]
+place_ports {out_Red[1]} B7
+endgroup
+place_ports {out_Red[1]} B4
+startgroup
+set_property package_pin "" [get_ports [list  {out_Green[3]} {out_Green[2]} {out_Green[1]} {out_Green[0]}]]
+place_ports {out_Blue[0]} B7
+endgroup
+place_ports {out_Green[3]} A6
+place_ports {out_Green[2]} B6
+place_ports {out_Green[1]} A5
+startgroup
+set_property package_pin "" [get_ports [list  {out_Red[3]} {out_Red[2]} {out_Red[1]}]]
+place_ports {out_Green[0]} C6
+endgroup
+place_ports {out_Red[3]} A3
+place_ports {out_Red[2]} B4
+place_ports {out_Red[1]} C5
+place_ports {out_Red[0]} A4
+file mkdir C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/constrs_1/new
+close [ open C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/constrs_1/new/pong.xdc w ]
+add_files -fileset constrs_1 C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/constrs_1/new/pong.xdc
+set_property target_constrs_file C:/Users/asian/Desktop/School/D_lab/final_project/Pong/Pong.srcs/constrs_1/new/pong.xdc [current_fileset -constrset]
+save_constraints -force
+place_ports clock E3
+place_ports out_Hsync B11
+place_ports out_Vsync B12
+place_ports p1_down L16
+place_ports start M18
+place_ports p2_up U11
+place_ports p2_down V10
+startgroup
+set_property package_pin "" [get_ports [list  {out_Green[3]} {out_Green[2]} {out_Green[1]} {out_Green[0]}]]
+place_ports p1_up J14
+endgroup
+place_ports p1_up J15
+startgroup
+set_property package_pin "" [get_ports [list  clock out_Hsync out_Vsync p1_down p1_up p2_down p2_up start]]
+place_ports {out_Green[3]} A6
+endgroup
+place_ports {out_Green[2]} B6
+place_ports {out_Green[1]} A5
+place_ports {out_Green[0]} C6
+place_ports clock E3
+place_ports out_Hsync B11
+place_ports out_Vsync B12
+place_ports start M18
+place_ports p2_up U11
+place_ports p2_down V10
+place_ports start N17
+place_ports p1_down L16
+save_constraints
+refresh_design
+reset_run synth_1
+launch_runs synth_1 -jobs 16
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+launch_runs impl_1 -jobs 16
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 16
+wait_on_run impl_1
+open_hw_manager
