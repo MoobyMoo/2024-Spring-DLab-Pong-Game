@@ -14,6 +14,7 @@ module Pong (
     output [3:0] out_Blue,
 
     output [2:0] state
+    //fiuegrhdg;iudrg
     );
 
 
