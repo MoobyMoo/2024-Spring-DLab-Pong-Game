@@ -18,8 +18,8 @@ module Pong_FSM #(
 
     output reg out_Hsync = 0,
     output reg out_Vsync = 0,
-    output reg [3:0] p1_score,
-    output reg [3:0] p2_score,
+    output reg [3:0] p1_score = 0,
+    output reg [3:0] p2_score = 0,
     output [3:0] out_Red,
     output [3:0] out_Green,
     output [3:0] out_Blue,
@@ -43,6 +43,7 @@ module Pong_FSM #(
     wire [9:0] column_count, row_count;
     wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
     wire [5:0] small_column_count, small_row_count;
+    reg p1_score_point = 0;
 
     // Divide by 16
     assign small_column_count = column_count[9:4];
@@ -98,6 +99,7 @@ module Pong_FSM #(
         ) ball_wrap (
         .clock(clock),
         .running(running),
+        .p1_score_point(p1_score_point),
 
         .ball_x(ball_x),
         .ball_y(ball_y)
@@ -140,24 +142,31 @@ module Pong_FSM #(
         end
         
         P1_SCORE: begin
+            p1_score_point <= 1;
             if (p1_score == SCORE_LIMIT-1) begin
-                p1_score <= 0;
+                state <= RESTART;
             end else begin
                 p1_score <= p1_score + 1;
-                state <= RESTART;
+                state <= IDLE;
             end
         end
 
         P2_SCORE: begin
+            p1_score_point <= 0;
             if (p2_score == SCORE_LIMIT-1) begin
-                p2_score <= 0;
+                state <= RESTART;
             end else begin
                 p2_score <= p2_score + 1;
-                state <= RESTART;
+                state <= IDLE;
             end
         end
 
-        RESTART: state <= IDLE;
+        RESTART: begin
+            p1_score <= 0;
+            p2_score <= 0;
+            state <= IDLE;
+        end
+
         endcase
     end
 endmodule

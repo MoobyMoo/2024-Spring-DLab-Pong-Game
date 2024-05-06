@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
-| Date         : Sat May  4 20:32:33 2024
+| Date         : Mon May  6 22:00:33 2024
 | Host         : Moo_Laptop running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Pong_control_sets_placed.rpt
 | Design       : Pong
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    26 |
-|    Minimum number of control sets                        |    26 |
+| Total control sets                                       |    28 |
+|    Minimum number of control sets                        |    28 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   100 |
+| Unused register locations in slices containing registers |   118 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    26 |
+| Total control sets |    28 |
 | >= 0 to < 4        |     4 |
-| >= 4 to < 6        |     7 |
-| >= 6 to < 8        |     2 |
+| >= 4 to < 6        |     8 |
+| >= 6 to < 8        |     3 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     6 |
 | >= 12 to < 14      |     0 |
-| >= 14 to < 16      |     1 |
-| >= 16              |     6 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     7 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              38 |           18 |
+| No           | No                    | No                     |              39 |           21 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              50 |           18 |
-| Yes          | No                    | No                     |              70 |           24 |
+| No           | Yes                   | No                     |              50 |           17 |
+| Yes          | No                    | No                     |              75 |           27 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             118 |           32 |
+| Yes          | Yes                   | No                     |             118 |           37 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,32 +73,34 @@ Table of Contents
 +----------------------+----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
 |     Clock Signal     |                    Enable Signal                   |                  Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------------+----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
-|  clock_25Mhz_BUFG    |                                                    | sync_porch/Sync_to_Count_wrap/out_Hsync0           |                1 |              1 |         1.00 |
 |  clock_25Mhz_BUFG    |                                                    | sync_porch/Sync_to_Count_wrap/out_Vsync0           |                1 |              1 |         1.00 |
+|  clock_25Mhz_BUFG    |                                                    | sync_porch/Sync_to_Count_wrap/out_Hsync0           |                1 |              1 |         1.00 |
 |  clock_IBUF_BUFG     |                                                    |                                                    |                2 |              2 |         1.00 |
 |  clock_IBUF_BUFG     |                                                    | clock_div/clear                                    |                1 |              2 |         2.00 |
-|  debounce_clock_BUFG | debounce_p1_up/debounce_counter                    |                                                    |                2 |              4 |         2.00 |
 |  debounce_clock_BUFG | debounce_p1_down/debounce_counter                  |                                                    |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG | debounce_p2_down/debounce_counter                  |                                                    |                2 |              4 |         2.00 |
-|  debounce_clock_BUFG | debounce_p2_up/debounce_counter                    |                                                    |                2 |              4 |         2.00 |
-|  debounce_clock_BUFG | debounce_start/debounce_counter                    |                                                    |                2 |              4 |         2.00 |
+|  debounce_clock_BUFG | debounce_p1_up/debounce_counter                    |                                                    |                2 |              4 |         2.00 |
+|  debounce_clock_BUFG | debounce_p2_up/debounce_counter                    |                                                    |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG | debounce_p2_down/debounce_counter                  |                                                    |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG | debounce_start/debounce_counter                    |                                                    |                1 |              4 |         4.00 |
 |  clock_25Mhz_BUFG    | pong_fsm_wrap/p1_score[3]_i_1_n_0                  |                                                    |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG    | pong_fsm_wrap/p2_score[3]_i_1_n_0                  |                                                    |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG    | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_1_n_0        |                                                    |                2 |              6 |         3.00 |
+|  clock_25Mhz_BUFG    | pong_fsm_wrap/p2_score[3]_i_1_n_0                  |                                                    |                2 |              4 |         2.00 |
+|  clock_25Mhz_BUFG    | pong_fsm_wrap/p2_paddle/E[0]                       |                                                    |                2 |              5 |         2.50 |
+|  clock_25Mhz_BUFG    | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_1_n_0        |                                                    |                3 |              6 |         2.00 |
 |  clock_25Mhz_BUFG    | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_1__0_n_0     |                                                    |                2 |              6 |         3.00 |
-|  clock_25Mhz_BUFG    |                                                    | sync_pulse_gen/column_count[9]_i_1__1_n_0          |                2 |             10 |         5.00 |
-|  clock_25Mhz_BUFG    |                                                    | pong_fsm_wrap/VGA_Sync_to_Count_wrap/row_count_0   |                4 |             10 |         2.50 |
-|  clock_25Mhz_BUFG    |                                                    | sync_porch/Sync_to_Count_wrap/row_count            |                5 |             10 |         2.00 |
-|  clock_25Mhz_BUFG    | sync_pulse_gen/column_count[9]_i_1__1_n_0          |                                                    |                3 |             10 |         3.33 |
+|  clock_25Mhz_BUFG    | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_2_n_0 | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_1_n_0 |                4 |              6 |         1.50 |
+|  clock_25Mhz_BUFG    |                                                    | pong_fsm_wrap/VGA_Sync_to_Count_wrap/row_count_0   |                3 |             10 |         3.33 |
+|  clock_25Mhz_BUFG    |                                                    | sync_porch/Sync_to_Count_wrap/row_count            |                4 |             10 |         2.50 |
+|  clock_25Mhz_BUFG    |                                                    | sync_pulse_gen/column_count[9]_i_1__1_n_0          |                3 |             10 |         3.33 |
 |  clock_25Mhz_BUFG    | pong_fsm_wrap/VGA_Sync_to_Count_wrap/row_count_0   |                                                    |                3 |             10 |         3.33 |
-|  clock_25Mhz_BUFG    | sync_porch/Sync_to_Count_wrap/row_count            |                                                    |                3 |             10 |         3.33 |
-|  debounce_clock_BUFG |                                                    |                                                    |                4 |             15 |         3.75 |
+|  clock_25Mhz_BUFG    | sync_porch/Sync_to_Count_wrap/row_count            |                                                    |                4 |             10 |         2.50 |
+|  clock_25Mhz_BUFG    | sync_pulse_gen/column_count[9]_i_1__1_n_0          |                                                    |                4 |             10 |         2.50 |
 |  clock_IBUF_BUFG     |                                                    | clock_debounce/counter0_carry__0_n_1               |                4 |             16 |         4.00 |
-|  clock_25Mhz_BUFG    |                                                    |                                                    |               14 |             23 |         1.64 |
-|  clock_25Mhz_BUFG    | pong_fsm_wrap/ball_wrap/previous_ball_x[5]_i_2_n_0 | pong_fsm_wrap/ball_wrap/previous_ball_x[5]_i_1_n_0 |                8 |             24 |         3.00 |
+|  debounce_clock_BUFG |                                                    |                                                    |                7 |             18 |         2.57 |
+|  clock_25Mhz_BUFG    | pong_fsm_wrap/ball_wrap/previous_ball_y            | pong_fsm_wrap/ball_wrap/previous_ball_x[5]_i_1_n_0 |                9 |             18 |         2.00 |
+|  clock_25Mhz_BUFG    |                                                    |                                                    |               14 |             21 |         1.50 |
 |  clock_25Mhz_BUFG    | debounce_p1_up/paddle_enable                       | pong_fsm_wrap/p1_paddle/paddle_count[31]_i_1_n_0   |                8 |             31 |         3.88 |
 |  clock_25Mhz_BUFG    | debounce_p2_up/paddle_enable                       | pong_fsm_wrap/p2_paddle/paddle_count[31]_i_1_n_0   |                8 |             31 |         3.88 |
-|  clock_25Mhz_BUFG    | pong_fsm_wrap/ball_wrap/state__1[1]                | pong_fsm_wrap/ball_wrap/ball_count                 |                8 |             32 |         4.00 |
+|  clock_25Mhz_BUFG    | pong_fsm_wrap/running                              | pong_fsm_wrap/ball_wrap/ball_count                 |                8 |             32 |         4.00 |
 +----------------------+----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
 
 

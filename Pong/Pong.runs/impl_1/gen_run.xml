@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1714825875">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715003959">
   <File Type="ROUTE-PWR" Name="Pong_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Pong.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="Pong_power_summary_routed.pb"/>
@@ -143,6 +143,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/clock_divider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/score_to_ssd.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
