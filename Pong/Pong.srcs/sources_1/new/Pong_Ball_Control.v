@@ -9,6 +9,7 @@ module Pong_Ball_Control #(
     ) (
     input clock,
     input running,
+    input p1_score_point,
 
     output reg [5:0] ball_x = 0,
     output reg [5:0] ball_y = 0
@@ -30,9 +31,13 @@ module Pong_Ball_Control #(
         if (~running) begin
             ball_x <= GAME_WIDTH/2;
             ball_y <= GAME_HEIGHT/2;
-            previous_ball_x <= GAME_WIDTH/2 + 1;
-            previous_ball_y <= GAME_HEIGHT/2 + 1;
-        
+            if (p1_score_point) begin
+                previous_ball_x <= GAME_WIDTH/2 - 1;
+                previous_ball_y <= GAME_HEIGHT/2 - 1;
+            end else begin
+                previous_ball_x <= GAME_WIDTH/2 + 1;
+                previous_ball_y <= GAME_HEIGHT/2 + 1;
+            end
         // Only need to check the ball position when ball_count == BALL_SPEED
         end else begin
             if (ball_count < BALL_SPEED) begin

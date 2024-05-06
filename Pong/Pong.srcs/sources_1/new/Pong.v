@@ -11,6 +11,8 @@ module Pong (
     output [3:0] out_Red,
     output [3:0] out_Green,
     output [3:0] out_Blue,
+    output [7:0] ssd,
+    output [7:0] anode,
 
     output [2:0] state
     );
@@ -18,7 +20,9 @@ module Pong (
 
     parameter TOTAL_COLS = 800, TOTAL_ROWS = 525;
     parameter ACTIVE_COLS = 640, ACTIVE_ROWS = 480;
-    
+    parameter DEBOUNCE_DIVISOR = 50000;
+    parameter BLANK = 12;
+
 
     wire clock_25Mhz, debounce_clock;
     wire temp1_Hsync, temp1_Vsync, temp2_Hsync, temp2_Vsync;
@@ -26,6 +30,7 @@ module Pong (
     wire p1_up_debounced, p1_down_debounced;
     wire p2_up_debounced, p2_down_debounced;
     wire start_debounced;
+    wire [3:0] p1_score, p2_score;
 
 
     clock_divider #(
@@ -37,7 +42,7 @@ module Pong (
         );
 
     clock_divider #(
-        .DIVISOR(50000) 
+        .DIVISOR(DEBOUNCE_DIVISOR) 
         ) clock_debounce (
         .in_clock(clock),
 
@@ -110,8 +115,8 @@ module Pong (
 
         .out_Hsync(temp2_Hsync),
         .out_Vsync(temp2_Vsync),
-        .p1_score(),
-        .p2_score(),
+        .p1_score(p1_score),
+        .p2_score(p2_score),
         .out_Red(temp_Red),
         .out_Green(temp_Green),
         .out_Blue(temp_Blue),
@@ -137,6 +142,22 @@ module Pong (
         .out_Red(out_Red),
         .out_Green(out_Green),
         .out_Blue(out_Blue)
+        );
+
+
+    score_to_ssd ssd_wrap (
+        .digit0(p2_score),
+        .digit1(BLANK),
+        .digit2(BLANK),
+        .digit3(BLANK),
+        .digit4(p1_score),
+        .digit5(BLANK),
+        .digit6(BLANK),
+        .digit7(BLANK),
+        .clock(debounce_clock),
+
+        .ssd(ssd),
+        .anode(anode)
         );
 
 endmodule
