@@ -15,7 +15,7 @@ module Draw_Start(
     reg [1:0] counter = 2'b00;
 
     clock_divider #(
-        .DIVISOR(50000000)
+        .DIVISOR(12500000)
     ) clock_sec (
         .in_clock(clock),
 
@@ -172,9 +172,9 @@ module Draw_Start(
         else if (row_count == 6'd26 & column_count == 6'd35) begin
             case (counter)
                 2'b00: begin
-                    draw_r <= 1'b0;
-                    draw_b <= 1'b0;
-                    draw_g <= 1'b0;
+                    draw_r <= 1'b1;
+                    draw_b <= 1'b1;
+                    draw_g <= 1'b1;
                 end
                 2'b01: begin
                     draw_r <= 1'b1;
@@ -201,9 +201,9 @@ module Draw_Start(
                     draw_g <= 1'b1;
                 end
                 2'b01: begin
-                    draw_r <= 1'b0;
-                    draw_b <= 1'b0;
-                    draw_g <= 1'b0;
+                    draw_r <= 1'b1;
+                    draw_b <= 1'b1;
+                    draw_g <= 1'b1;
                 end
                 2'b10: begin
                     draw_r <= 1'b1;
