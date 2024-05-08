@@ -1,0 +1,23 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Pong.srcs/sources_1/new/Draw.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Game.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Over.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Start.v" \
+"../../../../Pong.srcs/sources_1/new/Pong.v" \
+"../../../../Pong.srcs/sources_1/new/Pong_Ball_Control.v" \
+"../../../../Pong.srcs/sources_1/new/Pong_FSM.v" \
+"../../../../Pong.srcs/sources_1/new/Pong_Paddle_Control.v" \
+"../../../../Pong.srcs/sources_1/new/VGA_Sync_Porch.v" \
+"../../../../Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v" \
+"../../../../Pong.srcs/sources_1/new/VGA_Sync_to_Count.v" \
+"../../../../Pong.srcs/sources_1/new/button_debouncer.v" \
+"../../../../Pong.srcs/sources_1/new/clock_divider.v" \
+"../../../../Pong.srcs/sources_1/new/score_to_ssd.v" \
+"../../../../Pong.srcs/sim_1/new/TB.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
