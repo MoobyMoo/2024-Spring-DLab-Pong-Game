@@ -21,9 +21,9 @@ module Draw #(
     output [3:0] out_Blue
     );
 
-    wire out_red_start, out_green_start, out_blue_start;
-    wire out_red_game, out_green_game, out_blue_game;
-    wire out_red_over, out_green_over, out_blue_over;
+    wire [3:0] out_red_start, out_green_start, out_blue_start;
+    wire [3:0] out_red_game, out_green_game, out_blue_game;
+    wire [3:0] out_red_over, out_green_over, out_blue_over;
 
     Draw_Start Draw_Start_wrap(
         .clock(clock),
