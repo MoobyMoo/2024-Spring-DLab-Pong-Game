@@ -56,6 +56,6 @@
 * Add start screen which has an easy animation
 * Add end screen to show the final score.
 
-## Bug Needed to be Fixed
+### Bug Needed to be Fixed
 * 0 will be shown as 1 at the end screen
 * 9 can't be shown (instead, the winner's score will be shown as 8)
