@@ -43,7 +43,7 @@ module Pong_FSM #(
     wire [9:0] column_count, row_count;
     wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
     wire [5:0] small_column_count, small_row_count;
-    reg p1_score_point = 0;
+    reg p1_score_point = 0, pressed = 0;
 
     // Divide by 16
     assign small_column_count = column_count[9:4];
@@ -68,6 +68,16 @@ module Pong_FSM #(
     always @(posedge clock) begin
         out_Hsync <= temp_Hsync;
         out_Vsync <= temp_Vsync;
+
+        if (start & ~pressed) begin
+            pressed <= 1'b1;
+        end
+        else if (~start & pressed) begin
+            pressed <= 1'b0;
+        end
+        else begin
+            pressed <= pressed;
+        end
     end
 
 
@@ -117,6 +127,8 @@ module Pong_FSM #(
         .ball_y(ball_y),
         .column_count(small_column_count),
         .row_count(small_row_count),
+        .p1_score(p1_score),
+        .p2_score(p2_score),
         .state (state),
 
         .out_Red(out_Red),
@@ -129,7 +141,7 @@ module Pong_FSM #(
         case (state)
         // Start Screen
         INIT: begin
-            state <= (start) ? IDLE : INIT;
+            state <= (start & ~pressed) ? IDLE : INIT;
         end
         // Stay in this state until start button is hit
         IDLE: begin
@@ -171,7 +183,7 @@ module Pong_FSM #(
         end
         //End Screen
         OVER: begin
-            state <= (start) ? INIT : OVER;
+            state <= (start & ~pressed) ? INIT : OVER;
         end
         endcase
     end

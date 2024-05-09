@@ -14,6 +14,8 @@ module Draw #(
     input [5:0] ball_y,
     input [5:0] column_count,
     input [5:0] row_count,
+    input [3:0] p1_score,
+    input [3:0] p2_score,
     input [2:0] state,
 
     output [3:0] out_Red,
@@ -24,9 +26,19 @@ module Draw #(
     wire [3:0] out_red_start, out_green_start, out_blue_start;
     wire [3:0] out_red_game, out_green_game, out_blue_game;
     wire [3:0] out_red_over, out_green_over, out_blue_over;
+    wire sec;
+
+    clock_divider #(
+        .DIVISOR(12500000)
+    ) clock_sec (
+        .in_clock(clock),
+
+        .out_clock(sec)
+        );
 
     Draw_Start Draw_Start_wrap(
         .clock(clock),
+        .sec(sec),
         .column_count(column_count),
         .row_count(row_count),
         .state (state),
@@ -57,8 +69,11 @@ module Draw #(
 
     Draw_Over Draw_Over_wrap(
         .clock(clock),
+        .sec(sec),
         .column_count(column_count),
         .row_count(row_count),
+        .p1_score(p1_score),
+        .p2_score(p2_score),
         .state (state),
 
         .out_Red(out_red_over),
@@ -66,8 +81,8 @@ module Draw #(
         .out_Blue(out_blue_over)
     );
 
-    assign out_Red = (state == 3'd0) ? out_red_start : out_red_game;
-    assign out_Green = (state == 3'd0) ? out_green_start : out_green_game;
-    assign out_Blue = (state == 3'd0) ? out_blue_start : out_blue_game;
+    assign out_Red = (state == 3'd0) ? out_red_start : (state == 3'd5) ? out_red_over : out_red_game;
+    assign out_Green = (state == 3'd0) ? out_green_start : (state == 3'd5) ? out_green_over : out_green_game;
+    assign out_Blue = (state == 3'd0) ? out_blue_start : (state == 3'd5) ? out_blue_over : out_blue_game;
         
 endmodule

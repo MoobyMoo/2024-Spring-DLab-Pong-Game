@@ -1,6 +1,7 @@
 
 module Draw_Start(
     input clock,
+    input sec,
     input [5:0] column_count,
     input [5:0] row_count,
     input [2:0] state,
@@ -10,17 +11,8 @@ module Draw_Start(
     output [3:0] out_Blue
     );
 
-    wire sec;
     reg draw_t = 0, draw_change = 0, draw_s, draw_r, draw_g, draw_b;
     reg [1:0] counter = 2'b00;
-
-    clock_divider #(
-        .DIVISOR(12500000)
-    ) clock_sec (
-        .in_clock(clock),
-
-        .out_clock(sec)
-        );
 
     always @(negedge sec) begin
             draw_change <= ~draw_change;
