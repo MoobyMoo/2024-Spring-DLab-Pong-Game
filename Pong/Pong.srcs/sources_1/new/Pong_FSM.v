@@ -141,7 +141,7 @@ module Pong_FSM #(
         ) draw_wrap (
         .clock(clock),
         .p1_paddle_y(p1_paddle_y),
-         .p2_paddle_y(p2_paddle_y),
+        .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
         .ball_y(ball_y),
         .column_count(small_column_count),
@@ -161,6 +161,8 @@ module Pong_FSM #(
         // Start Screen
         INIT: begin
             state <= (start & ~start_pressed) ? MODE : INIT;
+            mode = P5;
+            score_limit <= 5;
         end
         // Choose how many points to win
         MODE: begin

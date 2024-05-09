@@ -27,20 +27,6 @@ module score_to_ssd #(
         refresh_count <= refresh_count + 1;
     end
 
-
-    // always @* begin
-    //     case (refresh_count)
-    //         3'd0: number = digit0;
-    //         3'd1: number = digit1;
-    //         3'd2: number = digit2;
-    //         3'd3: number = digit3;
-    //         3'd4: number = digit4;
-    //         3'd5: number = digit5;
-    //         3'd6: number = digit6;
-    //         3'd7: number = digit7;
-    //     endcase
-    // end
-
     always @* begin
         case (refresh_count)
             3'b000: begin

@@ -30,6 +30,13 @@ module Pong (
     wire p2_up_debounced, p2_down_debounced;
     wire start_debounced, change_mode_debounced;
     wire [3:0] p1_score, p2_score;
+    wire [3:0] p1_score_ones, p2_score_ones;
+    wire [3:0] p1_score_tens, p2_score_tens;
+
+    assign p1_score_tens = p1_score / 10;
+    assign p1_score_ones = p1_score % 10;
+    assign p2_score_tens = p2_score / 10;
+    assign p2_score_ones = p2_score % 10;
 
 
     clock_divider #(
@@ -151,12 +158,12 @@ module Pong (
 
 
     score_to_ssd ssd_wrap (
-        .digit0(p2_score),
-        .digit1(BLANK),
+        .digit0(p2_score_ones),
+        .digit1(p2_score_tens),
         .digit2(BLANK),
         .digit3(BLANK),
-        .digit4(p1_score),
-        .digit5(BLANK),
+        .digit4(p1_score_ones),
+        .digit5(p1_score_tens),
         .digit6(BLANK),
         .digit7(BLANK),
         .clock(debounce_clock),
