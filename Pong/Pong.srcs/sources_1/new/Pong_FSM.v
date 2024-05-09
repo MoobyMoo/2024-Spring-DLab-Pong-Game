@@ -36,7 +36,8 @@ module Pong_FSM #(
     parameter SCORE_LIMIT = 9;
     parameter PADDLE_HEIGHT = 6;
     parameter P1_PADDLE_X = 0, P2_PADDLE_X = GAME_WIDTH-1;
-    parameter INIT = 3'd0, IDLE = 3'd1, RUNNING = 3'd2, P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
+    parameter INIT = 3'd0, MODE = 3'd1, IDLE = 3'd2, RUNNING = 3'd3, 
+    P1_SCORE = 3'd4, P2_SCORE = 3'd5, OVER = 3'd6;
 
 
     wire temp_Hsync, temp_Vsync, p1_draw_paddle, p2_draw_paddle, draw, running;
@@ -142,6 +143,9 @@ module Pong_FSM #(
         // Start Screen
         INIT: begin
             state <= (start & ~pressed) ? IDLE : INIT;
+        end
+        // Choose how many points to win
+        MODE: begin
         end
         // Stay in this state until start button is hit
         IDLE: begin
