@@ -39,10 +39,15 @@
 ### Bug Fixes
 *  The paddles now move independently.
 
-## [1.0.0](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-06)
+## [1.0.1](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-06)
 
 > Description: Working Pong game with basic mechanics
 
 ### New Feature 
 * Ball direction after reset now depends on who scores
 * Added SSD display for the scoring system, First to 9 points wins!, After one player wins the score resets back to 0.
+
+
+## [1.0.2](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-09)
+
+> Description: Add starting screen for the game
