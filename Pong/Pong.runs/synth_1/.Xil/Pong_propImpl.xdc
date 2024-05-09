@@ -71,3 +71,5 @@ set_property src_info {type:XDC file:1 line:100 export:INPUT save:INPUT read:REA
 set_property PACKAGE_PIN L18 [get_ports {ssd[1]}]
 set_property src_info {type:XDC file:1 line:101 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN H15 [get_ports {ssd[0]}]
+set_property src_info {type:XDC file:1 line:104 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN M18 [get_ports change_mode]

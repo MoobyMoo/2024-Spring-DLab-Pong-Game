@@ -153,7 +153,7 @@ module Pong_FSM #(
         case (state)
         // Start Screen
         INIT: begin
-            state <= (start & ~start_pressed) ? IDLE : INIT;
+            state <= (start & ~start_pressed) ? MODE : INIT;
         end
         // Choose how many points to win
         MODE: begin
@@ -173,6 +173,8 @@ module Pong_FSM #(
                 end
                 endcase
             end
+
+            state <= (start & ~start_pressed) ? IDLE : MODE;
         end    
         // Stay in this state until start button is hit
         IDLE: begin

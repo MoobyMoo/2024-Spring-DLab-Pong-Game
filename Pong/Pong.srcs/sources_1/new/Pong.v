@@ -55,7 +55,7 @@ module Pong (
         .debounced_button(start_debounced)
         );
 
-    button_debouncer deobunce_change_mode(
+    button_debouncer debounce_change_mode(
         .clock(debounce_clock),
         .button(change_mode),
 
