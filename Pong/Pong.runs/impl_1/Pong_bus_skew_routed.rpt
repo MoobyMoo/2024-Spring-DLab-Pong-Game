@@ -1,0 +1,16 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
+| Date         : Thu May  9 20:23:41 2024
+| Host         : Moo_Laptop running 64-bit major release  (build 9200)
+| Command      : report_bus_skew -warn_on_violation -file Pong_bus_skew_routed.rpt -pb Pong_bus_skew_routed.pb -rpx Pong_bus_skew_routed.rpx
+| Design       : Pong
+| Device       : 7a100t-csg324
+| Speed File   : -3  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Bus Skew Report
+
+No bus skew constraints
+

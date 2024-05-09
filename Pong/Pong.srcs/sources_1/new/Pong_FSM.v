@@ -130,7 +130,14 @@ module Pong_FSM #(
     Draw #(
         .P1_PADDLE_X(P1_PADDLE_X),
         .P2_PADDLE_X(P2_PADDLE_X),
-        .PADDLE_HEIGHT(PADDLE_HEIGHT)
+        .PADDLE_HEIGHT(PADDLE_HEIGHT),
+        .INIT(INIT),
+        .MODE(MODE), 
+        .IDLE(IDLE), 
+        .RUNNING(RUNNING), 
+        .P1_SCORE(P1_SCORE), 
+        .P2_SCORE(P2_SCORE),
+        .OVER(OVER)
         ) draw_wrap (
         .clock(clock),
         .p1_paddle_y(p1_paddle_y),
@@ -198,6 +205,7 @@ module Pong_FSM #(
         P1_SCORE: begin
             p1_score_point <= 1;
             if (p1_score == score_limit-1) begin
+                p1_score <= p1_score + 1;
                 state <= OVER;
             end else begin
                 p1_score <= p1_score + 1;
@@ -208,6 +216,7 @@ module Pong_FSM #(
         P2_SCORE: begin
             p1_score_point <= 0;
             if (p2_score == score_limit-1) begin
+                p2_score <= p2_score + 1;
                 state <= OVER;
             end else begin
                 p2_score <= p2_score + 1;

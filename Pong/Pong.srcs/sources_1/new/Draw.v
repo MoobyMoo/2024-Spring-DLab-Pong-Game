@@ -5,7 +5,15 @@ module Draw #(
     parameter
     P1_PADDLE_X = 0,
     P2_PADDLE_X = 39,
-    PADDLE_HEIGHT = 6
+    PADDLE_HEIGHT = 6,
+
+    INIT = 3'd0,
+    MODE = 3'd1, 
+    IDLE = 3'd2, 
+    RUNNING = 3'd3, 
+    P1_SCORE = 3'd4, 
+    P2_SCORE = 3'd5, 
+    OVER = 3'd6
     ) (
     input clock,
     input [5:0] p1_paddle_y,
@@ -81,8 +89,8 @@ module Draw #(
         .out_Blue(out_blue_over)
     );
 
-    assign out_Red = (state == 3'd0) ? out_red_start : (state == 3'd5) ? out_red_over : out_red_game;
-    assign out_Green = (state == 3'd0) ? out_green_start : (state == 3'd5) ? out_green_over : out_green_game;
-    assign out_Blue = (state == 3'd0) ? out_blue_start : (state == 3'd5) ? out_blue_over : out_blue_game;
+    assign out_Red = (state == INIT) ? out_red_start : (state == OVER) ? out_red_over : out_red_game;
+    assign out_Green = (state == INIT) ? out_green_start : (state == OVER) ? out_green_over : out_green_game;
+    assign out_Blue = (state == INIT) ? out_blue_start : (state == OVER) ? out_blue_over : out_blue_game;
         
 endmodule
