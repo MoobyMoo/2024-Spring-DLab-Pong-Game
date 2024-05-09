@@ -33,7 +33,7 @@ module Pong_FSM #(
     // This way we only need to keep track of less column and row positions
     parameter GAME_WIDTH = 40, GAME_HEIGHT = 30;
     parameter PADDLE_HEIGHT = 6;
-    parameter P1_PADDLE_X = 0, P2_PADDLE_X = GAME_WIDTH-1;
+    parameter P1_PADDLE_X = 1, P2_PADDLE_X = GAME_WIDTH-2;
     parameter INIT = 3'd0, MODE = 3'd1, IDLE = 3'd2, RUNNING = 3'd3, 
     P1_SCORE = 3'd4, P2_SCORE = 3'd5, OVER = 3'd6;
     parameter P5 = 2'd0, P10 = 2'd1, P15 = 2'd2;
@@ -51,21 +51,8 @@ module Pong_FSM #(
     assign small_column_count = column_count[9:4];
     assign small_row_count = row_count[9:4];
     assign running = (state == RUNNING) ? 1 : 0;
+    assign init = (state == INIT) ? 1 : 0;
 
-
-    VGA_Sync_to_Count #(
-        .TOTAL_COLS(TOTAL_COLS),
-        .TOTAL_ROWS(TOTAL_ROWS)
-        ) VGA_Sync_to_Count_wrap (
-        .clock(clock),
-        .in_Hsync(in_Hsync),
-        .in_Vsync(in_Vsync),
-
-        .out_Hsync(temp_Hsync),
-        .out_Vsync(temp_Vsync),
-        .column_count(column_count),
-        .row_count(row_count)
-        );
 
     always @(posedge clock) begin
         out_Hsync <= temp_Hsync;
@@ -92,6 +79,19 @@ module Pong_FSM #(
         end
     end
 
+    VGA_Sync_to_Count #(
+        .TOTAL_COLS(TOTAL_COLS),
+        .TOTAL_ROWS(TOTAL_ROWS)
+        ) VGA_Sync_to_Count_wrap (
+        .clock(clock),
+        .in_Hsync(in_Hsync),
+        .in_Vsync(in_Vsync),
+
+        .out_Hsync(temp_Hsync),
+        .out_Vsync(temp_Vsync),
+        .column_count(column_count),
+        .row_count(row_count)
+        );
 
     Pong_Paddle_Control #(
         .PADDLE_HEIGHT(PADDLE_HEIGHT),
@@ -100,6 +100,7 @@ module Pong_FSM #(
         .clock(clock),
         .up(p1_up),
         .down(p1_down),
+        .init(init),
 
         .paddle_y(p1_paddle_y)
         );
@@ -111,6 +112,7 @@ module Pong_FSM #(
         .clock(clock),
         .up(p2_up),
         .down(p2_down),
+        .init(init),
 
         .paddle_y(p2_paddle_y)
         );
@@ -160,6 +162,8 @@ module Pong_FSM #(
         case (state)
         // Start Screen
         INIT: begin
+            p1_score <= 0;
+            p2_score <= 0;
             state <= (start & ~start_pressed) ? MODE : INIT;
             mode = P5;
             score_limit <= 5;
@@ -187,18 +191,16 @@ module Pong_FSM #(
         end    
         // Stay in this state until start button is hit
         IDLE: begin
-            p1_score <= 0;
-            p2_score <= 0;
             state <= (start) ? RUNNING : IDLE;
         end
         // Stay in this state until a player scores
         RUNNING: begin
             // P1 score 
-            if ((ball_x == GAME_WIDTH-1) && 
+            if ((ball_x == GAME_WIDTH-2) && 
                 ((ball_y < p2_paddle_y) || (ball_y > (p2_paddle_y + PADDLE_HEIGHT)))) begin
                 state <= P1_SCORE;
             // P2 score
-            end else if ((ball_x == 0) && 
+            end else if ((ball_x == 1) && 
                 ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT)))) begin
                 state <= P2_SCORE;
             end
