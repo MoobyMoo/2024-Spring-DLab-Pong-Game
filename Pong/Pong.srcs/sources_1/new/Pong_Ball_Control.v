@@ -22,8 +22,8 @@ module Pong_Ball_Control #(
     // 25MHz / 1875000 = 13.33 Hz = 75 milliseconds 
     // 25MHz / 625000 = 40 Hz = 25 milliseconds 
     parameter MIN_BALL_SPEED = 1875000;
-    parameter MAX_BALL_SPEED = 625000;
-    parameter BALL_ACCELERATION = 10000;
+    parameter MAX_BALL_SPEED = 1250000;
+    parameter BALL_ACCELERATION = 5000;
 
 
     reg [5:0] previous_ball_x = 0, previous_ball_y = 0;
@@ -50,7 +50,7 @@ module Pong_Ball_Control #(
             end else begin
                 ball_count <= 0;
                 ball_speed <= (ball_speed == MAX_BALL_SPEED) ?
-                 ball_speed : ball_speed - BALL_ACCELERATION;
+                ball_speed : ball_speed - BALL_ACCELERATION;
                 // Store previous location to keep track of movement 
                 previous_ball_x <= ball_x;
                 previous_ball_y <= ball_y;
@@ -60,8 +60,8 @@ module Pong_Ball_Control #(
                 // If previous_ball_x is greater than ball_x, ball is moving to the left
                 // Keep it moving to the left unless we hit the wall.
                 // The same logic applies to previous_ball_y and ball_y
-                ball_x <= ((previous_ball_x < ball_x && ball_x == GAME_WIDTH-1) 
-                    || (previous_ball_x > ball_x && ball_x != 0)) ? ball_x - 1 : ball_x + 1;
+                ball_x <= ((previous_ball_x < ball_x && ball_x == GAME_WIDTH-2) 
+                    || (previous_ball_x > ball_x && ball_x != 1)) ? ball_x - 1 : ball_x + 1;
                 ball_y <= ((previous_ball_y < ball_y && ball_y == GAME_HEIGHT-1) 
                     || (previous_ball_y > ball_y && ball_y != 0)) ? ball_y - 1 : ball_y + 1;
             end

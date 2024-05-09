@@ -3,8 +3,8 @@
 // If so, then assign color to it
 module Draw #(
     parameter
-    P1_PADDLE_X = 0,
-    P2_PADDLE_X = 39,
+    P1_PADDLE_X = 1,
+    P2_PADDLE_X = 38,
     PADDLE_HEIGHT = 6,
 
     INIT = 3'd0,
