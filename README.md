@@ -50,4 +50,12 @@
 
 ## [1.0.2](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-09)
 
-> Description: Add starting screen for the game
+> Description: Add the start and end screen for the game
+
+### New Feature 
+* Add start screen which has an easy animation
+* Add end screen to show the final score.
+
+## Bug Needed to be Fixed
+* 0 will be shown as 1 at the end screen
+* 9 can't be shown (instead, the winner's score will be shown as 8)
