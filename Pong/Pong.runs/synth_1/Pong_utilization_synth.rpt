@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu May  9 14:01:48 2024
+| Date         : Thu May  9 14:47:56 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Pong_utilization_synth.rpt -pb Pong_utilization_synth.pb
 | Design       : Pong
@@ -39,7 +39,7 @@ Table of Contents
 | Slice Registers            |  325 |     0 |          0 |    126800 |  0.26 |
 |   Register as Flip Flop    |  325 |     0 |          0 |    126800 |  0.26 |
 |   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                   |    1 |     0 |          0 |     31700 | <0.01 |
+| F7 Muxes                   |    0 |     0 |          0 |     31700 |  0.00 |
 | F8 Muxes                   |    0 |     0 |          0 |     15850 |  0.00 |
 +----------------------------+------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
@@ -151,10 +151,10 @@ Warning! LUT value is adjusted to account for LUT combining.
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
 | FDRE     |  311 |        Flop & Latch |
-| LUT6     |  146 |                 LUT |
-| LUT2     |  135 |                 LUT |
-| LUT4     |  122 |                 LUT |
-| LUT5     |  105 |                 LUT |
+| LUT6     |  157 |                 LUT |
+| LUT2     |  132 |                 LUT |
+| LUT4     |  112 |                 LUT |
+| LUT5     |  102 |                 LUT |
 | LUT3     |   59 |                 LUT |
 | CARRY4   |   55 |          CarryLogic |
 | OBUF     |   33 |                  IO |
@@ -163,7 +163,6 @@ Warning! LUT value is adjusted to account for LUT combining.
 | IBUF     |    6 |                  IO |
 | BUFG     |    3 |               Clock |
 | SRL16E   |    2 |  Distributed Memory |
-| MUXF7    |    1 |               MuxFx |
 +----------+------+---------------------+
 
 

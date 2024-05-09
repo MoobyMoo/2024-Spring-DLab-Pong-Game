@@ -24,7 +24,7 @@ module Draw_Over(
                      draw_t <= ((column_count >= 6'd3   &  column_count <= 6'd8)  |
                                 (column_count >= 6'd23  &  column_count <= 6'd26) |
                                 (column_count == 6'd13) | (column_count == 6'd18) |
-                                (column_count >= 6'd33) | (column_count == 6'd35)) ?
+                                (column_count == 6'd33) | (column_count == 6'd35)) ?
                             1'b1 : 1'b0;
                 end
                 6'd4: begin
