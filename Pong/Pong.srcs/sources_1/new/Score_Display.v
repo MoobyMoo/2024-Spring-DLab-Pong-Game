@@ -77,6 +77,11 @@ module Score_Display #(
             else begin
                 case(score)
                     4'd0, 4'd10: begin
+                        draw_s <= ((fixed_column_count == 6'd2 | fixed_column_count == 6'd3) &
+                                    ~(fixed_row_count == 6'd0 | fixed_row_count == 6'd1 | fixed_row_count == 6'd8 | fixed_row_count == 6'd9)) ?
+                            1'b0 : 1'b1;
+                    end
+                    4'd1, 4'd11: begin
                         draw_s <= (((fixed_column_count == 6'd0 | fixed_column_count == 6'd1) & ~(fixed_row_count == 6'd2 | fixed_row_count == 6'd3 | fixed_row_count == 6'd8 | fixed_row_count == 6'd9)) |
                                    ((fixed_column_count == 6'd4 | fixed_column_count == 6'd5) & ~(fixed_row_count == 6'd8 | fixed_row_count == 6'd9))) ?
                             1'b0 : 1'b1;
