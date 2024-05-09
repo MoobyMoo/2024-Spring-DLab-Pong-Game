@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc rfile:../../../Pong.srcs/constrs_1/new/pong.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc rfile:../../../Pong.srcs/constrs_1/new/pong.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:49 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN D8 [get_ports {out_Blue[3]}]
 set_property src_info {type:XDC file:1 line:50 export:INPUT save:INPUT read:READ} [current_design]

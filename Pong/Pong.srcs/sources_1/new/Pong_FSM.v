@@ -36,14 +36,14 @@ module Pong_FSM #(
     parameter SCORE_LIMIT = 9;
     parameter PADDLE_HEIGHT = 6;
     parameter P1_PADDLE_X = 0, P2_PADDLE_X = GAME_WIDTH-1;
-    parameter IDLE = 3'd0, RUNNING = 3'd1, P1_SCORE = 3'd2, P2_SCORE = 3'd3, RESTART = 3'd4;
+    parameter INIT = 3'd0, IDLE = 3'd1, RUNNING = 3'd2, P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
 
 
     wire temp_Hsync, temp_Vsync, p1_draw_paddle, p2_draw_paddle, draw, running;
     wire [9:0] column_count, row_count;
     wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
     wire [5:0] small_column_count, small_row_count;
-    reg p1_score_point = 0;
+    reg p1_score_point = 0, pressed = 0;
 
     // Divide by 16
     assign small_column_count = column_count[9:4];
@@ -68,6 +68,16 @@ module Pong_FSM #(
     always @(posedge clock) begin
         out_Hsync <= temp_Hsync;
         out_Vsync <= temp_Vsync;
+
+        if (start & ~pressed) begin
+            pressed <= 1'b1;
+        end
+        else if (~start & pressed) begin
+            pressed <= 1'b0;
+        end
+        else begin
+            pressed <= pressed;
+        end
     end
 
 
@@ -112,11 +122,14 @@ module Pong_FSM #(
         ) draw_wrap (
         .clock(clock),
         .p1_paddle_y(p1_paddle_y),
-        .p2_paddle_y(p2_paddle_y),
+         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
         .ball_y(ball_y),
         .column_count(small_column_count),
         .row_count(small_row_count),
+        .p1_score(p1_score),
+        .p2_score(p2_score),
+        .state (state),
 
         .out_Red(out_Red),
         .out_Green(out_Green),
@@ -126,8 +139,16 @@ module Pong_FSM #(
     
     always @(posedge clock) begin
         case (state)
+        // Start Screen
+        INIT: begin
+            state <= (start & ~pressed) ? IDLE : INIT;
+        end
         // Stay in this state until start button is hit
-        IDLE: state <= (start) ? RUNNING : IDLE;
+        IDLE: begin
+            p1_score <= 0;
+            p2_score <= 0;
+            state <= (start) ? RUNNING : IDLE;
+        end
         // Stay in this state until a player scores
         RUNNING: begin
             // P1 score 
@@ -144,29 +165,26 @@ module Pong_FSM #(
         P1_SCORE: begin
             p1_score_point <= 1;
             if (p1_score == SCORE_LIMIT-1) begin
-                state <= RESTART;
+                state <= OVER;
             end else begin
                 p1_score <= p1_score + 1;
-                state <= IDLE;
+                state <= RUNNING;
             end
         end
 
         P2_SCORE: begin
             p1_score_point <= 0;
             if (p2_score == SCORE_LIMIT-1) begin
-                state <= RESTART;
+                state <= OVER;
             end else begin
                 p2_score <= p2_score + 1;
-                state <= IDLE;
+                state <= RUNNING;
             end
         end
-
-        RESTART: begin
-            p1_score <= 0;
-            p2_score <= 0;
-            state <= IDLE;
+        //End Screen
+        OVER: begin
+            state <= (start & ~pressed) ? INIT : OVER;
         end
-
         endcase
     end
 endmodule
