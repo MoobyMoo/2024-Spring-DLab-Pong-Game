@@ -1,4 +1,4 @@
-
+//To show the Start and Title screen of the game
 module Draw_Start(
     input clock,
     input sec,

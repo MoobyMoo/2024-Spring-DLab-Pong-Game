@@ -1,4 +1,4 @@
-yo// Purpose of this Module:
+// Purpose of this Module:
 // Controls the state transition and designs of all the states
 module Pong_FSM #(
     parameter
@@ -150,6 +150,7 @@ module Pong_FSM #(
         .row_count(small_row_count),
         .p1_score(p1_score),
         .p2_score(p2_score),
+        .score_limit(score_limit),
         .state (state),
 
         .out_Red(out_Red),

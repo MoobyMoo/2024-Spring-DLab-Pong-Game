@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
-| Date             : Thu May  9 23:51:15 2024
-| Host             : Moo_Laptop running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date             : Sat May 11 19:50:16 2024
+| Host             : MSI running 64-bit major release  (build 9200)
 | Command          : report_power -file Pong_power_routed.rpt -pb Pong_power_summary_routed.pb -rpx Pong_power_routed.rpx
 | Design           : Pong
 | Device           : xc7a100tcsg324-3
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 37.548 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 38.205 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 36.751                           |
+| Dynamic (W)              | 37.408                           |
 | Device Static (W)        | 0.797                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,17 +52,18 @@ Table of Contents
 +-------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
 +-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     2.607 |     1159 |       --- |             --- |
-|   LUT as Logic          |     2.308 |      488 |     63400 |            0.77 |
-|   CARRY4                |     0.146 |       73 |     15850 |            0.46 |
-|   Register              |     0.124 |      379 |    126800 |            0.30 |
-|   BUFG                  |     0.029 |        3 |        32 |            9.38 |
+| Slice Logic             |     3.033 |     1492 |       --- |             --- |
+|   LUT as Logic          |     2.688 |      635 |     63400 |            1.00 |
+|   CARRY4                |     0.164 |       85 |     15850 |            0.54 |
+|   Register              |     0.145 |      496 |    126800 |            0.39 |
+|   BUFG                  |     0.035 |        4 |        32 |           12.50 |
+|   F7/F8 Muxes           |    <0.001 |        2 |     63400 |           <0.01 |
 |   LUT as Shift Register |    <0.001 |        2 |     19000 |            0.01 |
-|   Others                |     0.000 |       45 |       --- |             --- |
-| Signals                 |     2.100 |      744 |       --- |             --- |
-| I/O                     |    32.043 |       37 |       210 |           17.62 |
+|   Others                |     0.000 |       63 |       --- |             --- |
+| Signals                 |     2.398 |      961 |       --- |             --- |
+| I/O                     |    31.977 |       37 |       210 |           17.62 |
 | Static Power            |     0.797 |          |           |                 |
-| Total                   |    37.548 |          |           |                 |
+| Total                   |    38.205 |          |           |                 |
 +-------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +73,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     5.298 |       4.736 |      0.563 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     1.266 |       1.173 |      0.093 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     9.066 |       9.062 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     6.021 |       5.459 |      0.563 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     1.264 |       1.171 |      0.093 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     9.047 |       9.043 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,28 +140,30 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| Pong                       |    36.751 |
-|   clock_debounce           |     0.166 |
-|   clock_div                |     0.028 |
-|   debounce_change_mode     |     0.040 |
-|   debounce_p1_down         |     0.042 |
-|   debounce_p1_up           |     0.045 |
-|   debounce_p2_down         |     0.045 |
-|   debounce_p2_up           |     0.047 |
-|   debounce_start           |     0.041 |
-|   pong_fsm_wrap            |     3.487 |
-|     VGA_Sync_to_Count_wrap |     0.261 |
-|     ball_wrap              |     1.335 |
-|     draw_wrap              |     0.319 |
-|       Draw_Game_wrap       |     0.017 |
-|       Draw_Over_wrap       |     0.023 |
-|       Draw_Start_wrap      |     0.066 |
-|       clock_sec            |     0.213 |
-|     p1_paddle              |     0.469 |
-|     p2_paddle              |     0.487 |
-|   ssd_wrap                 |     0.406 |
-|   sync_porch               |     0.136 |
-|     Sync_to_Count_wrap     |     0.130 |
+| Pong                       |    37.408 |
+|   clock_debounce           |     0.173 |
+|   clock_div                |     0.023 |
+|   debounce_change_mode     |     0.041 |
+|   debounce_p1_down         |     0.041 |
+|   debounce_p1_up           |     0.054 |
+|   debounce_p2_down         |     0.039 |
+|   debounce_p2_up           |     0.059 |
+|   debounce_start           |     0.047 |
+|   pong_fsm_wrap            |     4.168 |
+|     VGA_Sync_to_Count_wrap |     0.267 |
+|     ball_wrap              |     1.360 |
+|     draw_wrap              |     0.809 |
+|       Draw_Game_wrap       |     0.020 |
+|       Draw_Mode_wrap       |     0.003 |
+|       Draw_Over_wrap       |     0.290 |
+|       Draw_Start_wrap      |     0.079 |
+|       clock_ms             |     0.211 |
+|       clock_sec            |     0.205 |
+|     p1_paddle              |     0.522 |
+|     p2_paddle              |     0.513 |
+|   ssd_wrap                 |     0.404 |
+|   sync_porch               |     0.140 |
+|     Sync_to_Count_wrap     |     0.135 |
 |   sync_pulse_gen           |     0.102 |
 +----------------------------+-----------+
 
