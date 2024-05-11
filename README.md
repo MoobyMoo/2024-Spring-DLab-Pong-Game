@@ -1,5 +1,20 @@
 # 2024-Spring-DLab-Pong-Game on Nexys 4 DDR FPGA
 
+# Introduction
+
+Pong! is a 2D game that simulates table tennis.
+Two players control the paddles vertically in the right and left side of the screen, aiming to hit the ball past their opponent's paddle.
+The ball is positioned in the middle as the game starts, and gradually gains speed as the round progresses.
+The first player to reach a set number of points wins.
+
+
+# How to play
+
+
+
+
+# Progression history
+
 ## [0.0.0](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-02)
 > Description: Learning about VGA in FPGA
 
@@ -73,3 +88,14 @@
 
 ### Action Needed 
 * Add a screen for selecting modes. 
+
+
+
+## [1.0.4](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-10)
+
+> Description: Screen display updates. 
+
+### New Feature 
+* End screen now includes rgb breathing light smiley face icon to indicate winner.
+* Changed the winning score in endscreen to be yellow.
+* Now includes the MODE selection screen, the number displayed indicates the score required to win.
