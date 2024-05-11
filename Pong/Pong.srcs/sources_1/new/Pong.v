@@ -13,7 +13,8 @@ module Pong (
     output [3:0] out_Green,
     output [3:0] out_Blue,
     output [7:0] ssd,
-    output [7:0] anode
+    output [7:0] anode,
+    output audio_output
     );
 
 
@@ -32,6 +33,8 @@ module Pong (
     wire [3:0] p1_score, p2_score;
     wire [3:0] p1_score_ones, p2_score_ones;
     wire [3:0] p1_score_tens, p2_score_tens;
+    wire [2:0] state;
+    wire audio_output;
 
     assign p1_score_tens = p1_score / 10;
     assign p1_score_ones = p1_score % 10;
@@ -171,5 +174,11 @@ module Pong (
         .ssd(ssd),
         .anode(anode)
         );
+
+    bgm bgm_1(
+        .clk(clk),
+        .state(state),
+        .signal(audio_output)
+    )
 
 endmodule

@@ -23,7 +23,8 @@ module Pong_FSM #(
     output reg [3:0] p2_score = 0,
     output [3:0] out_Red,
     output [3:0] out_Green,
-    output [3:0] out_Blue
+    output [3:0] out_Blue,
+    output reg [2:0]state
     );
 
 
@@ -45,7 +46,7 @@ module Pong_FSM #(
     reg p1_score_point = 0, start_pressed = 0, change_mode_pressed = 0;
     reg [1:0] mode = 0;
     reg [3:0] score_limit = 5;
-    reg [2:0] state = 0 ;
+
 
     // Divide by 16
     assign small_column_count = column_count[9:4];
@@ -156,8 +157,10 @@ module Pong_FSM #(
         .out_Green(out_Green),
         .out_Blue(out_Blue)
         );
-
     
+
+
+
     always @(posedge clock) begin
         case (state)
         // Start Screen
