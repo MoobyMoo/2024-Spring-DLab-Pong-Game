@@ -29,14 +29,8 @@ module Pong (
     wire p1_up_debounced, p1_down_debounced;
     wire p2_up_debounced, p2_down_debounced;
     wire start_debounced, change_mode_debounced;
-    wire [3:0] p1_score, p2_score;
     wire [3:0] p1_score_ones, p2_score_ones;
     wire [3:0] p1_score_tens, p2_score_tens;
-
-    assign p1_score_tens = p1_score / 10;
-    assign p1_score_ones = p1_score % 10;
-    assign p2_score_tens = p2_score / 10;
-    assign p2_score_ones = p2_score % 10;
 
 
     clock_divider #(
@@ -129,8 +123,10 @@ module Pong (
 
         .out_Hsync(temp2_Hsync),
         .out_Vsync(temp2_Vsync),
-        .p1_score(p1_score),
-        .p2_score(p2_score),
+        .p1_score_tens(p1_score_tens),
+        .p1_score_ones(p1_score_ones),
+        .p2_score_tens(p2_score_tens),
+        .p2_score_ones(p2_score_ones),
         .out_Red(temp_Red),
         .out_Green(temp_Green),
         .out_Blue(temp_Blue)

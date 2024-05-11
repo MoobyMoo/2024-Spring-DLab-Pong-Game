@@ -28,7 +28,7 @@ module Pong_Paddle_Control #(
     // Don't update paddle reaches the top or bottom of the screen
     always @(posedge clock) begin
         if (init) begin
-            paddle_y = GAME_HEIGHT/2-1 - PADDLE_HEIGHT/2;
+            paddle_y <= GAME_HEIGHT/2-1 - PADDLE_HEIGHT/2;
         end
 
         if (paddle_enable) begin
