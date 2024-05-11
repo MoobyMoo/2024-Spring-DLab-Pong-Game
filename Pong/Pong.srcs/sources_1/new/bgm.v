@@ -17,7 +17,7 @@ module bgm (
     reg [27:0]number_11 = 28'd143266;//f5
     reg [27:0]number_12 = 28'd127511;//g5
 
-    reg [7:0] bpm;
+    reg [7:0] bpm = 8'd60;
     reg bump;
 
     wire voice_fre_1;
@@ -109,7 +109,44 @@ endmodule
 
 module msuic_1 (
     input bump,
-    output voice_fre
+    output reg voice_fre
 );
-    
+    reg [7:0] counter = 0'd0;
+    always@(posedge bump)begin
+        counter <= counter + 8'd1;
+        case (counter)
+            8'd0:
+                voice_fre <= voice_fre_1;
+            8'd1:
+                voice_fre <= voice_fre_2;
+            8'd2:
+                voice_fre <= voice_fre_3;
+            8'd3:
+                voice_fre <= voice_fre_4;
+            8'd4:
+                voice_fre <= voice_fre_5;
+            8'd5:
+                voice_fre <= voice_fre_6;
+            8'd6:
+                voice_fre <= voice_fre_7;
+            8'd7:
+                voice_fre <= voice_fre_8;
+            8'd8:         
+                voice_fre <= voice_fre_9;    
+            8'd9:
+                voice_fre <= voice_fre_10;
+            8'd10:
+                voice_fre <= voice_fre_11;
+            8'd11:
+                voice_fre <= voice_fre_12;
+            8'd12:
+                voice_fre <= voice_fre_8;
+            8'd13:
+                voice_fre <= voice_fre_12;
+            default: 
+                voice_fre <= voice_fre_1;
+        endcase
+        if(counter >= 8'd13)
+            counter = 8'd0;
+    end
 endmodule
