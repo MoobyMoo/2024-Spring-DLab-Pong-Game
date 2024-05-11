@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 set curr_wave [current_wave_config]
 if { [string length $curr_wave] == 0 } {
   if { [llength [get_objects]] > 0} {
@@ -9,3 +10,16 @@ if { [string length $curr_wave] == 0 } {
 }
 
 run 1000ns
+=======
+set curr_wave [current_wave_config]
+if { [string length $curr_wave] == 0 } {
+  if { [llength [get_objects]] > 0} {
+    add_wave /
+    set_property needs_save false [current_wave_config]
+  } else {
+     send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+  }
+}
+
+run 1000ns
+>>>>>>> 97cb86f7ce14f87d149c66f1393594ce8a2e6322

@@ -2,7 +2,8 @@
 // Check if the paddles or ball is located in the current position
 // If so, then assign color to it
 module Draw #(
-    parameter
+    parameter MS_DIVISOR = 1250000,
+    parameter SEC_DIVISOR = 12500000,
     P1_PADDLE_X = 1,
     P2_PADDLE_X = 38,
     PADDLE_HEIGHT = 6,
@@ -32,6 +33,7 @@ module Draw #(
     output [3:0] out_Blue
     );
 
+
     wire [3:0] out_red_start, out_green_start, out_blue_start;
     wire [3:0] out_red_mode, out_green_mode, out_blue_mode;
     wire [3:0] out_red_game, out_green_game, out_blue_game;
@@ -40,7 +42,7 @@ module Draw #(
 
     // Divide the clock to get the second (used in Draw_Start.v)
     clock_divider #(
-        .DIVISOR(12500000)
+        .DIVISOR(SEC_DIVISOR)
     ) clock_sec (
         .in_clock(clock),
 
@@ -49,7 +51,7 @@ module Draw #(
 
     // Divide the clock to get the millisecond (used in Draw_Over.v)
     clock_divider #(
-        .DIVISOR(1250000)
+        .DIVISOR(MS_DIVISOR)
     ) clock_ms (
         .in_clock(clock),
 

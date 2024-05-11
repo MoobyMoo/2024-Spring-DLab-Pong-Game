@@ -14,14 +14,16 @@ module TB();
         #2 ms = ~ms;
     end
 
-    Draw_Over draw_over(
+    Draw #(
+        .MS_DIVISOR(2)
+        ) draw (
         .clock(clk),
-        .ms(ms),
         .column_count(col),
         .row_count(row),
         .p1_score(p1),
         .p2_score(p2),
-        
+        .state(6),
+
         .out_Red(out_Red),
         .out_Green(out_Green),
         .out_Blue(out_Blue)

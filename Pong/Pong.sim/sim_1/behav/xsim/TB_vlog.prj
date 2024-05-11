@@ -1,9 +1,21 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
+<<<<<<< HEAD
 "../../../../Pong.srcs/sources_1/new/Draw_Face.v" \
 "../../../../Pong.srcs/sources_1/new/Draw_Over.v" \
 "../../../../Pong.srcs/sources_1/new/Score_Display.v" \
 "../../../../Pong.srcs/sources_1/new/Signal_Control.v" \
+=======
+"../../../../Pong.srcs/sources_1/new/Draw.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Face.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Game.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Mode.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Over.v" \
+"../../../../Pong.srcs/sources_1/new/Draw_Start.v" \
+"../../../../Pong.srcs/sources_1/new/Score_Display.v" \
+"../../../../Pong.srcs/sources_1/new/Signal_Control.v" \
+"../../../../Pong.srcs/sources_1/new/clock_divider.v" \
+>>>>>>> 97cb86f7ce14f87d149c66f1393594ce8a2e6322
 "../../../../Pong.srcs/sim_1/new/TB.v" \
 
 # compile glbl module

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715431544" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Pong.dcp">
+=======
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715442006" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Pong.dcp">
+>>>>>>> 97cb86f7ce14f87d149c66f1393594ce8a2e6322
   <File Type="PA-TCL" Name="Pong.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Pong_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Pong_reports.tcl"/>

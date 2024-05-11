@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2023.2.2 (64-bit)                              -->
+<!-- Product Version: Vivado v2023.2 (64-bit)                              -->
 <!--                                                                         -->
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
-<!-- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.   -->
+<!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
+<<<<<<< HEAD
 <Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.xpr">
+=======
+<Project Product="Vivado" Version="7" Minor="65" Path="C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.xpr">
+>>>>>>> 97cb86f7ce14f87d149c66f1393594ce8a2e6322
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="146b2bf0353644dfb86ab854e846b500"/>
@@ -59,7 +63,11 @@
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
     <Option Name="FeatureSet" Val="FeatureSet_Classic"/>
+<<<<<<< HEAD
     <Option Name="WTXSimLaunchSim" Val="14"/>
+=======
+    <Option Name="WTXSimLaunchSim" Val="45"/>
+>>>>>>> 97cb86f7ce14f87d149c66f1393594ce8a2e6322
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -248,7 +256,6 @@
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="TB"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
-        <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SelectedSimModel" Val="rtl"/>
@@ -304,7 +311,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
+<<<<<<< HEAD
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 4 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
+=======
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-3" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" IsChild="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/impl_1" LaunchOptions="-jobs 4 " AutoRQSDir="$PSRCDIR/utils_1/imports/impl_1">
+>>>>>>> 97cb86f7ce14f87d149c66f1393594ce8a2e6322
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2023"/>
         <Step Id="init_design"/>
