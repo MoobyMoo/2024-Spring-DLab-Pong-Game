@@ -19,8 +19,10 @@ module Pong_FSM #(
 
     output reg out_Hsync = 0,
     output reg out_Vsync = 0,
-    output reg [3:0] p1_score = 0,
-    output reg [3:0] p2_score = 0,
+    output [3:0] p1_score_tens,
+    output [3:0] p1_score_ones,
+    output [3:0] p2_score_tens,
+    output [3:0] p2_score_ones,
     output [3:0] out_Red,
     output [3:0] out_Green,
     output [3:0] out_Blue
@@ -46,12 +48,18 @@ module Pong_FSM #(
     reg [1:0] mode = 0;
     reg [3:0] score_limit = 5;
     reg [2:0] state = 0 ;
+    reg [3:0] p1_score = 0;
+    reg [3:0] p2_score = 0;
 
     // Divide by 16
     assign small_column_count = column_count[9:4];
     assign small_row_count = row_count[9:4];
     assign running = (state == RUNNING) ? 1 : 0;
     assign init = (state == INIT) ? 1 : 0;
+    assign p1_score_tens = p1_score / 10;
+    assign p1_score_ones = p1_score % 10;
+    assign p2_score_tens = p2_score / 10;
+    assign p2_score_ones = p2_score % 10;
 
 
     always @(posedge clock) begin

@@ -1,20 +1,20 @@
 #-----------------------------------------------------------
-# Vivado v2023.2 (64-bit)
-# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
-# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
-# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Sat May 11 19:47:15 2024
-# Process ID: 18972
-# Current directory: C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1
+# Vivado v2023.2.2 (64-bit)
+# SW Build 4126759 on Thu Feb  8 23:53:51 MST 2024
+# IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
+# SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
+# Start of session at: Sat May 11 20:45:48 2024
+# Process ID: 2000
+# Current directory: C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1
 # Command line: vivado.exe -log Pong.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Pong.tcl
-# Log file: C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.vds
-# Journal file: C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1\vivado.jou
-# Running On: MSI, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 16866 MB
+# Log file: C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.vds
+# Journal file: C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1\vivado.jou
+# Running On: Moo_Laptop, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 16, Host memory: 16366 MB
 #-----------------------------------------------------------
 source Pong.tcl -notrace
-create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 466.992 ; gain = 184.863
-Command: read_checkpoint -auto_incremental -incremental C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/utils_1/imports/synth_1/Pong.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/utils_1/imports/synth_1/Pong.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:06 . Memory (MB): peak = 471.879 ; gain = 186.012
+Command: read_checkpoint -auto_incremental -incremental C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/utils_1/imports/synth_1/Pong.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/utils_1/imports/synth_1/Pong.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top Pong -part xc7a100tcsg324-3
 Starting synth_design
@@ -25,65 +25,63 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 29464
+INFO: [Synth 8-7075] Helper process launched with PID 20532
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1320.867 ; gain = 440.051
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1327.188 ; gain = 440.574
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-11065] parameter 'MIN_BALL_SPEED' becomes localparam in 'Pong_Ball_Control' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:24]
-WARNING: [Synth 8-11065] parameter 'MAX_BALL_SPEED' becomes localparam in 'Pong_Ball_Control' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:25]
-WARNING: [Synth 8-11065] parameter 'BALL_ACCELERATION' becomes localparam in 'Pong_Ball_Control' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:26]
-INFO: [Synth 8-11241] undeclared symbol 'init', assumed default net type 'wire' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:54]
-WARNING: [Synth 8-11065] parameter 'GAME_WIDTH' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:34]
-WARNING: [Synth 8-11065] parameter 'GAME_HEIGHT' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:34]
-WARNING: [Synth 8-11065] parameter 'PADDLE_HEIGHT' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:35]
-WARNING: [Synth 8-11065] parameter 'P1_PADDLE_X' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:36]
-WARNING: [Synth 8-11065] parameter 'P2_PADDLE_X' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:36]
-WARNING: [Synth 8-11065] parameter 'INIT' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:37]
-WARNING: [Synth 8-11065] parameter 'MODE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:37]
-WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:37]
-WARNING: [Synth 8-11065] parameter 'RUNNING' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:37]
-WARNING: [Synth 8-11065] parameter 'P1_SCORE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:38]
-WARNING: [Synth 8-11065] parameter 'P2_SCORE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:38]
-WARNING: [Synth 8-11065] parameter 'OVER' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:38]
-WARNING: [Synth 8-11065] parameter 'P5' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:39]
-WARNING: [Synth 8-11065] parameter 'P10' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:39]
-WARNING: [Synth 8-11065] parameter 'P15' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:39]
-WARNING: [Synth 8-11065] parameter 'PADDLE_SPEED' becomes localparam in 'Pong_Paddle_Control' with formal parameter declaration list [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:19]
-INFO: [Synth 8-6157] synthesizing module 'Pong' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong.v:1]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+WARNING: [Synth 8-11065] parameter 'MIN_BALL_SPEED' becomes localparam in 'Pong_Ball_Control' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:24]
+WARNING: [Synth 8-11065] parameter 'MAX_BALL_SPEED' becomes localparam in 'Pong_Ball_Control' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:25]
+WARNING: [Synth 8-11065] parameter 'BALL_ACCELERATION' becomes localparam in 'Pong_Ball_Control' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:26]
+INFO: [Synth 8-11241] undeclared symbol 'init', assumed default net type 'wire' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:58]
+WARNING: [Synth 8-11065] parameter 'GAME_WIDTH' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:36]
+WARNING: [Synth 8-11065] parameter 'GAME_HEIGHT' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:36]
+WARNING: [Synth 8-11065] parameter 'PADDLE_HEIGHT' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:37]
+WARNING: [Synth 8-11065] parameter 'P1_PADDLE_X' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:38]
+WARNING: [Synth 8-11065] parameter 'P2_PADDLE_X' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:38]
+WARNING: [Synth 8-11065] parameter 'INIT' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:39]
+WARNING: [Synth 8-11065] parameter 'MODE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:39]
+WARNING: [Synth 8-11065] parameter 'IDLE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:39]
+WARNING: [Synth 8-11065] parameter 'RUNNING' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:39]
+WARNING: [Synth 8-11065] parameter 'P1_SCORE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:40]
+WARNING: [Synth 8-11065] parameter 'P2_SCORE' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:40]
+WARNING: [Synth 8-11065] parameter 'OVER' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:40]
+WARNING: [Synth 8-11065] parameter 'P5' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:41]
+WARNING: [Synth 8-11065] parameter 'P10' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:41]
+WARNING: [Synth 8-11065] parameter 'P15' becomes localparam in 'Pong_FSM' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:41]
+WARNING: [Synth 8-11065] parameter 'PADDLE_SPEED' becomes localparam in 'Pong_Paddle_Control' with formal parameter declaration list [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:19]
+INFO: [Synth 8-6157] synthesizing module 'Pong' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
 	Parameter DIVISOR bound to: 4 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized0' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized0' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
 	Parameter DIVISOR bound to: 50000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized0' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
-INFO: [Synth 8-6157] synthesizing module 'button_debouncer' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/button_debouncer.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'button_debouncer' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/button_debouncer.v:1]
-INFO: [Synth 8-6157] synthesizing module 'VGA_Sync_Pulse_Generator' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized0' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'button_debouncer' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/button_debouncer.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'button_debouncer' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/button_debouncer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Sync_Pulse_Generator' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v:9]
 	Parameter TOTAL_COLS bound to: 800 - type: integer 
 	Parameter TOTAL_ROWS bound to: 525 - type: integer 
 	Parameter ACTIVE_COLS bound to: 640 - type: integer 
 	Parameter ACTIVE_ROWS bound to: 480 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'VGA_Sync_Pulse_Generator' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v:9]
-INFO: [Synth 8-6157] synthesizing module 'Pong_FSM' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Sync_Pulse_Generator' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v:9]
+INFO: [Synth 8-6157] synthesizing module 'Pong_FSM' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:3]
 	Parameter TOTAL_COLS bound to: 800 - type: integer 
 	Parameter TOTAL_ROWS bound to: 525 - type: integer 
 	Parameter ACTIVE_COLS bound to: 640 - type: integer 
 	Parameter ACTIVE_ROWS bound to: 480 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'VGA_Sync_to_Count' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_to_Count.v:4]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Sync_to_Count' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_to_Count.v:4]
 	Parameter TOTAL_COLS bound to: 800 - type: integer 
 	Parameter TOTAL_ROWS bound to: 525 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'VGA_Sync_to_Count' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_to_Count.v:4]
-INFO: [Synth 8-6157] synthesizing module 'Pong_Paddle_Control' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Sync_to_Count' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_to_Count.v:4]
+INFO: [Synth 8-6157] synthesizing module 'Pong_Paddle_Control' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:3]
 	Parameter PADDLE_HEIGHT bound to: 6 - type: integer 
 	Parameter GAME_HEIGHT bound to: 30 - type: integer 
-WARNING: [Synth 8-6090] variable 'paddle_y' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:39]
-WARNING: [Synth 8-6090] variable 'paddle_y' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:41]
-INFO: [Synth 8-6155] done synthesizing module 'Pong_Paddle_Control' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Pong_Ball_Control' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'Pong_Paddle_Control' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v:3]
+INFO: [Synth 8-6157] synthesizing module 'Pong_Ball_Control' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:5]
 	Parameter GAME_WIDTH bound to: 40 - type: integer 
 	Parameter GAME_HEIGHT bound to: 30 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Pong_Ball_Control' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:5]
-INFO: [Synth 8-6157] synthesizing module 'Draw' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'Pong_Ball_Control' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Draw' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw.v:4]
 	Parameter P1_PADDLE_X bound to: 1 - type: integer 
 	Parameter P2_PADDLE_X bound to: 38 - type: integer 
 	Parameter PADDLE_HEIGHT bound to: 6 - type: integer 
@@ -94,84 +92,84 @@ INFO: [Synth 8-6157] synthesizing module 'Draw' [C:/Users/Chien/College/Logic_De
 	Parameter P1_SCORE bound to: 3'b100 
 	Parameter P2_SCORE bound to: 3'b101 
 	Parameter OVER bound to: 3'b110 
-INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized1' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized1' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
 	Parameter DIVISOR bound to: 12500000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized1' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
-INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized2' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized1' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider__parameterized2' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
 	Parameter DIVISOR bound to: 1250000 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized2' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
-INFO: [Synth 8-6157] synthesizing module 'Draw_Start' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Start.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'Draw_Start' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Start.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Draw_Mode' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Mode.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Score_Display' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider__parameterized2' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Draw_Start' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Start.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Draw_Start' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Start.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Draw_Mode' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Mode.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Score_Display' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
 	Parameter COL_S1 bound to: 6'b001101 
 	Parameter COL_E1 bound to: 6'b010010 
 	Parameter COL_S2 bound to: 6'b010101 
 	Parameter COL_E2 bound to: 6'b011010 
 	Parameter ROW_S bound to: 6'b001101 
 	Parameter ROW_E bound to: 6'b010110 
-INFO: [Synth 8-6155] done synthesizing module 'Score_Display' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'Draw_Mode' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Mode.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Draw_Game' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Game.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Score_Display' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Draw_Mode' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Mode.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Draw_Game' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Game.v:2]
 	Parameter P1_PADDLE_X bound to: 1 - type: integer 
 	Parameter P2_PADDLE_X bound to: 38 - type: integer 
 	Parameter PADDLE_HEIGHT bound to: 6 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'Draw_Game' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Game.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Draw_Over' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Over.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Score_Display__parameterized0' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Draw_Game' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Game.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Draw_Over' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Over.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Score_Display__parameterized0' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
 	Parameter COL_S1 bound to: 6'b000011 
 	Parameter COL_E1 bound to: 6'b001000 
 	Parameter COL_S2 bound to: 6'b001010 
 	Parameter COL_E2 bound to: 6'b001111 
 	Parameter ROW_S bound to: 6'b001101 
 	Parameter ROW_E bound to: 6'b010110 
-INFO: [Synth 8-6155] done synthesizing module 'Score_Display__parameterized0' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Score_Display__parameterized1' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Score_Display__parameterized0' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Score_Display__parameterized1' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
 	Parameter COL_S1 bound to: 6'b011000 
 	Parameter COL_E1 bound to: 6'b011101 
 	Parameter COL_S2 bound to: 6'b011111 
 	Parameter COL_E2 bound to: 6'b100100 
 	Parameter ROW_S bound to: 6'b001101 
 	Parameter ROW_E bound to: 6'b010110 
-INFO: [Synth 8-6155] done synthesizing module 'Score_Display__parameterized1' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Face_Display' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Score_Display__parameterized1' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Face_Display' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
 	Parameter COL_S bound to: 6'b000111 
 	Parameter COL_E bound to: 6'b001011 
 	Parameter ROW_S bound to: 6'b011001 
 	Parameter ROW_E bound to: 6'b011100 
-INFO: [Synth 8-6155] done synthesizing module 'Face_Display' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Face_Display__parameterized0' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Face_Display' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Face_Display__parameterized0' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
 	Parameter COL_S bound to: 6'b011100 
 	Parameter COL_E bound to: 6'b100000 
 	Parameter ROW_S bound to: 6'b011001 
 	Parameter ROW_E bound to: 6'b011100 
-INFO: [Synth 8-6155] done synthesizing module 'Face_Display__parameterized0' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Signal_Control' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Face_Display__parameterized0' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Signal_Control' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
 	Parameter INITIAL_STATE bound to: 2'b01 
 	Parameter INITIAL_VALUE bound to: 4'b1111 
-INFO: [Synth 8-6155] done synthesizing module 'Signal_Control' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Signal_Control__parameterized0' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Signal_Control' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Signal_Control__parameterized0' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
 	Parameter INITIAL_STATE bound to: 2'b00 
 	Parameter INITIAL_VALUE bound to: 4'b0000 
-INFO: [Synth 8-6155] done synthesizing module 'Signal_Control__parameterized0' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
-INFO: [Synth 8-6157] synthesizing module 'Signal_Control__parameterized1' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Signal_Control__parameterized0' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
+INFO: [Synth 8-6157] synthesizing module 'Signal_Control__parameterized1' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
 	Parameter INITIAL_STATE bound to: 2'b10 
 	Parameter INITIAL_VALUE bound to: 4'b0000 
-INFO: [Synth 8-6155] done synthesizing module 'Signal_Control__parameterized1' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'Draw_Over' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Over.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'Draw' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw.v:4]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:175]
-INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:163]
-INFO: [Synth 8-6155] done synthesizing module 'Pong_FSM' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:3]
-INFO: [Synth 8-6157] synthesizing module 'VGA_Sync_Porch' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Porch.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'Signal_Control__parameterized1' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Draw_Over' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Over.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Draw' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw.v:4]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:183]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:171]
+INFO: [Synth 8-6155] done synthesizing module 'Pong_FSM' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v:3]
+INFO: [Synth 8-6157] synthesizing module 'VGA_Sync_Porch' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Porch.v:4]
 	Parameter TOTAL_COLS bound to: 800 - type: integer 
 	Parameter TOTAL_ROWS bound to: 525 - type: integer 
 	Parameter ACTIVE_COLS bound to: 640 - type: integer 
 	Parameter ACTIVE_ROWS bound to: 480 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'VGA_Sync_Porch' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Porch.v:4]
-INFO: [Synth 8-6157] synthesizing module 'score_to_ssd' [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/score_to_ssd.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'score_to_ssd' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/score_to_ssd.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'Pong' (0#1) [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'VGA_Sync_Porch' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Porch.v:4]
+INFO: [Synth 8-6157] synthesizing module 'score_to_ssd' [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/score_to_ssd.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'score_to_ssd' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/score_to_ssd.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'Pong' (0#1) [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong.v:1]
 WARNING: [Synth 8-7129] Port state[2] in module Draw_Game is either unconnected or has no load
 WARNING: [Synth 8-7129] Port state[1] in module Draw_Game is either unconnected or has no load
 WARNING: [Synth 8-7129] Port state[0] in module Draw_Game is either unconnected or has no load
@@ -179,50 +177,50 @@ WARNING: [Synth 8-7129] Port state[2] in module Draw_Start is either unconnected
 WARNING: [Synth 8-7129] Port state[1] in module Draw_Start is either unconnected or has no load
 WARNING: [Synth 8-7129] Port state[0] in module Draw_Start is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1444.797 ; gain = 563.980
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 1450.691 ; gain = 564.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1444.797 ; gain = 563.980
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1450.691 ; gain = 564.078
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1444.797 ; gain = 563.980
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1450.691 ; gain = 564.078
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 1444.797 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1450.691 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]
-Finished Parsing XDC File [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Pong_propImpl.xdc].
+Parsing XDC File [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]
+Finished Parsing XDC File [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/Pong_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/Pong_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1545.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1551.473 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1545.316 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1551.473 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:15 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'button_debouncer'
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'Signal_Control'
@@ -275,7 +273,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Pong_FSM'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:16 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -306,7 +304,7 @@ Detailed RTL Component Info :
 	   8 Input    8 Bit        Muxes := 1     
 	   7 Input    7 Bit        Muxes := 1     
 	   2 Input    7 Bit        Muxes := 7     
-	   2 Input    6 Bit        Muxes := 16    
+	   2 Input    6 Bit        Muxes := 12    
 	   3 Input    6 Bit        Muxes := 3     
 	   2 Input    5 Bit        Muxes := 3     
 	   4 Input    4 Bit        Muxes := 7     
@@ -315,10 +313,10 @@ Detailed RTL Component Info :
 	   2 Input    3 Bit        Muxes := 1     
 	   7 Input    3 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 7     
-	   2 Input    2 Bit        Muxes := 36    
+	   2 Input    2 Bit        Muxes := 34    
 	   3 Input    2 Bit        Muxes := 4     
 	   7 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 57    
+	   2 Input    1 Bit        Muxes := 59    
 	   4 Input    1 Bit        Muxes := 28    
 	   5 Input    1 Bit        Muxes := 1     
 	   3 Input    1 Bit        Muxes := 6     
@@ -340,25 +338,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:24 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:29 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:29 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:00:50 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:29 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -376,37 +374,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -438,42 +436,42 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     4|
-|2     |CARRY4 |    85|
-|3     |LUT1   |    61|
-|4     |LUT2   |   215|
+|2     |CARRY4 |    81|
+|3     |LUT1   |    64|
+|4     |LUT2   |   204|
 |5     |LUT3   |    78|
-|6     |LUT4   |   140|
-|7     |LUT5   |   123|
+|6     |LUT4   |   157|
+|7     |LUT5   |   126|
 |8     |LUT6   |   225|
 |9     |MUXF7  |     2|
 |10    |SRL16E |     2|
-|11    |FDRE   |   460|
-|12    |FDSE   |    36|
+|11    |FDRE   |   454|
+|12    |FDSE   |    42|
 |13    |IBUF   |     7|
 |14    |OBUF   |    30|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:55 . Memory (MB): peak = 1545.316 ; gain = 563.980
-Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 1545.316 ; gain = 664.500
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:14 ; elapsed = 00:00:32 . Memory (MB): peak = 1551.473 ; gain = 564.078
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:34 . Memory (MB): peak = 1551.473 ; gain = 664.859
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1545.316 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 87 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1551.473 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 83 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1545.316 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1551.473 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 73dc12ae
+Synth Design complete | Checksum: 3d204a93
 INFO: [Common 17-83] Releasing license: Synthesis
-86 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+86 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1545.316 ; gain = 1075.391
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1545.316 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:39 . Memory (MB): peak = 1551.473 ; gain = 1075.625
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1551.473 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Pong_utilization_synth.rpt -pb Pong_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat May 11 19:48:36 2024...
+INFO: [Common 17-206] Exiting Vivado at Sat May 11 20:46:36 2024...
