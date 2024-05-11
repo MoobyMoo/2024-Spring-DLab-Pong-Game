@@ -1,4 +1,4 @@
-// Purpose of this Module:
+yo// Purpose of this Module:
 // Controls the state transition and designs of all the states
 module Pong_FSM #(
     parameter
