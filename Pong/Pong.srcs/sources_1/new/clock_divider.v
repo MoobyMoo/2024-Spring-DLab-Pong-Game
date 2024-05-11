@@ -3,7 +3,7 @@ module clock_divider #(
     ) (
     input in_clock,
     
-    output reg out_clock=0
+    output reg out_clock = 0
     );
 
     integer counter = 0;

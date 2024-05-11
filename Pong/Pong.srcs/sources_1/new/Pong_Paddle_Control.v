@@ -7,6 +7,7 @@ module Pong_Paddle_Control #(
     ) (
     input clock,
     input up, down,
+    input init,
 
     output reg [5:0] paddle_y = GAME_HEIGHT/2-1 - PADDLE_HEIGHT/2 
     );
@@ -15,7 +16,7 @@ module Pong_Paddle_Control #(
     // In this case, the paddle will move one board game unit
     // every 50 milliseconds that the button is held down.
     // 25MHz / 1250000 = 20 Hz = 50 milliseconds 
-    parameter PADDLE_SPEED = 1250000;
+    parameter PADDLE_SPEED = 1000000;
 
 
     integer paddle_count = 0;
@@ -26,6 +27,10 @@ module Pong_Paddle_Control #(
     // Only update when paddle_count reaches PADDLE_SPEED
     // Don't update paddle reaches the top or bottom of the screen
     always @(posedge clock) begin
+        if (init) begin
+            paddle_y = GAME_HEIGHT/2-1 - PADDLE_HEIGHT/2;
+        end
+
         if (paddle_enable) begin
             paddle_count <= (paddle_count == PADDLE_SPEED) ? 0 : paddle_count + 1;
         end
