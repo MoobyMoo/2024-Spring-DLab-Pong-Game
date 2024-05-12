@@ -44,7 +44,8 @@ module Pong_FSM #(
     wire [9:0] column_count, row_count;
     wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
     wire [5:0] small_column_count, small_row_count;
-    reg p1_score_point = 0, start_pressed = 0, change_mode_pressed = 0;
+    wire p1_score_point, p2_score_point;
+    reg start_pressed = 0, change_mode_pressed = 0;
     reg [1:0] mode = 0;
     reg [3:0] score_limit = 5;
     reg [2:0] state = 0 ;
@@ -60,6 +61,10 @@ module Pong_FSM #(
     assign p1_score_ones = p1_score % 10;
     assign p2_score_tens = p2_score / 10;
     assign p2_score_ones = p2_score % 10;
+    assign p1_score_point = (ball_x == GAME_WIDTH-2) && 
+                ((ball_y < p2_paddle_y) || (ball_y > (p2_paddle_y + PADDLE_HEIGHT)));
+    assign p2_score_point = (ball_x == 1) && 
+                ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT)));
 
 
     always @(posedge clock) begin
@@ -200,36 +205,22 @@ module Pong_FSM #(
         // Stay in this state until a player scores
         RUNNING: begin
             // P1 score 
-            if ((ball_x == GAME_WIDTH-2) && 
-                ((ball_y < p2_paddle_y) || (ball_y > (p2_paddle_y + PADDLE_HEIGHT)))) begin
+            if (p1_score_point) begin
                 state <= P1_SCORE;
             // P2 score
-            end else if ((ball_x == 1) && 
-                ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT)))) begin
+            end else if (p2_score_point) begin
                 state <= P2_SCORE;
             end
         end
         
         P1_SCORE: begin
-            p1_score_point <= 1;
-            if (p1_score == score_limit-1) begin
-                p1_score <= p1_score + 1;
-                state <= OVER;
-            end else begin
-                p1_score <= p1_score + 1;
-                state <= RUNNING;
-            end
+            p1_score <= p1_score + 1;
+            state <= (p1_score == score_limit-1) ? OVER : RUNNING;
         end
 
         P2_SCORE: begin
-            p1_score_point <= 0;
-            if (p2_score == score_limit-1) begin
-                p2_score <= p2_score + 1;
-                state <= OVER;
-            end else begin
-                p2_score <= p2_score + 1;
-                state <= RUNNING;
-            end
+            p2_score <= p2_score + 1;
+            state <= (p2_score == score_limit-1) ? OVER : RUNNING;
         end
         //End Screen
         OVER: begin
