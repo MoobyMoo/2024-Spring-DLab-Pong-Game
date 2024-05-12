@@ -174,7 +174,7 @@ module Pong_FSM #(
             p1_score <= 0;
             p2_score <= 0;
             state <= (start & ~start_pressed) ? MODE : INIT;
-            mode = P5;
+            mode <= P5;
             score_limit <= 5;
         end
         // Choose how many points to win
