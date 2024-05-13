@@ -25,7 +25,9 @@ module Pong_FSM #(
     output [3:0] p2_score_ones,
     output [3:0] out_Red,
     output [3:0] out_Green,
-    output [3:0] out_Blue
+    output [3:0] out_Blue,
+    output hit_wall,
+    output hit_paddle
     );
 
 
@@ -65,6 +67,11 @@ module Pong_FSM #(
                 ((ball_y < p2_paddle_y) || (ball_y > (p2_paddle_y + PADDLE_HEIGHT)));
     assign p2_score_point = (ball_x == 1) && 
                 ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT)));
+    assign hit_wall = (ball_y == 0) || (ball_y == GAME_HEIGHT-1);
+    assign hit_paddle = ((ball_x == 1) && 
+                ((ball_y < p2_paddle_y) || (ball_y > (p2_paddle_y + PADDLE_HEIGHT)))) ||
+                ((ball_x == GAME_WIDTH-2) &&
+                ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT))));
 
 
     always @(posedge clock) begin
