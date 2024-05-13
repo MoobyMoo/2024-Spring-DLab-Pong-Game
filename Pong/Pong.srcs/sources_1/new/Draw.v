@@ -2,19 +2,19 @@
 // Check if the paddles or ball is located in the current position
 // If so, then assign color to it
 module Draw #(
-    parameter MS_DIVISOR = 1250000,
-    parameter SEC_DIVISOR = 12500000,
+    parameter 
+    MS_DIVISOR = 1250000,
+    SEC_DIVISOR = 12500000,
     P1_PADDLE_X = 1,
     P2_PADDLE_X = 38,
     PADDLE_HEIGHT = 6,
 
     INIT = 3'd0,
     MODE = 3'd1, 
-    IDLE = 3'd2, 
-    RUNNING = 3'd3, 
-    P1_SCORE = 3'd4, 
-    P2_SCORE = 3'd5, 
-    OVER = 3'd6
+    RUNNING = 3'd2, 
+    P1_SCORE = 3'd3, 
+    P2_SCORE = 3'd4, 
+    OVER = 3'd5
     ) (
     input clock,
     input [5:0] p1_paddle_y,
