@@ -8,8 +8,6 @@ module Pong_FSM #(
     ACTIVE_ROWS = 480
     ) (
     input clock,
-    input in_Hsync,
-    input in_Vsync,
     input start,
     input p1_up,
     input p1_down,
@@ -17,15 +15,19 @@ module Pong_FSM #(
     input p2_down,
     input change_mode,
 
-    output reg out_Hsync = 0,
-    output reg out_Vsync = 0,
+    output reg [2:0] state = 0,
+    output reg [3:0] score_limit = 5,
+    output reg [3:0] p1_score = 0,
+    output reg [3:0] p2_score = 0,
     output [3:0] p1_score_tens,
     output [3:0] p1_score_ones,
     output [3:0] p2_score_tens,
     output [3:0] p2_score_ones,
-    output [3:0] out_Red,
-    output [3:0] out_Green,
-    output [3:0] out_Blue,
+    output [5:0] p1_paddle_y,
+    output [5:0] p2_paddle_y,
+    output [5:0] ball_x,
+    output [5:0] ball_y,
+
     output hit_wall,
     output hit_paddle
     );
@@ -42,21 +44,17 @@ module Pong_FSM #(
     P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
     parameter P5 = 2'd0, P10 = 2'd1, P15 = 2'd2;
 
-    wire temp_Hsync, temp_Vsync, p1_draw_paddle, p2_draw_paddle, draw, running;
-    wire [9:0] column_count, row_count;
-    wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
+    wire p1_draw_paddle, p2_draw_paddle, draw, running;
+    
     wire [5:0] small_column_count, small_row_count;
     wire p1_score_point, p2_score_point;
     reg start_pressed = 0, change_mode_pressed = 0;
     reg [1:0] mode = 0;
-    reg [3:0] score_limit = 5;
-    reg [2:0] state = 0 ;
-    reg [3:0] p1_score = 0;
-    reg [3:0] p2_score = 0;
+
 
     // Divide by 16
-    assign small_column_count = column_count[9:4];
-    assign small_row_count = row_count[9:4];
+    //assign small_column_count = column_count[9:4];
+    //assign small_row_count = row_count[9:4];
     assign running = (state == RUNNING) ? 1 : 0;
     assign init = (state == INIT) ? 1 : 0;
     assign p1_score_tens = p1_score / 10;
@@ -75,8 +73,6 @@ module Pong_FSM #(
 
 
     always @(posedge clock) begin
-        out_Hsync <= temp_Hsync;
-        out_Vsync <= temp_Vsync;
 
         if (start & ~start_pressed) begin
             start_pressed <= 1'b1;
@@ -98,20 +94,6 @@ module Pong_FSM #(
             change_mode_pressed <= change_mode_pressed;
         end
     end
-
-    VGA_Sync_to_Count #(
-        .TOTAL_COLS(TOTAL_COLS),
-        .TOTAL_ROWS(TOTAL_ROWS)
-        ) VGA_Sync_to_Count_wrap (
-        .clock(clock),
-        .in_Hsync(in_Hsync),
-        .in_Vsync(in_Vsync),
-
-        .out_Hsync(temp_Hsync),
-        .out_Vsync(temp_Vsync),
-        .column_count(column_count),
-        .row_count(row_count)
-        );
 
     Pong_Paddle_Control #(
         .PADDLE_HEIGHT(PADDLE_HEIGHT),
@@ -148,35 +130,6 @@ module Pong_FSM #(
         .ball_x(ball_x),
         .ball_y(ball_y)
         );
-
-    Draw #(
-        .P1_PADDLE_X(P1_PADDLE_X),
-        .P2_PADDLE_X(P2_PADDLE_X),
-        .PADDLE_HEIGHT(PADDLE_HEIGHT),
-        .INIT(INIT),
-        .MODE(MODE), 
-        .RUNNING(RUNNING), 
-        .P1_SCORE(P1_SCORE), 
-        .P2_SCORE(P2_SCORE),
-        .OVER(OVER)
-        ) draw_wrap (
-        .clock(clock),
-        .p1_paddle_y(p1_paddle_y),
-        .p2_paddle_y(p2_paddle_y),
-        .ball_x(ball_x),
-        .ball_y(ball_y),
-        .column_count(small_column_count),
-        .row_count(small_row_count),
-        .p1_score(p1_score),
-        .p2_score(p2_score),
-        .score_limit(score_limit),
-        .state (state),
-
-        .out_Red(out_Red),
-        .out_Green(out_Green),
-        .out_Blue(out_Blue)
-        );
-
     
     always @(posedge clock) begin
         case (state)

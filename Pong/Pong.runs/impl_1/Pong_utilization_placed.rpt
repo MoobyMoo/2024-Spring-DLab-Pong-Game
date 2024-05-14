@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Sat May 11 23:42:43 2024
+| Date         : Tue May 14 22:23:29 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Pong_utilization_placed.rpt -pb Pong_utilization_placed.pb
 | Design       : Pong
@@ -29,20 +29,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+----------------------------+------+-------+------------+-----------+-------+
-|          Site Type         | Used | Fixed | Prohibited | Available | Util% |
-+----------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs                 |  639 |     0 |          0 |     63400 |  1.01 |
-|   LUT as Logic             |  637 |     0 |          0 |     63400 |  1.00 |
-|   LUT as Memory            |    2 |     0 |          0 |     19000 |  0.01 |
-|     LUT as Distributed RAM |    0 |     0 |            |           |       |
-|     LUT as Shift Register  |    2 |     0 |            |           |       |
-| Slice Registers            |  496 |     0 |          0 |    126800 |  0.39 |
-|   Register as Flip Flop    |  496 |     0 |          0 |    126800 |  0.39 |
-|   Register as Latch        |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                   |    2 |     0 |          0 |     31700 | <0.01 |
-| F8 Muxes                   |    0 |     0 |          0 |     15850 |  0.00 |
-+----------------------------+------+-------+------------+-----------+-------+
++-------------------------+------+-------+------------+-----------+-------+
+|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
++-------------------------+------+-------+------------+-----------+-------+
+| Slice LUTs              |  635 |     0 |          0 |     63400 |  1.00 |
+|   LUT as Logic          |  635 |     0 |          0 |     63400 |  1.00 |
+|   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
+| Slice Registers         |  498 |     0 |          0 |    126800 |  0.39 |
+|   Register as Flip Flop |  498 |     0 |          0 |    126800 |  0.39 |
+|   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
+| F7 Muxes                |    2 |     0 |          0 |     31700 | <0.01 |
+| F8 Muxes                |    1 |     0 |          0 |     15850 | <0.01 |
++-------------------------+------+-------+------------+-----------+-------+
 * Warning! LUT value is adjusted to account for LUT combining.
 
 
@@ -60,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 42    |          Yes |         Set |            - |
-| 454   |          Yes |       Reset |            - |
+| 30    |          Yes |         Set |            - |
+| 468   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -71,25 +69,22 @@ Table of Contents
 +--------------------------------------------+------+-------+------------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Prohibited | Available | Util% |
 +--------------------------------------------+------+-------+------------+-----------+-------+
-| Slice                                      |  252 |     0 |          0 |     15850 |  1.59 |
-|   SLICEL                                   |  162 |     0 |            |           |       |
-|   SLICEM                                   |   90 |     0 |            |           |       |
-| LUT as Logic                               |  637 |     0 |          0 |     63400 |  1.00 |
+| Slice                                      |  246 |     0 |          0 |     15850 |  1.55 |
+|   SLICEL                                   |  157 |     0 |            |           |       |
+|   SLICEM                                   |   89 |     0 |            |           |       |
+| LUT as Logic                               |  635 |     0 |          0 |     63400 |  1.00 |
 |   using O5 output only                     |    0 |       |            |           |       |
-|   using O6 output only                     |  420 |       |            |           |       |
-|   using O5 and O6                          |  217 |       |            |           |       |
-| LUT as Memory                              |    2 |     0 |          0 |     19000 |  0.01 |
+|   using O6 output only                     |  424 |       |            |           |       |
+|   using O5 and O6                          |  211 |       |            |           |       |
+| LUT as Memory                              |    0 |     0 |          0 |     19000 |  0.00 |
 |   LUT as Distributed RAM                   |    0 |     0 |            |           |       |
-|   LUT as Shift Register                    |    2 |     0 |            |           |       |
-|     using O5 output only                   |    2 |       |            |           |       |
-|     using O6 output only                   |    0 |       |            |           |       |
-|     using O5 and O6                        |    0 |       |            |           |       |
-| Slice Registers                            |  496 |     0 |          0 |    126800 |  0.39 |
-|   Register driven from within the Slice    |  438 |       |            |           |       |
-|   Register driven from outside the Slice   |   58 |       |            |           |       |
-|     LUT in front of the register is unused |   31 |       |            |           |       |
-|     LUT in front of the register is used   |   27 |       |            |           |       |
-| Unique Control Sets                        |   45 |       |          0 |     15850 |  0.28 |
+|   LUT as Shift Register                    |    0 |     0 |            |           |       |
+| Slice Registers                            |  498 |     0 |          0 |    126800 |  0.39 |
+|   Register driven from within the Slice    |  430 |       |            |           |       |
+|   Register driven from outside the Slice   |   68 |       |            |           |       |
+|     LUT in front of the register is unused |   29 |       |            |           |       |
+|     LUT in front of the register is used   |   39 |       |            |           |       |
+| Unique Control Sets                        |   42 |       |          0 |     15850 |  0.26 |
 +--------------------------------------------+------+-------+------------+-----------+-------+
 * * Note: Available Control Sets calculated as Slice * 1, Review the Control Sets Report for more information regarding control sets.
 
@@ -181,20 +176,20 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  454 |        Flop & Latch |
-| LUT6     |  225 |                 LUT |
-| LUT2     |  204 |                 LUT |
-| LUT4     |  157 |                 LUT |
-| LUT5     |  126 |                 LUT |
+| FDRE     |  468 |        Flop & Latch |
+| LUT6     |  217 |                 LUT |
+| LUT2     |  194 |                 LUT |
+| LUT4     |  160 |                 LUT |
+| LUT5     |  121 |                 LUT |
 | CARRY4   |   81 |          CarryLogic |
 | LUT3     |   78 |                 LUT |
-| LUT1     |   64 |                 LUT |
-| FDSE     |   42 |        Flop & Latch |
+| LUT1     |   76 |                 LUT |
 | OBUF     |   30 |                  IO |
+| FDSE     |   30 |        Flop & Latch |
 | IBUF     |    7 |                  IO |
 | BUFG     |    4 |               Clock |
-| SRL16E   |    2 |  Distributed Memory |
 | MUXF7    |    2 |               MuxFx |
+| MUXF8    |    1 |               MuxFx |
 +----------+------+---------------------+
 
 

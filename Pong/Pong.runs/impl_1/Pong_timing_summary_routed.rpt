@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Sat May 11 23:43:19 2024
+| Date         : Tue May 14 22:23:55 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -report_unconstrained -file Pong_timing_summary_routed.rpt -pb Pong_timing_summary_routed.pb -rpx Pong_timing_summary_routed.rpx -warn_on_violation
 | Design       : Pong
@@ -56,7 +56,7 @@ Table of Contents
 1. checking no_clock (498)
 2. checking constant_clock (0)
 3. checking pulse_width_clock (0)
-4. checking unconstrained_internal_endpoints (1080)
+4. checking unconstrained_internal_endpoints (1093)
 5. checking no_input_delay (6)
 6. checking no_output_delay (29)
 7. checking multiple_clock (0)
@@ -74,9 +74,9 @@ Table of Contents
 
  There are 388 register/latch pins with no clock driven by root clock pin: clock_div/out_clock_reg/Q (HIGH)
 
- There are 42 register/latch pins with no clock driven by root clock pin: pong_fsm_wrap/draw_wrap/clock_ms/out_clock_reg/Q (HIGH)
+ There are 42 register/latch pins with no clock driven by root clock pin: draw_wrap/clock_ms/out_clock_reg/Q (HIGH)
 
- There are 3 register/latch pins with no clock driven by root clock pin: pong_fsm_wrap/draw_wrap/clock_sec/out_clock_reg/Q (HIGH)
+ There are 3 register/latch pins with no clock driven by root clock pin: draw_wrap/clock_sec/out_clock_reg/Q (HIGH)
 
 
 2. checking constant_clock (0)
@@ -89,9 +89,9 @@ Table of Contents
  There are 0 register/latch pins which need pulse_width check
 
 
-4. checking unconstrained_internal_endpoints (1080)
+4. checking unconstrained_internal_endpoints (1093)
 ---------------------------------------------------
- There are 1080 pins that are not constrained for maximum delay. (HIGH)
+ There are 1093 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -150,7 +150,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-        inf        0.000                      0                 1109          inf        0.000                      0                 1109           NA           NA                      NA                    NA  
+        inf        0.000                      0                 1122          inf        0.000                      0                 1122           NA           NA                      NA                    NA  
 
 
 There are no user specified timing constraints.
@@ -219,258 +219,258 @@ Path Group:  (none)
 From Clock:  
   To Clock:  
 
-Max Delay          1109 Endpoints
-Min Delay          1109 Endpoints
+Max Delay          1122 Endpoints
+Min Delay          1122 Endpoints
 --------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
+  Source:                 ssd_wrap/refresh_count_reg[2]/C
                             (rising edge-triggered cell FDRE)
   Destination:            ssd[7]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.834ns  (logic 3.831ns (43.374%)  route 5.002ns (56.626%))
-  Logic Levels:           5  (FDRE=1 LUT2=1 LUT5=1 LUT6=1 OBUF=1)
+  Data Path Delay:        8.722ns  (logic 4.037ns (46.292%)  route 4.684ns (53.708%))
+  Logic Levels:           5  (FDRE=1 LUT5=1 LUT6=2 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 r  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          1.229     1.570    ssd_wrap/Q[0]
-    SLICE_X0Y107         LUT2 (Prop_lut2_I0_O)        0.097     1.667 f  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
-                         net (fo=1, routed)           0.584     2.251    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_1
-    SLICE_X1Y106         LUT6 (Prop_lut6_I1_O)        0.097     2.348 f  pong_fsm_wrap/ssd_OBUF[7]_inst_i_5/O
-                         net (fo=7, routed)           0.532     2.880    pong_fsm_wrap/ssd_OBUF[7]_inst_i_5_n_0
-    SLICE_X0Y106         LUT5 (Prop_lut5_I4_O)        0.097     2.977 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_1/O
-                         net (fo=1, routed)           2.657     5.634    ssd_OBUF[7]
-    T10                  OBUF (Prop_obuf_I_O)         3.199     8.834 r  ssd_OBUF[7]_inst/O
-                         net (fo=0)                   0.000     8.834    ssd[7]
+    SLICE_X2Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[2]/C
+    SLICE_X2Y93          FDRE (Prop_fdre_C_Q)         0.393     0.393 f  ssd_wrap/refresh_count_reg[2]/Q
+                         net (fo=16, routed)          1.047     1.440    ssd_wrap/Q[2]
+    SLICE_X2Y96          LUT6 (Prop_lut6_I1_O)        0.097     1.537 f  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
+                         net (fo=1, routed)           0.693     2.230    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_2
+    SLICE_X0Y94          LUT6 (Prop_lut6_I5_O)        0.097     2.327 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_4/O
+                         net (fo=7, routed)           0.504     2.831    pong_fsm_wrap/ssd_OBUF[7]_inst_i_4_n_0
+    SLICE_X0Y94          LUT5 (Prop_lut5_I3_O)        0.101     2.932 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_1/O
+                         net (fo=1, routed)           2.440     5.372    ssd_OBUF[7]
+    T10                  OBUF (Prop_obuf_I_O)         3.349     8.722 r  ssd_OBUF[7]_inst/O
+                         net (fo=0)                   0.000     8.722    ssd[7]
     T10                                                               r  ssd[7] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
+  Source:                 pong_fsm_wrap/p1_score_reg[2]/C
                             (rising edge-triggered cell FDRE)
   Destination:            ssd[6]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.762ns  (logic 3.810ns (43.480%)  route 4.952ns (56.520%))
-  Logic Levels:           5  (FDRE=1 LUT2=1 LUT4=1 LUT6=1 OBUF=1)
+  Data Path Delay:        8.592ns  (logic 3.950ns (45.970%)  route 4.642ns (54.030%))
+  Logic Levels:           5  (FDRE=1 LUT3=1 LUT4=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          1.229     1.570    ssd_wrap/Q[0]
-    SLICE_X0Y107         LUT2 (Prop_lut2_I0_O)        0.097     1.667 r  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
-                         net (fo=1, routed)           0.584     2.251    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_1
-    SLICE_X1Y106         LUT6 (Prop_lut6_I1_O)        0.097     2.348 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_5/O
-                         net (fo=7, routed)           0.500     2.849    pong_fsm_wrap/ssd_OBUF[7]_inst_i_5_n_0
-    SLICE_X0Y106         LUT4 (Prop_lut4_I3_O)        0.097     2.946 r  pong_fsm_wrap/ssd_OBUF[6]_inst_i_1/O
-                         net (fo=1, routed)           2.639     5.584    ssd_OBUF[6]
-    R10                  OBUF (Prop_obuf_I_O)         3.178     8.762 r  ssd_OBUF[6]_inst/O
-                         net (fo=0)                   0.000     8.762    ssd[6]
+    SLICE_X4Y94          FDRE                         0.000     0.000 r  pong_fsm_wrap/p1_score_reg[2]/C
+    SLICE_X4Y94          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  pong_fsm_wrap/p1_score_reg[2]/Q
+                         net (fo=12, routed)          1.020     1.361    pong_fsm_wrap/p1_score_reg[3]_0[2]
+    SLICE_X2Y96          LUT3 (Prop_lut3_I1_O)        0.100     1.461 f  pong_fsm_wrap/ssd_OBUF[7]_inst_i_6/O
+                         net (fo=1, routed)           0.691     2.151    pong_fsm_wrap/ssd_OBUF[7]_inst_i_6_n_0
+    SLICE_X0Y94          LUT6 (Prop_lut6_I0_O)        0.234     2.385 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_2/O
+                         net (fo=7, routed)           0.582     2.967    pong_fsm_wrap/ssd_OBUF[7]_inst_i_2_n_0
+    SLICE_X0Y93          LUT4 (Prop_lut4_I1_O)        0.097     3.064 r  pong_fsm_wrap/ssd_OBUF[6]_inst_i_1/O
+                         net (fo=1, routed)           2.350     5.414    ssd_OBUF[6]
+    R10                  OBUF (Prop_obuf_I_O)         3.178     8.592 r  ssd_OBUF[6]_inst/O
+                         net (fo=0)                   0.000     8.592    ssd[6]
     R10                                                               r  ssd[6] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
+  Source:                 ssd_wrap/refresh_count_reg[2]/C
                             (rising edge-triggered cell FDRE)
   Destination:            ssd[2]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.453ns  (logic 3.815ns (45.134%)  route 4.638ns (54.866%))
-  Logic Levels:           5  (FDRE=1 LUT2=1 LUT5=1 LUT6=1 OBUF=1)
+  Data Path Delay:        8.390ns  (logic 4.013ns (47.833%)  route 4.377ns (52.167%))
+  Logic Levels:           5  (FDRE=1 LUT5=1 LUT6=2 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          1.229     1.570    ssd_wrap/Q[0]
-    SLICE_X0Y107         LUT2 (Prop_lut2_I0_O)        0.097     1.667 r  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
-                         net (fo=1, routed)           0.584     2.251    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_1
-    SLICE_X1Y106         LUT6 (Prop_lut6_I1_O)        0.097     2.348 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_5/O
-                         net (fo=7, routed)           0.494     2.842    pong_fsm_wrap/ssd_OBUF[7]_inst_i_5_n_0
-    SLICE_X0Y106         LUT5 (Prop_lut5_I2_O)        0.097     2.939 r  pong_fsm_wrap/ssd_OBUF[2]_inst_i_1/O
-                         net (fo=1, routed)           2.331     5.270    ssd_OBUF[2]
-    T11                  OBUF (Prop_obuf_I_O)         3.183     8.453 r  ssd_OBUF[2]_inst/O
-                         net (fo=0)                   0.000     8.453    ssd[2]
+    SLICE_X2Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[2]/C
+    SLICE_X2Y93          FDRE (Prop_fdre_C_Q)         0.393     0.393 f  ssd_wrap/refresh_count_reg[2]/Q
+                         net (fo=16, routed)          1.047     1.440    ssd_wrap/Q[2]
+    SLICE_X2Y96          LUT6 (Prop_lut6_I1_O)        0.097     1.537 f  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
+                         net (fo=1, routed)           0.693     2.230    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_2
+    SLICE_X0Y94          LUT6 (Prop_lut6_I5_O)        0.097     2.327 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_4/O
+                         net (fo=7, routed)           0.512     2.839    pong_fsm_wrap/ssd_OBUF[7]_inst_i_4_n_0
+    SLICE_X0Y94          LUT5 (Prop_lut5_I4_O)        0.101     2.940 r  pong_fsm_wrap/ssd_OBUF[2]_inst_i_1/O
+                         net (fo=1, routed)           2.125     5.065    ssd_OBUF[2]
+    T11                  OBUF (Prop_obuf_I_O)         3.325     8.390 r  ssd_OBUF[2]_inst/O
+                         net (fo=0)                   0.000     8.390    ssd[2]
     T11                                                               r  ssd[2] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            ssd[3]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        8.314ns  (logic 3.788ns (45.562%)  route 4.526ns (54.438%))
-  Logic Levels:           5  (FDRE=1 LUT2=1 LUT4=1 LUT6=1 OBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 r  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          1.229     1.570    ssd_wrap/Q[0]
-    SLICE_X0Y107         LUT2 (Prop_lut2_I0_O)        0.097     1.667 f  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
-                         net (fo=1, routed)           0.584     2.251    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_1
-    SLICE_X1Y106         LUT6 (Prop_lut6_I1_O)        0.097     2.348 f  pong_fsm_wrap/ssd_OBUF[7]_inst_i_5/O
-                         net (fo=7, routed)           0.530     2.878    pong_fsm_wrap/ssd_OBUF[7]_inst_i_5_n_0
-    SLICE_X0Y106         LUT4 (Prop_lut4_I2_O)        0.097     2.975 r  pong_fsm_wrap/ssd_OBUF[3]_inst_i_1/O
-                         net (fo=1, routed)           2.183     5.158    ssd_OBUF[3]
-    P15                  OBUF (Prop_obuf_I_O)         3.156     8.314 r  ssd_OBUF[3]_inst/O
-                         net (fo=0)                   0.000     8.314    ssd[3]
-    P15                                                               r  ssd[3] (OUT)
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            ssd[1]
-                            (output port)
-  Path Group:             (none)
-  Path Type:              Max at Slow Process Corner
-  Data Path Delay:        7.815ns  (logic 3.952ns (50.567%)  route 3.863ns (49.433%))
-  Logic Levels:           5  (FDRE=1 LUT2=1 LUT5=1 LUT6=1 OBUF=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          1.229     1.570    ssd_wrap/Q[0]
-    SLICE_X0Y107         LUT2 (Prop_lut2_I0_O)        0.097     1.667 r  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
-                         net (fo=1, routed)           0.584     2.251    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_1
-    SLICE_X1Y106         LUT6 (Prop_lut6_I1_O)        0.097     2.348 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_5/O
-                         net (fo=7, routed)           0.532     2.880    pong_fsm_wrap/ssd_OBUF[7]_inst_i_5_n_0
-    SLICE_X0Y106         LUT5 (Prop_lut5_I4_O)        0.114     2.994 r  pong_fsm_wrap/ssd_OBUF[1]_inst_i_1/O
-                         net (fo=1, routed)           1.518     4.512    ssd_OBUF[1]
-    L18                  OBUF (Prop_obuf_I_O)         3.303     7.815 r  ssd_OBUF[1]_inst/O
-                         net (fo=0)                   0.000     7.815    ssd[1]
-    L18                                                               r  ssd[1] (OUT)
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
+  Source:                 ssd_wrap/refresh_count_reg[2]/C
                             (rising edge-triggered cell FDRE)
   Destination:            ssd[4]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        7.751ns  (logic 3.947ns (50.917%)  route 3.804ns (49.083%))
-  Logic Levels:           5  (FDRE=1 LUT2=1 LUT5=1 LUT6=1 OBUF=1)
+  Data Path Delay:        7.899ns  (logic 3.857ns (48.825%)  route 4.042ns (51.175%))
+  Logic Levels:           5  (FDRE=1 LUT5=1 LUT6=2 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          1.229     1.570    ssd_wrap/Q[0]
-    SLICE_X0Y107         LUT2 (Prop_lut2_I0_O)        0.097     1.667 r  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
-                         net (fo=1, routed)           0.584     2.251    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_1
-    SLICE_X1Y106         LUT6 (Prop_lut6_I1_O)        0.097     2.348 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_5/O
-                         net (fo=7, routed)           0.494     2.842    pong_fsm_wrap/ssd_OBUF[7]_inst_i_5_n_0
-    SLICE_X0Y106         LUT5 (Prop_lut5_I3_O)        0.097     2.939 r  pong_fsm_wrap/ssd_OBUF[4]_inst_i_1/O
-                         net (fo=1, routed)           1.498     4.436    ssd_OBUF[4]
-    K13                  OBUF (Prop_obuf_I_O)         3.315     7.751 r  ssd_OBUF[4]_inst/O
-                         net (fo=0)                   0.000     7.751    ssd[4]
+    SLICE_X2Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[2]/C
+    SLICE_X2Y93          FDRE (Prop_fdre_C_Q)         0.393     0.393 f  ssd_wrap/refresh_count_reg[2]/Q
+                         net (fo=16, routed)          1.047     1.440    ssd_wrap/Q[2]
+    SLICE_X2Y96          LUT6 (Prop_lut6_I1_O)        0.097     1.537 f  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
+                         net (fo=1, routed)           0.693     2.230    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_2
+    SLICE_X0Y94          LUT6 (Prop_lut6_I5_O)        0.097     2.327 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_4/O
+                         net (fo=7, routed)           0.504     2.831    pong_fsm_wrap/ssd_OBUF[7]_inst_i_4_n_0
+    SLICE_X0Y94          LUT5 (Prop_lut5_I4_O)        0.097     2.928 r  pong_fsm_wrap/ssd_OBUF[4]_inst_i_1/O
+                         net (fo=1, routed)           1.798     4.726    ssd_OBUF[4]
+    K13                  OBUF (Prop_obuf_I_O)         3.173     7.899 r  ssd_OBUF[4]_inst/O
+                         net (fo=0)                   0.000     7.899    ssd[4]
     K13                                                               r  ssd[4] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[1]/C
+  Source:                 pong_fsm_wrap/p1_score_reg[2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            anode[6]
+  Destination:            ssd[3]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        7.705ns  (logic 3.808ns (49.422%)  route 3.897ns (50.578%))
-  Logic Levels:           3  (FDRE=1 LUT3=1 OBUF=1)
+  Data Path Delay:        7.890ns  (logic 3.928ns (49.784%)  route 3.962ns (50.216%))
+  Logic Levels:           5  (FDRE=1 LUT3=1 LUT4=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[1]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.313     0.313 f  ssd_wrap/refresh_count_reg[1]/Q
-                         net (fo=21, routed)          0.897     1.210    ssd_wrap/Q[1]
-    SLICE_X0Y103         LUT3 (Prop_lut3_I2_O)        0.213     1.423 r  ssd_wrap/anode_OBUF[6]_inst_i_1/O
-                         net (fo=1, routed)           3.000     4.423    anode_OBUF[6]
-    K2                   OBUF (Prop_obuf_I_O)         3.282     7.705 r  anode_OBUF[6]_inst/O
-                         net (fo=0)                   0.000     7.705    anode[6]
-    K2                                                                r  anode[6] (OUT)
+    SLICE_X4Y94          FDRE                         0.000     0.000 r  pong_fsm_wrap/p1_score_reg[2]/C
+    SLICE_X4Y94          FDRE (Prop_fdre_C_Q)         0.341     0.341 r  pong_fsm_wrap/p1_score_reg[2]/Q
+                         net (fo=12, routed)          1.020     1.361    pong_fsm_wrap/p1_score_reg[3]_0[2]
+    SLICE_X2Y96          LUT3 (Prop_lut3_I1_O)        0.100     1.461 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_6/O
+                         net (fo=1, routed)           0.691     2.151    pong_fsm_wrap/ssd_OBUF[7]_inst_i_6_n_0
+    SLICE_X0Y94          LUT6 (Prop_lut6_I0_O)        0.234     2.385 f  pong_fsm_wrap/ssd_OBUF[7]_inst_i_2/O
+                         net (fo=7, routed)           0.568     2.953    pong_fsm_wrap/ssd_OBUF[7]_inst_i_2_n_0
+    SLICE_X0Y93          LUT4 (Prop_lut4_I1_O)        0.097     3.050 r  pong_fsm_wrap/ssd_OBUF[3]_inst_i_1/O
+                         net (fo=1, routed)           1.684     4.734    ssd_OBUF[3]
+    P15                  OBUF (Prop_obuf_I_O)         3.156     7.890 r  ssd_OBUF[3]_inst/O
+                         net (fo=0)                   0.000     7.890    ssd[3]
+    P15                                                               r  ssd[3] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
+  Source:                 pong_fsm_wrap/p1_score_reg[2]/C
                             (rising edge-triggered cell FDRE)
   Destination:            ssd[5]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        7.569ns  (logic 3.897ns (51.495%)  route 3.671ns (48.505%))
-  Logic Levels:           5  (FDRE=1 LUT2=1 LUT4=1 LUT6=1 OBUF=1)
+  Data Path Delay:        7.689ns  (logic 4.037ns (52.512%)  route 3.651ns (47.488%))
+  Logic Levels:           5  (FDRE=1 LUT3=1 LUT4=1 LUT6=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          1.229     1.570    ssd_wrap/Q[0]
-    SLICE_X0Y107         LUT2 (Prop_lut2_I0_O)        0.097     1.667 r  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
-                         net (fo=1, routed)           0.584     2.251    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_1
-    SLICE_X1Y106         LUT6 (Prop_lut6_I1_O)        0.097     2.348 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_5/O
-                         net (fo=7, routed)           0.500     2.849    pong_fsm_wrap/ssd_OBUF[7]_inst_i_5_n_0
-    SLICE_X0Y106         LUT4 (Prop_lut4_I3_O)        0.097     2.946 r  pong_fsm_wrap/ssd_OBUF[5]_inst_i_1/O
-                         net (fo=1, routed)           1.358     4.303    ssd_OBUF[5]
-    K16                  OBUF (Prop_obuf_I_O)         3.265     7.569 r  ssd_OBUF[5]_inst/O
-                         net (fo=0)                   0.000     7.569    ssd[5]
+    SLICE_X4Y94          FDRE                         0.000     0.000 r  pong_fsm_wrap/p1_score_reg[2]/C
+    SLICE_X4Y94          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  pong_fsm_wrap/p1_score_reg[2]/Q
+                         net (fo=12, routed)          1.020     1.361    pong_fsm_wrap/p1_score_reg[3]_0[2]
+    SLICE_X2Y96          LUT3 (Prop_lut3_I1_O)        0.100     1.461 f  pong_fsm_wrap/ssd_OBUF[7]_inst_i_6/O
+                         net (fo=1, routed)           0.691     2.151    pong_fsm_wrap/ssd_OBUF[7]_inst_i_6_n_0
+    SLICE_X0Y94          LUT6 (Prop_lut6_I0_O)        0.234     2.385 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_2/O
+                         net (fo=7, routed)           0.568     2.953    pong_fsm_wrap/ssd_OBUF[7]_inst_i_2_n_0
+    SLICE_X0Y93          LUT4 (Prop_lut4_I1_O)        0.105     3.058 r  pong_fsm_wrap/ssd_OBUF[5]_inst_i_1/O
+                         net (fo=1, routed)           1.373     4.431    ssd_OBUF[5]
+    K16                  OBUF (Prop_obuf_I_O)         3.257     7.689 r  ssd_OBUF[5]_inst/O
+                         net (fo=0)                   0.000     7.689    ssd[5]
     K16                                                               r  ssd[5] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
+  Source:                 ssd_wrap/refresh_count_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            anode[6]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        7.473ns  (logic 3.794ns (50.766%)  route 3.679ns (49.234%))
+  Logic Levels:           3  (FDRE=1 LUT3=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[2]/C
+    SLICE_X2Y93          FDRE (Prop_fdre_C_Q)         0.393     0.393 f  ssd_wrap/refresh_count_reg[2]/Q
+                         net (fo=16, routed)          1.007     1.400    ssd_wrap/Q[2]
+    SLICE_X0Y97          LUT3 (Prop_lut3_I0_O)        0.111     1.511 r  ssd_wrap/anode_OBUF[6]_inst_i_1/O
+                         net (fo=1, routed)           2.673     4.183    anode_OBUF[6]
+    K2                   OBUF (Prop_obuf_I_O)         3.290     7.473 r  anode_OBUF[6]_inst/O
+                         net (fo=0)                   0.000     7.473    anode[6]
+    K2                                                                r  anode[6] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ssd_wrap/refresh_count_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            ssd[1]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        7.388ns  (logic 3.844ns (52.027%)  route 3.544ns (47.973%))
+  Logic Levels:           5  (FDRE=1 LUT5=1 LUT6=2 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X2Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[2]/C
+    SLICE_X2Y93          FDRE (Prop_fdre_C_Q)         0.393     0.393 f  ssd_wrap/refresh_count_reg[2]/Q
+                         net (fo=16, routed)          1.047     1.440    ssd_wrap/Q[2]
+    SLICE_X2Y96          LUT6 (Prop_lut6_I1_O)        0.097     1.537 f  ssd_wrap/ssd_OBUF[7]_inst_i_10/O
+                         net (fo=1, routed)           0.693     2.230    pong_fsm_wrap/ssd_OBUF[5]_inst_i_1_2
+    SLICE_X0Y94          LUT6 (Prop_lut6_I5_O)        0.097     2.327 r  pong_fsm_wrap/ssd_OBUF[7]_inst_i_4/O
+                         net (fo=7, routed)           0.512     2.839    pong_fsm_wrap/ssd_OBUF[7]_inst_i_4_n_0
+    SLICE_X0Y94          LUT5 (Prop_lut5_I3_O)        0.097     2.936 r  pong_fsm_wrap/ssd_OBUF[1]_inst_i_1/O
+                         net (fo=1, routed)           1.293     4.228    ssd_OBUF[1]
+    L18                  OBUF (Prop_obuf_I_O)         3.160     7.388 r  ssd_OBUF[1]_inst/O
+                         net (fo=0)                   0.000     7.388    ssd[1]
+    L18                                                               r  ssd[1] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 ssd_wrap/refresh_count_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            anode[7]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        6.605ns  (logic 3.756ns (56.865%)  route 2.849ns (43.135%))
+  Data Path Delay:        7.103ns  (logic 3.701ns (52.099%)  route 3.403ns (47.901%))
   Logic Levels:           3  (FDRE=1 LUT3=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 f  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          0.628     0.969    ssd_wrap/Q[0]
-    SLICE_X0Y93          LUT3 (Prop_lut3_I1_O)        0.097     1.066 r  ssd_wrap/anode_OBUF[7]_inst_i_1/O
-                         net (fo=1, routed)           2.221     3.287    anode_OBUF[7]
-    U13                  OBUF (Prop_obuf_I_O)         3.318     6.605 r  anode_OBUF[7]_inst/O
-                         net (fo=0)                   0.000     6.605    anode[7]
+    SLICE_X0Y97          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[1]/C
+    SLICE_X0Y97          FDRE (Prop_fdre_C_Q)         0.313     0.313 f  ssd_wrap/refresh_count_reg[1]/Q
+                         net (fo=21, routed)          1.086     1.399    ssd_wrap/Q[1]
+    SLICE_X0Y92          LUT3 (Prop_lut3_I2_O)        0.212     1.611 r  ssd_wrap/anode_OBUF[7]_inst_i_1/O
+                         net (fo=1, routed)           2.316     3.928    anode_OBUF[7]
+    U13                  OBUF (Prop_obuf_I_O)         3.176     7.103 r  anode_OBUF[7]_inst/O
+                         net (fo=0)                   0.000     7.103    anode[7]
     U13                                                               r  anode[7] (OUT)
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 ssd_wrap/refresh_count_reg[0]/C
+  Source:                 ssd_wrap/refresh_count_reg[1]/C
                             (rising edge-triggered cell FDRE)
   Destination:            anode[2]
                             (output port)
   Path Group:             (none)
   Path Type:              Max at Slow Process Corner
-  Data Path Delay:        6.472ns  (logic 3.635ns (56.160%)  route 2.837ns (43.840%))
+  Data Path Delay:        6.977ns  (logic 3.722ns (53.342%)  route 3.255ns (46.658%))
   Logic Levels:           3  (FDRE=1 LUT3=1 OBUF=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y93          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[0]/C
-    SLICE_X0Y93          FDRE (Prop_fdre_C_Q)         0.341     0.341 r  ssd_wrap/refresh_count_reg[0]/Q
-                         net (fo=18, routed)          0.634     0.975    ssd_wrap/Q[0]
-    SLICE_X0Y93          LUT3 (Prop_lut3_I2_O)        0.097     1.072 r  ssd_wrap/anode_OBUF[2]_inst_i_1/O
-                         net (fo=1, routed)           2.203     3.275    anode_OBUF[2]
-    T9                   OBUF (Prop_obuf_I_O)         3.197     6.472 r  anode_OBUF[2]_inst/O
-                         net (fo=0)                   0.000     6.472    anode[2]
+    SLICE_X0Y97          FDRE                         0.000     0.000 r  ssd_wrap/refresh_count_reg[1]/C
+    SLICE_X0Y97          FDRE (Prop_fdre_C_Q)         0.313     0.313 f  ssd_wrap/refresh_count_reg[1]/Q
+                         net (fo=21, routed)          0.941     1.254    ssd_wrap/Q[1]
+    SLICE_X0Y92          LUT3 (Prop_lut3_I0_O)        0.212     1.466 r  ssd_wrap/anode_OBUF[2]_inst_i_1/O
+                         net (fo=1, routed)           2.314     3.780    anode_OBUF[2]
+    T9                   OBUF (Prop_obuf_I_O)         3.197     6.977 r  anode_OBUF[2]_inst/O
+                         net (fo=0)                   0.000     6.977    anode[2]
     T9                                                                r  anode[2] (OUT)
   -------------------------------------------------------------------    -------------------
 
@@ -481,183 +481,181 @@ Slack:                    inf
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack:                    inf
-  Source:                 pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[1]/C
+  Source:                 draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[1]/D
+  Destination:            draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[2]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.214ns  (logic 0.133ns (62.206%)  route 0.081ns (37.794%))
+  Data Path Delay:        0.218ns  (logic 0.151ns (69.197%)  route 0.067ns (30.803%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X87Y139        FDRE                         0.000     0.000 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[1]/C
-    SLICE_X87Y139        FDRE (Prop_fdre_C_Q)         0.133     0.133 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[1]/Q
-                         net (fo=6, routed)           0.081     0.214    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[1]
-    SLICE_X87Y139        FDRE                                         r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[1]/D
+    SLICE_X30Y119        FDRE                         0.000     0.000 r  draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[2]/C
+    SLICE_X30Y119        FDRE (Prop_fdre_C_Q)         0.151     0.151 r  draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[2]/Q
+                         net (fo=5, routed)           0.067     0.218    draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[2]
+    SLICE_X31Y119        FDRE                                         r  draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 pong_fsm_wrap/ball_wrap/ball_x_reg[5]/C
+  Source:                 VGA_Sync_to_Count_wrap/out_Hsync_reg/C
                             (rising edge-triggered cell FDRE)
-  Destination:            pong_fsm_wrap/ball_wrap/previous_ball_x_reg[5]/D
+  Destination:            sync_porch/Sync_to_Count_wrap/out_Hsync_reg/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.220ns  (logic 0.128ns (58.270%)  route 0.092ns (41.730%))
+  Data Path Delay:        0.244ns  (logic 0.141ns (57.819%)  route 0.103ns (42.181%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X11Y109        FDRE                         0.000     0.000 r  pong_fsm_wrap/ball_wrap/ball_x_reg[5]/C
-    SLICE_X11Y109        FDRE (Prop_fdre_C_Q)         0.128     0.128 r  pong_fsm_wrap/ball_wrap/ball_x_reg[5]/Q
-                         net (fo=8, routed)           0.092     0.220    pong_fsm_wrap/ball_wrap/ball_x_reg[5]_0[2]
-    SLICE_X10Y109        FDRE                                         r  pong_fsm_wrap/ball_wrap/previous_ball_x_reg[5]/D
+    SLICE_X3Y144         FDRE                         0.000     0.000 r  VGA_Sync_to_Count_wrap/out_Hsync_reg/C
+    SLICE_X3Y144         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  VGA_Sync_to_Count_wrap/out_Hsync_reg/Q
+                         net (fo=1, routed)           0.103     0.244    sync_porch/Sync_to_Count_wrap/temp2_Hsync
+    SLICE_X0Y144         FDRE                                         r  sync_porch/Sync_to_Count_wrap/out_Hsync_reg/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 sync_porch/temp_Red_reg[3]/C
-                            (rising edge-triggered cell FDSE)
-  Destination:            sync_porch/out_Red_reg[3]/D
+  Source:                 sync_pulse_gen/row_count_reg[9]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            VGA_Sync_to_Count_wrap/out_Vsync_reg/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.256ns  (logic 0.148ns (57.710%)  route 0.108ns (42.290%))
-  Logic Levels:           1  (FDSE=1)
+  Data Path Delay:        0.261ns  (logic 0.186ns (71.233%)  route 0.075ns (28.767%))
+  Logic Levels:           2  (FDRE=1 LUT5=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X88Y132        FDSE                         0.000     0.000 r  sync_porch/temp_Red_reg[3]/C
-    SLICE_X88Y132        FDSE (Prop_fdse_C_Q)         0.148     0.148 r  sync_porch/temp_Red_reg[3]/Q
-                         net (fo=1, routed)           0.108     0.256    sync_porch/temp_Red__0[3]
-    SLICE_X89Y133        FDRE                                         r  sync_porch/out_Red_reg[3]/D
+    SLICE_X1Y144         FDRE                         0.000     0.000 r  sync_pulse_gen/row_count_reg[9]/C
+    SLICE_X1Y144         FDRE (Prop_fdre_C_Q)         0.141     0.141 f  sync_pulse_gen/row_count_reg[9]/Q
+                         net (fo=3, routed)           0.075     0.216    sync_pulse_gen/row_count_reg_n_0_[9]
+    SLICE_X0Y144         LUT5 (Prop_lut5_I3_O)        0.045     0.261 r  sync_pulse_gen/out_Vsync_i_1/O
+                         net (fo=1, routed)           0.000     0.261    VGA_Sync_to_Count_wrap/temp1_Vsync
+    SLICE_X0Y144         FDRE                                         r  VGA_Sync_to_Count_wrap/out_Vsync_reg/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[3]/C
+  Source:                 draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_reg/D
+  Destination:            draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state_reg[1]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.258ns  (logic 0.209ns (81.006%)  route 0.049ns (18.994%))
+  Data Path Delay:        0.265ns  (logic 0.191ns (72.015%)  route 0.074ns (27.985%))
   Logic Levels:           2  (FDRE=1 LUT6=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X2Y113         FDRE                         0.000     0.000 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[3]/C
-    SLICE_X2Y113         FDRE (Prop_fdre_C_Q)         0.164     0.164 f  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[3]/Q
-                         net (fo=1, routed)           0.049     0.213    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count[3]
-    SLICE_X3Y113         LUT6 (Prop_lut6_I3_O)        0.045     0.258 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_i_1__0/O
-                         net (fo=1, routed)           0.000     0.258    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_i_1__0_n_0
-    SLICE_X3Y113         FDRE                                         r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_reg/D
+    SLICE_X31Y120        FDRE                         0.000     0.000 r  draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[2]/C
+    SLICE_X31Y120        FDRE (Prop_fdre_C_Q)         0.146     0.146 r  draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[2]/Q
+                         net (fo=4, routed)           0.074     0.220    draw_wrap/Draw_Over_wrap/Signal_Control_R/sel0[2]
+    SLICE_X30Y120        LUT6 (Prop_lut6_I2_O)        0.045     0.265 r  draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state[1]_i_1/O
+                         net (fo=1, routed)           0.000     0.265    draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state[1]_i_1_n_0
+    SLICE_X30Y120        FDRE                                         r  draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state_reg[1]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 debounce_p1_down/debounce_counter_reg[0]/C
+  Source:                 sync_pulse_gen/row_count_reg[4]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            debounce_p1_down/FSM_sequential_state_reg[0]/D
+  Destination:            sync_pulse_gen/row_count_reg[5]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.269ns  (logic 0.186ns (69.261%)  route 0.083ns (30.739%))
+  Data Path Delay:        0.271ns  (logic 0.186ns (68.599%)  route 0.085ns (31.401%))
   Logic Levels:           2  (FDRE=1 LUT6=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X0Y81          FDRE                         0.000     0.000 r  debounce_p1_down/debounce_counter_reg[0]/C
-    SLICE_X0Y81          FDRE (Prop_fdre_C_Q)         0.141     0.141 r  debounce_p1_down/debounce_counter_reg[0]/Q
-                         net (fo=7, routed)           0.083     0.224    debounce_p1_down/debounce_counter_reg_n_0_[0]
-    SLICE_X1Y81          LUT6 (Prop_lut6_I4_O)        0.045     0.269 r  debounce_p1_down/FSM_sequential_state[0]_i_1__2/O
-                         net (fo=1, routed)           0.000     0.269    debounce_p1_down/FSM_sequential_state[0]_i_1__2_n_0
-    SLICE_X1Y81          FDRE                                         r  debounce_p1_down/FSM_sequential_state_reg[0]/D
+    SLICE_X0Y145         FDRE                         0.000     0.000 r  sync_pulse_gen/row_count_reg[4]/C
+    SLICE_X0Y145         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  sync_pulse_gen/row_count_reg[4]/Q
+                         net (fo=8, routed)           0.085     0.226    sync_pulse_gen/row_count_reg_n_0_[4]
+    SLICE_X1Y145         LUT6 (Prop_lut6_I0_O)        0.045     0.271 r  sync_pulse_gen/row_count[5]_i_1/O
+                         net (fo=1, routed)           0.000     0.271    sync_pulse_gen/row_count[5]_i_1_n_0
+    SLICE_X1Y145         FDRE                                         r  sync_pulse_gen/row_count_reg[5]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/ten_reg/C
+  Source:                 draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[2]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/draw_s_reg/D
+  Destination:            draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[2]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.270ns  (logic 0.186ns (68.798%)  route 0.084ns (31.202%))
-  Logic Levels:           2  (FDRE=1 LUT6=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X4Y110         FDRE                         0.000     0.000 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/ten_reg/C
-    SLICE_X4Y110         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/ten_reg/Q
-                         net (fo=1, routed)           0.084     0.225    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/ten
-    SLICE_X5Y110         LUT6 (Prop_lut6_I4_O)        0.045     0.270 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/draw_s_i_1__2/O
-                         net (fo=1, routed)           0.000     0.270    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/draw_s0_out
-    SLICE_X5Y110         FDRE                                         r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Score_Display_P2/draw_s_reg/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/display_reg/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/draw_f_reg/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.271ns  (logic 0.186ns (68.544%)  route 0.085ns (31.456%))
-  Logic Levels:           2  (FDRE=1 LUT6=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X0Y114         FDRE                         0.000     0.000 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/display_reg/C
-    SLICE_X0Y114         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/display_reg/Q
-                         net (fo=1, routed)           0.085     0.226    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/display
-    SLICE_X1Y114         LUT6 (Prop_lut6_I2_O)        0.045     0.271 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/draw_f_i_1/O
-                         net (fo=1, routed)           0.000     0.271    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/draw_f_i_1_n_0
-    SLICE_X1Y114         FDRE                                         r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P2/draw_f_reg/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 sync_porch/temp_Red_reg[0]/C
-                            (rising edge-triggered cell FDSE)
-  Destination:            sync_porch/out_Red_reg[0]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.273ns  (logic 0.164ns (59.997%)  route 0.109ns (40.003%))
-  Logic Levels:           1  (FDSE=1)
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-    SLICE_X88Y132        FDSE                         0.000     0.000 r  sync_porch/temp_Red_reg[0]/C
-    SLICE_X88Y132        FDSE (Prop_fdse_C_Q)         0.164     0.164 r  sync_porch/temp_Red_reg[0]/Q
-                         net (fo=1, routed)           0.109     0.273    sync_porch/temp_Red__0[0]
-    SLICE_X89Y133        FDRE                                         r  sync_porch/out_Red_reg[0]/D
-  -------------------------------------------------------------------    -------------------
-
-Slack:                    inf
-  Source:                 pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/C
-                            (rising edge-triggered cell FDRE)
-  Destination:            pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[3]/D
-  Path Group:             (none)
-  Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.277ns  (logic 0.133ns (48.014%)  route 0.144ns (51.986%))
+  Data Path Delay:        0.271ns  (logic 0.146ns (53.780%)  route 0.125ns (46.220%))
   Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X87Y139        FDRE                         0.000     0.000 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/C
-    SLICE_X87Y139        FDRE (Prop_fdre_C_Q)         0.133     0.133 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/Q
-                         net (fo=4, routed)           0.144     0.277    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]
-    SLICE_X87Y139        FDRE                                         r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[3]/D
+    SLICE_X31Y116        FDRE                         0.000     0.000 r  draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[2]/C
+    SLICE_X31Y116        FDRE (Prop_fdre_C_Q)         0.146     0.146 r  draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[2]/Q
+                         net (fo=5, routed)           0.125     0.271    draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[2]
+    SLICE_X30Y116        FDRE                                         r  draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[2]/D
   -------------------------------------------------------------------    -------------------
 
 Slack:                    inf
-  Source:                 pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[0]/C
+  Source:                 draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/C
                             (rising edge-triggered cell FDRE)
-  Destination:            sync_porch/temp_Red_reg[0]/D
+  Destination:            draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[3]/D
   Path Group:             (none)
   Path Type:              Min at Fast Process Corner
-  Data Path Delay:        0.277ns  (logic 0.191ns (68.951%)  route 0.086ns (31.049%))
-  Logic Levels:           2  (FDRE=1 LUT4=1)
+  Data Path Delay:        0.282ns  (logic 0.133ns (47.213%)  route 0.149ns (52.787%))
+  Logic Levels:           1  (FDRE=1)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-    SLICE_X89Y132        FDRE                         0.000     0.000 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[0]/C
-    SLICE_X89Y132        FDRE (Prop_fdre_C_Q)         0.146     0.146 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[0]/Q
-                         net (fo=1, routed)           0.086     0.232    pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/temp_Red_reg[3]_0[0]
-    SLICE_X88Y132        LUT4 (Prop_lut4_I1_O)        0.045     0.277 r  pong_fsm_wrap/draw_wrap/Draw_Over_wrap/Face_Display_P1/temp_Red[0]_i_1/O
-                         net (fo=1, routed)           0.000     0.277    sync_porch/temp_Red_reg[0]_0
-    SLICE_X88Y132        FDSE                                         r  sync_porch/temp_Red_reg[0]/D
+    SLICE_X32Y119        FDRE                         0.000     0.000 r  draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/C
+    SLICE_X32Y119        FDRE (Prop_fdre_C_Q)         0.133     0.133 r  draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/Q
+                         net (fo=4, routed)           0.149     0.282    draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]
+    SLICE_X32Y118        FDRE                                         r  draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 sync_porch/Sync_to_Count_wrap/out_Vsync_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            sync_porch/out_Vsync_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.286ns  (logic 0.141ns (49.289%)  route 0.145ns (50.711%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X0Y144         FDRE                         0.000     0.000 r  sync_porch/Sync_to_Count_wrap/out_Vsync_reg/C
+    SLICE_X0Y144         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  sync_porch/Sync_to_Count_wrap/out_Vsync_reg/Q
+                         net (fo=1, routed)           0.145     0.286    sync_porch/Sync_to_Count_wrap_n_1
+    SLICE_X0Y143         FDSE                                         r  sync_porch/out_Vsync_reg/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.289ns  (logic 0.146ns (50.470%)  route 0.143ns (49.530%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y119        FDRE                         0.000     0.000 r  draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[2]/C
+    SLICE_X32Y119        FDRE (Prop_fdre_C_Q)         0.146     0.146 r  draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[2]/Q
+                         net (fo=5, routed)           0.143     0.289    draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[2]
+    SLICE_X32Y118        FDRE                                         r  draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 draw_wrap/Draw_Mode_wrap/Score_Display_Limit/display_reg/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            draw_wrap/Draw_Mode_wrap/Score_Display_Limit/draw_s_reg/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.291ns  (logic 0.186ns (63.813%)  route 0.105ns (36.187%))
+  Logic Levels:           2  (FDRE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y100         FDRE                         0.000     0.000 r  draw_wrap/Draw_Mode_wrap/Score_Display_Limit/display_reg/C
+    SLICE_X3Y100         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  draw_wrap/Draw_Mode_wrap/Score_Display_Limit/display_reg/Q
+                         net (fo=1, routed)           0.105     0.246    draw_wrap/Draw_Mode_wrap/Score_Display_Limit/display
+    SLICE_X3Y100         LUT6 (Prop_lut6_I0_O)        0.045     0.291 r  draw_wrap/Draw_Mode_wrap/Score_Display_Limit/draw_s_i_1__0/O
+                         net (fo=1, routed)           0.000     0.291    draw_wrap/Draw_Mode_wrap/Score_Display_Limit/draw_s0_out
+    SLICE_X3Y100         FDRE                                         r  draw_wrap/Draw_Mode_wrap/Score_Display_Limit/draw_s_reg/D
   -------------------------------------------------------------------    -------------------
 
 
