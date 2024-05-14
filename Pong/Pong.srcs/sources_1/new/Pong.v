@@ -25,8 +25,7 @@ module Pong (
     parameter GAME_WIDTH = 40, GAME_HEIGHT = 30;
     parameter PADDLE_HEIGHT = 6;
     parameter P1_PADDLE_X = 1, P2_PADDLE_X = GAME_WIDTH-2;
-    parameter INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, 
-    P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
+    parameter INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
 
 
     wire clock_25Mhz, debounce_clock;
@@ -122,7 +121,18 @@ module Pong (
         .TOTAL_COLS(TOTAL_COLS),
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
-        .ACTIVE_ROWS(ACTIVE_ROWS)
+        .ACTIVE_ROWS(ACTIVE_ROWS),
+        .GAME_WIDTH(GAME_WIDTH),
+        .GAME_HEIGHT(GAME_HEIGHT),
+        .P1_PADDLE_X(P1_PADDLE_X),
+        .P2_PADDLE_X(P2_PADDLE_X),
+        .PADDLE_HEIGHT(PADDLE_HEIGHT),
+        .INIT(INIT),
+        .MODE(MODE), 
+        .RUNNING(RUNNING), 
+        .P1_SCORE(P1_SCORE), 
+        .P2_SCORE(P2_SCORE),
+        .OVER(OVER)
         ) pong_fsm_wrap (
         .clock(clock_25Mhz),
         .start(start_debounced),
