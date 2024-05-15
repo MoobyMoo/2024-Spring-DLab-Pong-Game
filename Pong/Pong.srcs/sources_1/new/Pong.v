@@ -90,28 +90,28 @@ module Pong (
 
     button_debouncer debounce_p1_up(
         .clock(debounce_clock),
-        .button(p1_up),
+        .button(p1_up_button),
 
         .debounced_button(p1_up_debounced)
         );
 
     button_debouncer debounce_p1_down(
         .clock(debounce_clock),
-        .button(p1_down),
+        .button(p1_down_button),
 
         .debounced_button(p1_down_debounced)
         );
 
     button_debouncer debounce_p2_up(
         .clock(debounce_clock),
-        .button(p2_up),
+        .button(p2_up_button),
 
         .debounced_button(p2_up_debounced)
         );
 
     button_debouncer debounce_p2_down(
         .clock(debounce_clock),
-        .button(p2_down),
+        .button(p2_down_button),
 
         .debounced_button(p2_down_debounced)
         );
