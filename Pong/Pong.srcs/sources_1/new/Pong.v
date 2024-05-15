@@ -43,6 +43,8 @@ module Pong (
     wire [9:0] column_count, row_count;
     wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
     wire [2:0] state;
+
+    wire hit_wall, hit_paddle;
     
 
     clock_divider #(
@@ -108,7 +110,7 @@ module Pong (
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
         .ACTIVE_ROWS(ACTIVE_ROWS)
-        ) sync_pulse_gen (
+    ) sync_pulse_gen (
         .clock(clock_25Mhz),
 
         .out_Hsync(temp1_Hsync),
@@ -154,14 +156,14 @@ module Pong (
         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
         .ball_y(ball_y),
-        .hit_wall(),
-        .hit_paddle()
+        .hit_wall(hit_wall),
+        .hit_paddle(hit_paddle)
         );
 
     VGA_Sync_to_Count #(
         .TOTAL_COLS(TOTAL_COLS),
         .TOTAL_ROWS(TOTAL_ROWS)
-        ) VGA_Sync_to_Count_wrap (
+    ) VGA_Sync_to_Count_wrap (
         .clock(clock_25Mhz),
         .in_Hsync(temp1_Hsync),
         .in_Vsync(temp1_Vsync),
@@ -182,12 +184,13 @@ module Pong (
         .P1_SCORE(P1_SCORE), 
         .P2_SCORE(P2_SCORE),
         .OVER(OVER)
-        ) draw_wrap (
+    ) draw_wrap (
         .clock(clock_25Mhz),
         .p1_paddle_y(p1_paddle_y),
         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
         .ball_y(ball_y),
+        .hit_paddle(hit_paddle),
         .column_count(column_count[9:4]),
         .row_count(row_count[9:4]),
         .p1_score(p1_score),
@@ -205,7 +208,7 @@ module Pong (
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
         .ACTIVE_ROWS(ACTIVE_ROWS)
-        ) sync_porch (
+    ) sync_porch (
         .clock(clock_25Mhz),
         .in_Hsync(temp2_Hsync),
         .in_Vsync(temp2_Vsync),

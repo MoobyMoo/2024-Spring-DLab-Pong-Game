@@ -98,7 +98,7 @@ module Pong_FSM #(
     Pong_Paddle_Control #(
         .PADDLE_HEIGHT(PADDLE_HEIGHT),
         .GAME_HEIGHT(GAME_HEIGHT)
-        ) p1_paddle (
+    ) p1_paddle (
         .clock(clock),
         .up(p1_up),
         .down(p1_down),
@@ -110,7 +110,7 @@ module Pong_FSM #(
     Pong_Paddle_Control #(
         .PADDLE_HEIGHT(PADDLE_HEIGHT),
         .GAME_HEIGHT(GAME_HEIGHT)
-        ) p2_paddle (
+    ) p2_paddle (
         .clock(clock),
         .up(p2_up),
         .down(p2_down),
@@ -122,7 +122,7 @@ module Pong_FSM #(
     Pong_Ball_Control #(
         .GAME_HEIGHT(GAME_HEIGHT),
         .GAME_WIDTH(GAME_WIDTH)
-        ) ball_wrap (
+    ) ball_wrap (
         .clock(clock),
         .running(running),
         .p1_score_point(p1_score_point),

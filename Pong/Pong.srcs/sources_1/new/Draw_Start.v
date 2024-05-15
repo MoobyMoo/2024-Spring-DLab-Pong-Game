@@ -4,7 +4,6 @@ module Draw_Start(
     input sec,
     input [5:0] column_count,
     input [5:0] row_count,
-    input [2:0] state,
 
     output [3:0] out_Red,
     output [3:0] out_Green,
