@@ -5,7 +5,12 @@ module Pong_FSM #(
     TOTAL_COLS = 800,
     TOTAL_ROWS = 525,
     ACTIVE_COLS = 640,
-    ACTIVE_ROWS = 480
+    ACTIVE_ROWS = 480,
+    GAME_WIDTH = 40,
+    GAME_HEIGHT = 30,
+    PADDLE_HEIGHT = 6,
+    P1_PADDLE_X = 1, P2_PADDLE_X = GAME_WIDTH-2,
+    INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5
     ) (
     input clock,
     input start,
@@ -37,10 +42,6 @@ module Pong_FSM #(
     // 640/16 = 40, 480/16 = 30
     // now each board unit represents 16*16 pixels
     // This way we only need to keep track of less column and row positions
-    parameter GAME_WIDTH = 40, GAME_HEIGHT = 30;
-    parameter PADDLE_HEIGHT = 6;
-    parameter P1_PADDLE_X = 1, P2_PADDLE_X = GAME_WIDTH-2;
-    parameter INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
     parameter P5 = 2'd0, P10 = 2'd1, P15 = 2'd2;
 
     wire p1_draw_paddle, p2_draw_paddle, draw, running;

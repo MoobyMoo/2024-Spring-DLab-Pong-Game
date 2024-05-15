@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue May 14 22:23:29 2024
+| Date         : Wed May 15 13:55:12 2024
 | Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Pong_control_sets_placed.rpt
 | Design       : Pong
@@ -73,47 +73,47 @@ Table of Contents
 +--------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+--------------+
 |       Clock Signal       |                        Enable Signal                        |                         Set/Reset Signal                        | Slice Load Count | Bel Load Count | Bels / Slice |
 +--------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+--------------+
-|  clock_25Mhz_BUFG        |                                                             | sync_porch/Sync_to_Count_wrap/out_Hsync0                        |                1 |              1 |         1.00 |
 |  clock_25Mhz_BUFG        |                                                             | sync_porch/Sync_to_Count_wrap/out_Vsync0                        |                1 |              1 |         1.00 |
-|  clock_IBUF_BUFG         |                                                             | clock_div/clear                                                 |                1 |              2 |         2.00 |
+|  clock_25Mhz_BUFG        |                                                             | sync_porch/Sync_to_Count_wrap/out_Hsync0                        |                1 |              1 |         1.00 |
 |  clock_IBUF_BUFG         |                                                             |                                                                 |                2 |              2 |         1.00 |
+|  clock_IBUF_BUFG         |                                                             | clock_div/clear                                                 |                1 |              2 |         2.00 |
 | ~draw_wrap/clock_sec/CLK |                                                             |                                                                 |                2 |              3 |         1.50 |
+|  clock_25Mhz_BUFG        | pong_fsm_wrap/FSM_onehot_state_reg_n_0_[4]                  | pong_fsm_wrap/init                                              |                1 |              4 |         4.00 |
+| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_R/next_state        | draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO[3]_i_1_n_0 |                1 |              4 |         4.00 |
+|  clock_25Mhz_BUFG        | pong_fsm_wrap/Q[1]                                          | pong_fsm_wrap/init                                              |                3 |              4 |         1.33 |
+|  clock_25Mhz_BUFG        |                                                             | VGA_Sync_to_Count_wrap/fixed_column_count1                      |                1 |              4 |         4.00 |
+|  clock_25Mhz_BUFG        |                                                             | VGA_Sync_to_Count_wrap/row_count_reg[8]_0                       |                4 |              4 |         1.00 |
+|  debounce_clock_BUFG     | debounce_p1_down/debounce_counter[3]_i_2__2_n_0             | debounce_p1_down/debounce_counter[3]_i_1__2_n_0                 |                1 |              4 |         4.00 |
 |  debounce_clock_BUFG     | debounce_change_mode/debounce_counter[3]_i_2__0_n_0         | debounce_change_mode/debounce_counter[3]_i_1__0_n_0             |                1 |              4 |         4.00 |
 |  debounce_clock_BUFG     | debounce_p1_up/debounce_counter[3]_i_2__1_n_0               | debounce_p1_up/debounce_counter[3]_i_1__1_n_0                   |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | debounce_p1_down/debounce_counter[3]_i_2__2_n_0             | debounce_p1_down/debounce_counter[3]_i_1__2_n_0                 |                1 |              4 |         4.00 |
 |  debounce_clock_BUFG     | debounce_p2_down/debounce_counter[3]_i_2__4_n_0             | debounce_p2_down/debounce_counter[3]_i_1__4_n_0                 |                1 |              4 |         4.00 |
 |  debounce_clock_BUFG     | debounce_p2_up/debounce_counter[3]_i_2__3_n_0               | debounce_p2_up/debounce_counter[3]_i_1__3_n_0                   |                1 |              4 |         4.00 |
 |  debounce_clock_BUFG     | debounce_start/debounce_counter[3]_i_2_n_0                  | debounce_start/debounce_counter[3]_i_1_n_0                      |                1 |              4 |         4.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_R/next_state        | draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO[3]_i_1_n_0 |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        |                                                             | VGA_Sync_to_Count_wrap/fixed_column_count1                      |                1 |              4 |         4.00 |
 | ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_G/next_state        | draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO[3]_i_1_n_0 |                1 |              4 |         4.00 |
 | ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_B/next_state        | draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO[3]_i_1_n_0 |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/FSM_onehot_state_reg_n_0_[4]                  | pong_fsm_wrap/init                                              |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        |                                                             | VGA_Sync_to_Count_wrap/row_count_reg[8]_0                       |                4 |              4 |         1.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/Q[1]                                          | pong_fsm_wrap/init                                              |                3 |              4 |         1.33 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_2_n_0                 | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_1_n_0                     |                2 |              6 |         3.00 |
-|  ms                      |                                                             |                                                                 |                4 |              6 |         1.50 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_2__0_n_0              | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_1__0_n_0                  |                3 |              6 |         2.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_2_n_0          | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_1_n_0              |                3 |              6 |         2.00 |
 |  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/E[0]                                |                                                                 |                3 |              6 |         2.00 |
+|  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_2_n_0          | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_1_n_0              |                3 |              6 |         2.00 |
+|  clock_25Mhz_BUFG        | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_2_n_0                 | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_1_n_0                     |                2 |              6 |         3.00 |
+|  clock_25Mhz_BUFG        | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_2__0_n_0              | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_1__0_n_0                  |                3 |              6 |         2.00 |
+|  ms                      |                                                             |                                                                 |                4 |              6 |         1.50 |
 | ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_R/sel               | draw_wrap/Draw_Over_wrap/Signal_Control_R/clear                 |                2 |              8 |         4.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_B/signal[3]_i_2_n_0 | draw_wrap/Draw_Over_wrap/Signal_Control_B/signal[3]_i_1__1_n_0  |                2 |              8 |         4.00 |
 | ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_G/current_state[1]  | draw_wrap/Draw_Over_wrap/Signal_Control_G/signal[3]_i_1__0_n_0  |                2 |              8 |         4.00 |
-|  clock_25Mhz_BUFG        | sync_pulse_gen/p_0_in                                       |                                                                 |                3 |             10 |         3.33 |
+| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_B/signal[3]_i_2_n_0 | draw_wrap/Draw_Over_wrap/Signal_Control_B/signal[3]_i_1__1_n_0  |                2 |              8 |         4.00 |
 |  clock_25Mhz_BUFG        |                                                             | VGA_Sync_to_Count_wrap/column_count[9]_i_1__0_n_0               |                3 |             10 |         3.33 |
-|  clock_25Mhz_BUFG        |                                                             | sync_pulse_gen/p_0_in                                           |                3 |             10 |         3.33 |
 |  clock_25Mhz_BUFG        |                                                             | sync_porch/Sync_to_Count_wrap/row_count_0                       |                4 |             10 |         2.50 |
+|  clock_25Mhz_BUFG        |                                                             | sync_pulse_gen/p_0_in                                           |                3 |             10 |         3.33 |
 |  clock_25Mhz_BUFG        | VGA_Sync_to_Count_wrap/row_count[9]_i_1__0_n_0              |                                                                 |                3 |             10 |         3.33 |
+|  clock_25Mhz_BUFG        | sync_pulse_gen/p_0_in                                       |                                                                 |                3 |             10 |         3.33 |
 |  clock_25Mhz_BUFG        | sync_porch/Sync_to_Count_wrap/row_count_0                   |                                                                 |                3 |             10 |         3.33 |
 |  clock_IBUF_BUFG         |                                                             | clock_debounce/counter0_carry__0_n_1                            |                4 |             16 |         4.00 |
 |  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/previous_ball_y                     | pong_fsm_wrap/ball_wrap/clear                                   |               10 |             18 |         1.80 |
-|  debounce_clock_BUFG     |                                                             |                                                                 |                8 |             21 |         2.62 |
 |  clock_25Mhz_BUFG        |                                                             | draw_wrap/clock_ms/counter0_carry__1_n_2                        |                6 |             21 |         3.50 |
+|  debounce_clock_BUFG     |                                                             |                                                                 |                8 |             21 |         2.62 |
 |  clock_25Mhz_BUFG        |                                                             | draw_wrap/clock_sec/clear                                       |                6 |             24 |         4.00 |
 |  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/ball_speed[3]_i_1_n_0               | pong_fsm_wrap/ball_wrap/clear                                   |                8 |             29 |         3.62 |
 |  clock_25Mhz_BUFG        | debounce_p1_up/paddle_enable                                | pong_fsm_wrap/p1_paddle/paddle_count[31]_i_1_n_0                |                8 |             31 |         3.88 |
-|  clock_25Mhz_BUFG        | debounce_p2_up/paddle_enable                                | pong_fsm_wrap/p2_paddle/paddle_count[31]_i_1_n_0                |                9 |             32 |         3.56 |
 |  clock_25Mhz_BUFG        | pong_fsm_wrap/Q[0]                                          | pong_fsm_wrap/ball_wrap/ball_count                              |                8 |             32 |         4.00 |
+|  clock_25Mhz_BUFG        | debounce_p2_up/paddle_enable                                | pong_fsm_wrap/p2_paddle/paddle_count[31]_i_1_n_0                |                9 |             32 |         3.56 |
 |  clock_25Mhz_BUFG        |                                                             |                                                                 |               46 |             99 |         2.15 |
 +--------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+--------------+
 
