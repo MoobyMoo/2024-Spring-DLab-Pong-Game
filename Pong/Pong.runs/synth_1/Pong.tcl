@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.tcl"
+  variable script "C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,41 +70,40 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-3
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.cache/wt [current_project]
-set_property parent.project_path C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.cache/wt [current_project]
+set_property parent.project_path C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.cache/ip [current_project]
+set_property ip_output_repo c:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib {
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Game.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Mode.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Over.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Start.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Porch.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_to_Count.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/button_debouncer.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/score_to_ssd.v
-  C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Face.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Game.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Mode.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Over.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Draw_Start.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Ball_Control.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_FSM.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong_Paddle_Control.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Score_Display.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Signal_Control.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Porch.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_to_Count.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/button_debouncer.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/keypad_input.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/score_to_ssd.v
+  C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/Pong.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -115,12 +114,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc
-set_property used_in_implementation false [get_files C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]
+read_xdc C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc
+set_property used_in_implementation false [get_files C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/utils_1/imports/synth_1/Pong.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/utils_1/imports/synth_1/Pong.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

@@ -1,12 +1,16 @@
 module Pong (
     input clock,
-    input p1_up,
-    input p1_down,
-    input p2_up,
-    input p2_down,
+    input p1_up_button,
+    input p1_down_button,
+    input p2_up_button,
+    input p2_down_button,
     input start,
     input change_mode,
+    input [2:0] p1_keypad_column,
+    input [2:0] p2_keypad_column,
 
+    output [3:0] p1_keypad_row,
+    output [3:0] p2_keypad_row,
     output out_Hsync,
     output out_Vsync,
     output [3:0] out_Red,
@@ -20,6 +24,7 @@ module Pong (
     parameter TOTAL_COLS = 800, TOTAL_ROWS = 525;
     parameter ACTIVE_COLS = 640, ACTIVE_ROWS = 480;
     parameter DEBOUNCE_DIVISOR = 50000;
+    parameter KEYPAD_UP = 2, KEYPAD_DOWN = 5;
     parameter BLANK = 12;
 
     parameter GAME_WIDTH = 40, GAME_HEIGHT = 30;
@@ -36,6 +41,8 @@ module Pong (
     wire p1_up_debounced, p1_down_debounced;
     wire p2_up_debounced, p2_down_debounced;
     wire start_debounced, change_mode_debounced;
+    wire p1_up_keypad, p1_down_keypad, p2_up_keypad, p2_down_keypad;
+    wire p1_up, p1_down, p2_up, p2_down;
 
     wire [3:0] p1_score, p2_score, score_limit;
     wire [3:0] p1_score_ones, p2_score_ones;
@@ -46,6 +53,10 @@ module Pong (
 
     wire hit_wall, hit_paddle;
     
+    assign p1_up = p1_up_debounced ^ p1_up_keypad;
+    assign p1_down = p1_down_debounced ^ p1_down_keypad;
+    assign p2_up = p2_up_debounced ^ p2_up_keypad;
+    assign p2_down = p2_down_debounced ^ p2_down_keypad;
 
     clock_divider #(
         .DIVISOR(4)
@@ -105,12 +116,38 @@ module Pong (
         .debounced_button(p2_down_debounced)
         );
 
+    keypad_input #(
+        .BLANK(BLANK),
+        .UP(KEYPAD_UP),
+        .DOWN(KEYPAD_DOWN)
+        ) keypad_p1 (
+        .column(p1_keypad_column),
+        .clock(debounce_clock),
+
+        .row(p1_keypad_row),
+        .up(p1_up_keypad),
+        .down(p1_down_keypad)
+        );
+
+    keypad_input #(
+        .BLANK(BLANK),
+        .UP(KEYPAD_UP),
+        .DOWN(KEYPAD_DOWN)
+        ) keypad_p2 (
+        .column(p2_keypad_column),
+        .clock(debounce_clock),
+
+        .row(p2_keypad_row),
+        .up(p2_up_keypad),
+        .down(p2_down_keypad)
+        );
+
     VGA_Sync_Pulse_Generator #(
         .TOTAL_COLS(TOTAL_COLS),
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
         .ACTIVE_ROWS(ACTIVE_ROWS)
-    ) sync_pulse_gen (
+        ) sync_pulse_gen (
         .clock(clock_25Mhz),
 
         .out_Hsync(temp1_Hsync),
@@ -138,10 +175,10 @@ module Pong (
         ) pong_fsm_wrap (
         .clock(clock_25Mhz),
         .start(start_debounced),
-        .p1_up(p1_up_debounced),
-        .p1_down(p1_down_debounced),
-        .p2_up(p2_up_debounced),
-        .p2_down(p2_down_debounced),
+        .p1_up(p1_up),
+        .p1_down(p1_down),
+        .p2_up(p2_up),
+        .p2_down(p2_down),
         .change_mode(change_mode_debounced),
 
         .state(state),
@@ -163,7 +200,7 @@ module Pong (
     VGA_Sync_to_Count #(
         .TOTAL_COLS(TOTAL_COLS),
         .TOTAL_ROWS(TOTAL_ROWS)
-    ) VGA_Sync_to_Count_wrap (
+        ) VGA_Sync_to_Count_wrap (
         .clock(clock_25Mhz),
         .in_Hsync(temp1_Hsync),
         .in_Vsync(temp1_Vsync),
@@ -184,7 +221,7 @@ module Pong (
         .P1_SCORE(P1_SCORE), 
         .P2_SCORE(P2_SCORE),
         .OVER(OVER)
-    ) draw_wrap (
+        ) draw_wrap (
         .clock(clock_25Mhz),
         .p1_paddle_y(p1_paddle_y),
         .p2_paddle_y(p2_paddle_y),
@@ -208,7 +245,7 @@ module Pong (
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
         .ACTIVE_ROWS(ACTIVE_ROWS)
-    ) sync_porch (
+        ) sync_porch (
         .clock(clock_25Mhz),
         .in_Hsync(temp2_Hsync),
         .in_Vsync(temp2_Vsync),
