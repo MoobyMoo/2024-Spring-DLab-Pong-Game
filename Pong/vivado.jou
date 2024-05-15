@@ -26,3 +26,9 @@ wait_on_run synth_1
 reset_run synth_1
 launch_runs synth_1 -jobs 16
 wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list {p1_keypad_column[2]} {p1_keypad_column[1]} {p1_keypad_column[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {p1_keypad_row[3]} {p1_keypad_row[2]} {p1_keypad_row[1]} {p1_keypad_row[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {p2_keypad_column[2]} {p2_keypad_column[1]} {p2_keypad_column[0]}]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list {p2_keypad_row[3]} {p2_keypad_row[2]} {p2_keypad_row[1]} {p2_keypad_row[0]}]]
+save_constraints
