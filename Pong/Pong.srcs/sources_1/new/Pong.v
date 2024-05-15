@@ -22,16 +22,30 @@ module Pong (
     parameter DEBOUNCE_DIVISOR = 50000;
     parameter BLANK = 12;
 
+    parameter GAME_WIDTH = 40, GAME_HEIGHT = 30;
+    parameter PADDLE_HEIGHT = 6;
+    parameter P1_PADDLE_X = 1, P2_PADDLE_X = GAME_WIDTH-2;
+    parameter INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
+
 
     wire clock_25Mhz, debounce_clock;
+
     wire temp1_Hsync, temp1_Vsync, temp2_Hsync, temp2_Vsync;
     wire [3:0] temp_Red, temp_Green, temp_Blue;
+
     wire p1_up_debounced, p1_down_debounced;
     wire p2_up_debounced, p2_down_debounced;
     wire start_debounced, change_mode_debounced;
+
+    wire [3:0] p1_score, p2_score, score_limit;
     wire [3:0] p1_score_ones, p2_score_ones;
     wire [3:0] p1_score_tens, p2_score_tens;
+    wire [9:0] column_count, row_count;
+    wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
+    wire [2:0] state;
 
+    wire hit_wall, hit_paddle;
+    
 
     clock_divider #(
         .DIVISOR(4)
@@ -96,7 +110,7 @@ module Pong (
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
         .ACTIVE_ROWS(ACTIVE_ROWS)
-        ) sync_pulse_gen (
+    ) sync_pulse_gen (
         .clock(clock_25Mhz),
 
         .out_Hsync(temp1_Hsync),
@@ -109,11 +123,20 @@ module Pong (
         .TOTAL_COLS(TOTAL_COLS),
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
-        .ACTIVE_ROWS(ACTIVE_ROWS)
+        .ACTIVE_ROWS(ACTIVE_ROWS),
+        .GAME_WIDTH(GAME_WIDTH),
+        .GAME_HEIGHT(GAME_HEIGHT),
+        .P1_PADDLE_X(P1_PADDLE_X),
+        .P2_PADDLE_X(P2_PADDLE_X),
+        .PADDLE_HEIGHT(PADDLE_HEIGHT),
+        .INIT(INIT),
+        .MODE(MODE), 
+        .RUNNING(RUNNING), 
+        .P1_SCORE(P1_SCORE), 
+        .P2_SCORE(P2_SCORE),
+        .OVER(OVER)
         ) pong_fsm_wrap (
         .clock(clock_25Mhz),
-        .in_Hsync(temp1_Hsync),
-        .in_Vsync(temp1_Vsync),
         .start(start_debounced),
         .p1_up(p1_up_debounced),
         .p1_down(p1_down_debounced),
@@ -121,12 +144,60 @@ module Pong (
         .p2_down(p2_down_debounced),
         .change_mode(change_mode_debounced),
 
-        .out_Hsync(temp2_Hsync),
-        .out_Vsync(temp2_Vsync),
+        .state(state),
+        .score_limit(score_limit),
+        .p1_score(p1_score),
+        .p2_score(p2_score),
         .p1_score_tens(p1_score_tens),
         .p1_score_ones(p1_score_ones),
         .p2_score_tens(p2_score_tens),
         .p2_score_ones(p2_score_ones),
+        .p1_paddle_y(p1_paddle_y),
+        .p2_paddle_y(p2_paddle_y),
+        .ball_x(ball_x),
+        .ball_y(ball_y),
+        .hit_wall(hit_wall),
+        .hit_paddle(hit_paddle)
+        );
+
+    VGA_Sync_to_Count #(
+        .TOTAL_COLS(TOTAL_COLS),
+        .TOTAL_ROWS(TOTAL_ROWS)
+    ) VGA_Sync_to_Count_wrap (
+        .clock(clock_25Mhz),
+        .in_Hsync(temp1_Hsync),
+        .in_Vsync(temp1_Vsync),
+
+        .out_Hsync(temp2_Hsync),
+        .out_Vsync(temp2_Vsync),
+        .column_count(column_count),
+        .row_count(row_count)
+        );
+
+    Draw #(
+        .P1_PADDLE_X(P1_PADDLE_X),
+        .P2_PADDLE_X(P2_PADDLE_X),
+        .PADDLE_HEIGHT(PADDLE_HEIGHT),
+        .INIT(INIT),
+        .MODE(MODE), 
+        .RUNNING(RUNNING), 
+        .P1_SCORE(P1_SCORE), 
+        .P2_SCORE(P2_SCORE),
+        .OVER(OVER)
+    ) draw_wrap (
+        .clock(clock_25Mhz),
+        .p1_paddle_y(p1_paddle_y),
+        .p2_paddle_y(p2_paddle_y),
+        .ball_x(ball_x),
+        .ball_y(ball_y),
+        .hit_paddle(hit_paddle),
+        .column_count(column_count[9:4]),
+        .row_count(row_count[9:4]),
+        .p1_score(p1_score),
+        .p2_score(p2_score),
+        .score_limit(score_limit),
+        .state (state),
+
         .out_Red(temp_Red),
         .out_Green(temp_Green),
         .out_Blue(temp_Blue)
@@ -137,7 +208,7 @@ module Pong (
         .TOTAL_ROWS(TOTAL_ROWS),
         .ACTIVE_COLS(ACTIVE_COLS),
         .ACTIVE_ROWS(ACTIVE_ROWS)
-        ) sync_porch (
+    ) sync_porch (
         .clock(clock_25Mhz),
         .in_Hsync(temp2_Hsync),
         .in_Vsync(temp2_Vsync),
@@ -151,7 +222,6 @@ module Pong (
         .out_Green(out_Green),
         .out_Blue(out_Blue)
         );
-
 
     score_to_ssd ssd_wrap (
         .digit0(p2_score_ones),

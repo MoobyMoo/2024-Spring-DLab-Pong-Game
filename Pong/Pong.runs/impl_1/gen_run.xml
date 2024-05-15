@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715442115">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715755679">
   <File Type="ROUTE-PWR" Name="Pong_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Pong.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="Pong_power_summary_routed.pb"/>
