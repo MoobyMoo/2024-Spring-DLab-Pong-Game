@@ -5,11 +5,14 @@ module Pong_FSM #(
     TOTAL_COLS = 800,
     TOTAL_ROWS = 525,
     ACTIVE_COLS = 640,
-    ACTIVE_ROWS = 480
+    ACTIVE_ROWS = 480,
+    GAME_WIDTH = 40,
+    GAME_HEIGHT = 30,
+    PADDLE_HEIGHT = 6,
+    P1_PADDLE_X = 1, P2_PADDLE_X = GAME_WIDTH-2,
+    INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5
     ) (
     input clock,
-    input in_Hsync,
-    input in_Vsync,
     input start,
     input p1_up,
     input p1_down,
@@ -17,15 +20,19 @@ module Pong_FSM #(
     input p2_down,
     input change_mode,
 
-    output reg out_Hsync = 0,
-    output reg out_Vsync = 0,
+    output reg [2:0] state = 0,
+    output reg [3:0] score_limit = 5,
+    output reg [3:0] p1_score = 0,
+    output reg [3:0] p2_score = 0,
     output [3:0] p1_score_tens,
     output [3:0] p1_score_ones,
     output [3:0] p2_score_tens,
     output [3:0] p2_score_ones,
-    output [3:0] out_Red,
-    output [3:0] out_Green,
-    output [3:0] out_Blue,
+    output [5:0] p1_paddle_y,
+    output [5:0] p2_paddle_y,
+    output [5:0] ball_x,
+    output [5:0] ball_y,
+
     output hit_wall,
     output hit_paddle
     );
@@ -35,28 +42,19 @@ module Pong_FSM #(
     // 640/16 = 40, 480/16 = 30
     // now each board unit represents 16*16 pixels
     // This way we only need to keep track of less column and row positions
-    parameter GAME_WIDTH = 40, GAME_HEIGHT = 30;
-    parameter PADDLE_HEIGHT = 6;
-    parameter P1_PADDLE_X = 1, P2_PADDLE_X = GAME_WIDTH-2;
-    parameter INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, 
-    P1_SCORE = 3'd3, P2_SCORE = 3'd4, OVER = 3'd5;
     parameter P5 = 2'd0, P10 = 2'd1, P15 = 2'd2;
 
-    wire temp_Hsync, temp_Vsync, p1_draw_paddle, p2_draw_paddle, draw, running;
-    wire [9:0] column_count, row_count;
-    wire [5:0] p1_paddle_y, p2_paddle_y, ball_x, ball_y;
+    wire p1_draw_paddle, p2_draw_paddle, draw, running;
+    
     wire [5:0] small_column_count, small_row_count;
     wire p1_score_point, p2_score_point;
     reg start_pressed = 0, change_mode_pressed = 0;
     reg [1:0] mode = 0;
-    reg [3:0] score_limit = 5;
-    reg [2:0] state = 0 ;
-    reg [3:0] p1_score = 0;
-    reg [3:0] p2_score = 0;
+
 
     // Divide by 16
-    assign small_column_count = column_count[9:4];
-    assign small_row_count = row_count[9:4];
+    //assign small_column_count = column_count[9:4];
+    //assign small_row_count = row_count[9:4];
     assign running = (state == RUNNING) ? 1 : 0;
     assign init = (state == INIT) ? 1 : 0;
     assign p1_score_tens = p1_score / 10;
@@ -75,8 +73,6 @@ module Pong_FSM #(
 
 
     always @(posedge clock) begin
-        out_Hsync <= temp_Hsync;
-        out_Vsync <= temp_Vsync;
 
         if (start & ~start_pressed) begin
             start_pressed <= 1'b1;
@@ -99,24 +95,10 @@ module Pong_FSM #(
         end
     end
 
-    VGA_Sync_to_Count #(
-        .TOTAL_COLS(TOTAL_COLS),
-        .TOTAL_ROWS(TOTAL_ROWS)
-        ) VGA_Sync_to_Count_wrap (
-        .clock(clock),
-        .in_Hsync(in_Hsync),
-        .in_Vsync(in_Vsync),
-
-        .out_Hsync(temp_Hsync),
-        .out_Vsync(temp_Vsync),
-        .column_count(column_count),
-        .row_count(row_count)
-        );
-
     Pong_Paddle_Control #(
         .PADDLE_HEIGHT(PADDLE_HEIGHT),
         .GAME_HEIGHT(GAME_HEIGHT)
-        ) p1_paddle (
+    ) p1_paddle (
         .clock(clock),
         .up(p1_up),
         .down(p1_down),
@@ -128,7 +110,7 @@ module Pong_FSM #(
     Pong_Paddle_Control #(
         .PADDLE_HEIGHT(PADDLE_HEIGHT),
         .GAME_HEIGHT(GAME_HEIGHT)
-        ) p2_paddle (
+    ) p2_paddle (
         .clock(clock),
         .up(p2_up),
         .down(p2_down),
@@ -140,7 +122,7 @@ module Pong_FSM #(
     Pong_Ball_Control #(
         .GAME_HEIGHT(GAME_HEIGHT),
         .GAME_WIDTH(GAME_WIDTH)
-        ) ball_wrap (
+    ) ball_wrap (
         .clock(clock),
         .running(running),
         .p1_score_point(p1_score_point),
@@ -148,35 +130,6 @@ module Pong_FSM #(
         .ball_x(ball_x),
         .ball_y(ball_y)
         );
-
-    Draw #(
-        .P1_PADDLE_X(P1_PADDLE_X),
-        .P2_PADDLE_X(P2_PADDLE_X),
-        .PADDLE_HEIGHT(PADDLE_HEIGHT),
-        .INIT(INIT),
-        .MODE(MODE), 
-        .RUNNING(RUNNING), 
-        .P1_SCORE(P1_SCORE), 
-        .P2_SCORE(P2_SCORE),
-        .OVER(OVER)
-        ) draw_wrap (
-        .clock(clock),
-        .p1_paddle_y(p1_paddle_y),
-        .p2_paddle_y(p2_paddle_y),
-        .ball_x(ball_x),
-        .ball_y(ball_y),
-        .column_count(small_column_count),
-        .row_count(small_row_count),
-        .p1_score(p1_score),
-        .p2_score(p2_score),
-        .score_limit(score_limit),
-        .state (state),
-
-        .out_Red(out_Red),
-        .out_Green(out_Green),
-        .out_Blue(out_Blue)
-        );
-
     
     always @(posedge clock) begin
         case (state)

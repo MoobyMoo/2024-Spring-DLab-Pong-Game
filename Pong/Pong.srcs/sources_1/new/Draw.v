@@ -17,6 +17,7 @@ module Draw #(
     OVER = 3'd5
     ) (
     input clock,
+    input hit_paddle,
     input [5:0] p1_paddle_y,
     input [5:0] p2_paddle_y,
     input [5:0] ball_x,
@@ -63,7 +64,6 @@ module Draw #(
         .sec(sec),
         .column_count(column_count),
         .row_count(row_count),
-        .state (state),
 
         .out_Red(out_red_start),
         .out_Green(out_green_start),
@@ -84,9 +84,11 @@ module Draw #(
     Draw_Game #(
         .P1_PADDLE_X(P1_PADDLE_X),
         .P2_PADDLE_X(P2_PADDLE_X),
-        .PADDLE_HEIGHT(PADDLE_HEIGHT)
+        .PADDLE_HEIGHT(PADDLE_HEIGHT),
+        .RUNNING(RUNNING)
     ) Draw_Game_wrap (
         .clock(clock),
+        .hit_paddle(hit_paddle),
         .p1_paddle_y(p1_paddle_y),
         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
