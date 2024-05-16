@@ -7,7 +7,7 @@ module button_debouncer (
 
     parameter IDLE = 2'b00, PRESS_CHECK = 2'b01, PRESSED = 2'b10, RELEASE_CHECK = 2'b11;
     // count the number of clock cycles to debounce
-    parameter DEBOUNCE_TIME = 10; 
+    parameter DEBOUNCE_TIME = 15; 
 
 
     reg [1:0] state = IDLE;

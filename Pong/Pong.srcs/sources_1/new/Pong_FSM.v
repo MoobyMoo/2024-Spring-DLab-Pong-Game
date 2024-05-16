@@ -34,7 +34,7 @@ module Pong_FSM #(
     output [5:0] ball_y,
 
     output hit_wall,
-    output hit_paddle
+    output reg hit_paddle = 0
     );
 
 
@@ -66,31 +66,28 @@ module Pong_FSM #(
     assign p2_score_point = (ball_x == 1) && 
                 ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT)));
     assign hit_wall = (ball_y == 0) || (ball_y == GAME_HEIGHT-1);
-    assign hit_paddle = ((ball_x == 1) && 
+
+
+    always @(posedge clock) begin
+        hit_paddle = ((ball_x == 1) && 
                 ((ball_y < p2_paddle_y) || (ball_y > (p2_paddle_y + PADDLE_HEIGHT)))) ||
                 ((ball_x == GAME_WIDTH-2) &&
                 ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT))));
 
 
-    always @(posedge clock) begin
-
         if (start & ~start_pressed) begin
             start_pressed <= 1'b1;
-        end
-        else if (~start & start_pressed) begin
+        end else if (~start & start_pressed) begin
             start_pressed <= 1'b0;
-        end
-        else begin
+        end else begin
             start_pressed <= start_pressed;
         end
 
         if (change_mode & ~change_mode_pressed) begin
             change_mode_pressed <= 1'b1;
-        end
-        else if (~change_mode & change_mode_pressed) begin
+        end else if (~change_mode & change_mode_pressed) begin
             change_mode_pressed <= 1'b0;
-        end
-        else begin
+        end else begin
             change_mode_pressed <= change_mode_pressed;
         end
     end

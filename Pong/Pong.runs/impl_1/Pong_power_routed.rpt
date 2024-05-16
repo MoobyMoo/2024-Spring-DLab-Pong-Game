@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Thu May 16 18:33:55 2024
-| Host             : LAPTOP-KTP5C24J running 64-bit major release  (build 9200)
+| Tool Version     : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
+| Date             : Thu May 16 22:15:40 2024
+| Host             : Moo_Laptop running 64-bit major release  (build 9200)
 | Command          : report_power -file Pong_power_routed.rpt -pb Pong_power_summary_routed.pb -rpx Pong_power_routed.rpx
 | Design           : Pong
 | Device           : xc7a100tcsg324-3
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 68.396 (Junction temp exceeded!) |
+| Total On-Chip Power (W)  | 68.577 (Junction temp exceeded!) |
 | Design Power Budget (W)  | Unspecified*                     |
 | Power Budget Margin (W)  | NA                               |
-| Dynamic (W)              | 67.600                           |
+| Dynamic (W)              | 67.780                           |
 | Device Static (W)        | 0.797                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     5.428 |     3021 |       --- |             --- |
-|   LUT as Logic |     4.296 |     1042 |     63400 |            1.64 |
+| Slice Logic    |     5.355 |     3001 |       --- |             --- |
+|   LUT as Logic |     4.217 |     1020 |     63400 |            1.61 |
 |   CARRY4       |     0.565 |      252 |     15850 |            1.59 |
-|   Register     |     0.525 |     1304 |    126800 |            1.03 |
+|   Register     |     0.530 |     1304 |    126800 |            1.03 |
 |   BUFG         |     0.038 |        4 |        32 |           12.50 |
 |   F7/F8 Muxes  |     0.005 |        5 |     63400 |           <0.01 |
 |   Others       |     0.000 |      162 |       --- |             --- |
-| Signals        |     5.852 |     2210 |       --- |             --- |
-| I/O            |    56.319 |       52 |       210 |           24.76 |
+| Signals        |     5.813 |     2189 |       --- |             --- |
+| I/O            |    56.612 |       52 |       210 |           24.76 |
 | Static Power   |     0.797 |          |           |                 |
-| Total          |    68.396 |          |           |                 |
+| Total          |    68.577 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,9 +72,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |    11.895 |      11.333 |      0.563 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     2.155 |       2.062 |      0.093 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |    15.930 |      15.926 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |    11.783 |      11.220 |      0.563 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     2.165 |       2.073 |      0.093 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |    16.013 |      16.009 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -139,89 +139,89 @@ Table of Contents
 +---------------------------------+-----------+
 | Name                            | Power (W) |
 +---------------------------------+-----------+
-| Pong                            |    67.600 |
-|   VGA_Sync_to_Count_wrap        |     0.253 |
-|   bgm_wrap                      |     4.878 |
-|     MODE_1                      |     1.716 |
-|       fre_1                     |     0.135 |
-|       fre_10                    |     0.147 |
-|       fre_11                    |     0.143 |
-|       fre_12                    |     0.126 |
-|       fre_2                     |     0.153 |
-|       fre_3                     |     0.158 |
-|       fre_4                     |     0.146 |
-|       fre_5                     |     0.129 |
+| Pong                            |    67.780 |
+|   VGA_Sync_to_Count_wrap        |     0.244 |
+|   bgm_wrap                      |     4.659 |
+|     MODE_1                      |     1.604 |
+|       fre_1                     |     0.130 |
+|       fre_10                    |     0.128 |
+|       fre_11                    |     0.148 |
+|       fre_12                    |     0.108 |
+|       fre_2                     |     0.140 |
+|       fre_3                     |     0.147 |
+|       fre_4                     |     0.127 |
+|       fre_5                     |     0.112 |
+|       fre_6                     |     0.138 |
+|       fre_7                     |     0.139 |
+|       fre_8                     |     0.129 |
+|       fre_9                     |     0.142 |
+|     OVER_1                      |     1.543 |
+|       fre_1                     |     0.134 |
+|       fre_10                    |     0.134 |
+|       fre_11                    |     0.119 |
+|       fre_12                    |     0.096 |
+|       fre_2                     |     0.171 |
+|       fre_3                     |     0.122 |
+|       fre_4                     |     0.121 |
+|       fre_5                     |     0.114 |
 |       fre_6                     |     0.130 |
-|       fre_7                     |     0.134 |
-|       fre_8                     |     0.147 |
-|       fre_9                     |     0.160 |
-|     OVER_1                      |     1.658 |
-|       fre_1                     |     0.126 |
-|       fre_10                    |     0.142 |
-|       fre_11                    |     0.141 |
-|       fre_12                    |     0.121 |
-|       fre_2                     |     0.170 |
-|       fre_3                     |     0.140 |
-|       fre_4                     |     0.139 |
-|       fre_5                     |     0.116 |
-|       fre_6                     |     0.137 |
-|       fre_7                     |     0.128 |
-|       fre_8                     |     0.140 |
-|       fre_9                     |     0.146 |
-|     P1_SCORE_1                  |     0.429 |
+|       fre_7                     |     0.126 |
+|       fre_8                     |     0.134 |
+|       fre_9                     |     0.128 |
+|     P1_SCORE_1                  |     0.438 |
 |       fre_10                    |     0.138 |
-|       fre_11                    |     0.137 |
+|       fre_11                    |     0.149 |
 |       fre_9                     |     0.130 |
-|     P2_SCORE_1                  |     0.456 |
-|       fre_10                    |     0.148 |
-|       fre_11                    |     0.144 |
-|       fre_9                     |     0.151 |
-|     bps_1                       |     0.020 |
-|     change_mode_1               |     0.190 |
-|       fre_1                     |     0.138 |
-|     fre_1Hz                     |     0.117 |
-|     hit_paddle_1                |     0.133 |
-|       fre_11                    |     0.126 |
-|     hit_wall_1                  |     0.154 |
-|       fre_1                     |     0.144 |
-|   clock_debounce                |     0.161 |
+|     P2_SCORE_1                  |     0.463 |
+|       fre_10                    |     0.162 |
+|       fre_11                    |     0.138 |
+|       fre_9                     |     0.146 |
+|     bps_1                       |     0.021 |
+|     change_mode_1               |     0.165 |
+|       fre_1                     |     0.119 |
+|     fre_1Hz                     |     0.105 |
+|     hit_paddle_1                |     0.172 |
+|       fre_11                    |     0.137 |
+|     hit_wall_1                  |     0.143 |
+|       fre_1                     |     0.135 |
+|   clock_debounce                |     0.184 |
 |   clock_div                     |     0.028 |
-|   debounce_change_mode          |     0.066 |
-|   debounce_p1_down              |     0.067 |
-|   debounce_p1_up                |     0.066 |
-|   debounce_p2_down              |     0.067 |
-|   debounce_p2_up                |     0.060 |
-|   debounce_start                |     0.068 |
-|   draw_wrap                     |     1.104 |
-|     Draw_Game_wrap              |     0.244 |
-|       Signal_Control_BB         |     0.094 |
-|       Signal_Control_BG         |     0.062 |
+|   debounce_change_mode          |     0.068 |
+|   debounce_p1_down              |     0.070 |
+|   debounce_p1_up                |     0.071 |
+|   debounce_p2_down              |     0.068 |
+|   debounce_p2_up                |     0.070 |
+|   debounce_start                |     0.069 |
+|   draw_wrap                     |     1.118 |
+|     Draw_Game_wrap              |     0.250 |
+|       Signal_Control_BB         |     0.098 |
+|       Signal_Control_BG         |     0.065 |
 |       Signal_Control_BR         |     0.079 |
 |     Draw_Mode_wrap              |     0.003 |
 |       Score_Display_Limit       |     0.003 |
-|     Draw_Over_wrap              |     0.349 |
-|       Face_Display_P1           |     0.006 |
-|       Face_Display_P2           |     0.003 |
-|       Score_Display_P1          |     0.006 |
-|       Score_Display_P2          |     0.098 |
-|       Signal_Control_B          |     0.096 |
+|     Draw_Over_wrap              |     0.344 |
+|       Face_Display_P1           |     0.004 |
+|       Face_Display_P2           |     0.004 |
+|       Score_Display_P1          |     0.005 |
+|       Score_Display_P2          |     0.106 |
+|       Signal_Control_B          |     0.089 |
 |       Signal_Control_G          |     0.059 |
-|       Signal_Control_R          |     0.082 |
-|     Draw_Start_wrap             |     0.064 |
+|       Signal_Control_R          |     0.078 |
+|     Draw_Start_wrap             |     0.073 |
 |     clock_ms                    |     0.212 |
-|     clock_sec                   |     0.231 |
+|     clock_sec                   |     0.236 |
 |   keypad_p1                     |     0.471 |
-|     refresh_counter_keypad_wrap |     0.122 |
-|   keypad_p2                     |     0.486 |
-|     refresh_counter_keypad_wrap |     0.150 |
-|   pong_fsm_wrap                 |     2.653 |
-|     ball_wrap                   |     1.416 |
-|     p1_paddle                   |     0.184 |
-|     p2_paddle                   |     0.169 |
-|   ssd_wrap                      |     0.384 |
-|   sync_porch                    |     0.121 |
-|     Sync_to_Count_wrap          |     0.118 |
-|   sync_pulse_gen                |     0.110 |
+|     refresh_counter_keypad_wrap |     0.140 |
+|   keypad_p2                     |     0.496 |
+|     refresh_counter_keypad_wrap |     0.141 |
+|   pong_fsm_wrap                 |     2.629 |
+|     ball_wrap                   |     1.367 |
+|     p1_paddle                   |     0.172 |
+|     p2_paddle                   |     0.185 |
+|   ssd_wrap                      |     0.423 |
+|   sync_porch                    |     0.145 |
+|     Sync_to_Count_wrap          |     0.142 |
+|   sync_pulse_gen                |     0.109 |
 +---------------------------------+-----------+
 
 

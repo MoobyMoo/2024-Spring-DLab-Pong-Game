@@ -25,6 +25,7 @@ module Draw_Game #(
     reg draw_ball = 0, draw_paddle_p1 = 0, draw_paddle_p2 = 0;
     // Draw determines whether the current position needs color
     wire draw; 
+    wire state_change = state[0] ^ state[1];
     wire [3:0] temp_R, temp_G, temp_B;
     reg [3:0] ball_R = 4'b1111, ball_G = 4'b1111, ball_B = 4'b1111;
     assign draw_paddle = draw_paddle_p1 | draw_paddle_p2;
@@ -69,9 +70,9 @@ module Draw_Game #(
     );
 
     always @(posedge clock) begin
-        ball_R <= (state != RUNNING) ? 4'b1111 : (hit_paddle) ? temp_R : ball_R;;
-        ball_G <= (state != RUNNING) ? 4'b1111 : (hit_paddle) ? temp_G : ball_G;
-        ball_B <= (state != RUNNING) ? 4'b1111 : (hit_paddle) ? temp_B : ball_B;
+        ball_R <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_R : ball_R;
+        ball_G <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_G : ball_G;
+        ball_B <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_B : ball_B;
     end
 
     // Assign white when the paddles or ball is in current position 

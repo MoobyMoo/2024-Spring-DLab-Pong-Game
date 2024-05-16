@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc rfile:../../../Pong.srcs/constrs_1/new/pong.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/constrs_1/new/pong.xdc rfile:../../../Pong.srcs/constrs_1/new/pong.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:18 export:INPUT save:INPUT read:READ} [current_design]
 set_property IOSTANDARD LVCMOS33 [get_ports p2_down]
 set_property src_info {type:XDC file:1 line:19 export:INPUT save:INPUT read:READ} [current_design]

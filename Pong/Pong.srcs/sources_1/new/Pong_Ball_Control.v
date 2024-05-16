@@ -22,7 +22,7 @@ module Pong_Ball_Control #(
     // 25MHz / 1875000 = 13.33 Hz = 75 milliseconds 
     // 25MHz / 625000 = 40 Hz = 25 milliseconds 
     parameter MIN_BALL_SPEED = 1875000;
-    parameter MAX_BALL_SPEED = 1250000;
+    parameter MAX_BALL_SPEED = 750000;
     parameter BALL_ACCELERATION = 5000;
 
 
@@ -37,11 +37,11 @@ module Pong_Ball_Control #(
             ball_x <= GAME_WIDTH/2;
             ball_y <= GAME_HEIGHT/2;
             if (p1_score_point) begin
-                previous_ball_x <= GAME_WIDTH/2 - 1;
-                previous_ball_y <= GAME_HEIGHT/2 - 1;
-            end else begin
                 previous_ball_x <= GAME_WIDTH/2 + 1;
                 previous_ball_y <= GAME_HEIGHT/2 + 1;
+            end else begin
+                previous_ball_x <= GAME_WIDTH/2 - 1;
+                previous_ball_y <= GAME_HEIGHT/2 - 1;
             end
         // Only need to check the ball position when ball_count == ball_speed
         end else begin

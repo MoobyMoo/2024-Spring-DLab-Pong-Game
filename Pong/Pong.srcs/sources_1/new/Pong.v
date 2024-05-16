@@ -278,8 +278,8 @@ module Pong (
 
     bgm bgm_wrap (
         .clk(clock),
-        .hit_paddle(hit_paddle),
         .hit_wall(hit_wall),
+        .ball_x(ball_x),
         .change_mode(change_mode_debounced),
         .voice_fre(audio_output),
         .state(state)

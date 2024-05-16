@@ -2,7 +2,7 @@ module bgm (
     input clk,
     input [2:0] state,
     input hit_wall,
-    input hit_paddle,
+    input ball_x,
     input change_mode,
     output reg voice_fre
 );
@@ -22,7 +22,7 @@ module bgm (
     reg start_P1_SCORE;
     reg start_P2_SCORE;
     reg start_OVER;
-
+    reg hit_paddle;
 
     wire [3:0] MODE_counter;
     wire [3:0] P1_SCORE_counter;
@@ -54,6 +54,13 @@ module bgm (
     music_6 hit_wall_1(.bump(bump), .voice_fre(hit_wall_music),.counter(hit_wall_counter), .start(hit_wall), .clk(clk));
     music_7 change_mode_1(.bump(bump), .voice_fre(change_mode_music),.counter(change_mode_counter), .start(change_mode), .clk(clk));
 
+    always@(*)begin
+        if(ball_x >= 38 || ball_x <= 1 && (state == RUNNING || state == P1_SCORE || state == P2_SCORE))
+            hit_paddle = 1'd1;
+        else
+            hit_paddle = 1'd0;
+    end
+
     always@(*)begin // get output signal from other module
         if(MODE_counter > 4'd0)
             voice_fre = MODE_music;
@@ -65,7 +72,7 @@ module bgm (
             voice_fre = OVER_music;
         else if(hit_wall_counter > 1'd0)
             voice_fre = hit_wall_music;
-        else if(hit_paddle_counter > 1'd0)
+        else if(hit_paddle_counter> 1'd0)
             voice_fre = hit_paddle_music;
         else if(change_mode_counter > 1'd0)
             voice_fre = change_mode_music;
@@ -171,7 +178,7 @@ module fre_divider_inv(input clk,input [27:0] number,output reg clk_after);
         begin
             clk_after = 1'd1;
             counter = 28'd0;
-        end else if(counter < 28'd5000)
+        end else if(counter < 28'd100000)
         begin
             counter = counter + 28'd1;
             clk_after = 1'd1;
@@ -758,7 +765,7 @@ module music_7 (
     always @(posedge clk) begin
         if(start == 1'd1)
             store_start = 1'd1;
-        else if(counter >= 8'd2) 
+        else if(counter >= 8'd1)//changr 2 t0 1 
         begin
             store_start = 1'd0;
         end
