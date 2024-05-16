@@ -70,6 +70,12 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 2
+set_param synth.incrementalSynthesisCache C:/Users/jxjdj/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4752-LAPTOP-KTP5C24J/incrSyn
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-3
 
@@ -99,6 +105,7 @@ read_verilog -library xil_defaultlib {
   D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Porch.v
   D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_Pulse_Generator.v
   D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/VGA_Sync_to_Count.v
+  D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/bgm.v
   D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/button_debouncer.v
   D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/clock_divider.v
   D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.srcs/sources_1/new/keypad_input.v

@@ -134,3 +134,6 @@ set_property PACKAGE_PIN H1 [get_ports {p1_keypad_row[2]}]
 set_property PACKAGE_PIN J4 [get_ports {p2_keypad_column[0]}]
 set_property PACKAGE_PIN G6 [get_ports {p2_keypad_row[0]}]
 set_property PACKAGE_PIN F6 [get_ports {p2_keypad_row[2]}]
+
+set_property PACKAGE_PIN C17 [get_ports audio_output]
+set_property IOSTANDARD LVCMOS33 [get_ports audio_output]

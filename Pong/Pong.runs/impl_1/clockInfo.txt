@@ -1,8 +1,8 @@
 -------------------------------------
 | Tool Version : Vivado v.2023.2
-| Date         : Thu May 16 17:55:40 2024
+| Date         : Thu May 16 18:33:04 2024
 | Host         : LAPTOP-KTP5C24J
-| Design       : checkpoint_Pong
+| Design       : design_1
 | Device       : xc7a100t-csg324-3--
 -------------------------------------
 

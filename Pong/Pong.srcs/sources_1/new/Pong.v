@@ -17,7 +17,8 @@ module Pong (
     output [3:0] out_Green,
     output [3:0] out_Blue,
     output [7:0] ssd,
-    output [7:0] anode
+    output [7:0] anode,
+    output audio_output
     );
 
 
@@ -275,4 +276,12 @@ module Pong (
         .anode(anode)
         );
 
+    bgm bgm_wrap (
+        .clk(clock),
+        .hit_paddle(hit_paddle),
+        .hit_wall(hit_wall),
+        .change_mode(change_mode_debounced),
+        .voice_fre(audio_output),
+        .state(state)
+        );
 endmodule

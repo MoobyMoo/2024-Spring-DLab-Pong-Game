@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715853287">
-  <File Type="OPT-HWDEF" Name="Pong.hwdef"/>
-  <File Type="ROUTE-BUS-SKEW" Name="Pong_bus_skew_routed.rpt"/>
-  <File Type="PA-DCP" Name="Pong.dcp"/>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715855536">
   <File Type="ROUTE-PWR" Name="Pong_power_routed.rpt"/>
   <File Type="PA-TCL" Name="Pong.tcl"/>
+  <File Type="ROUTE-PWR-SUM" Name="Pong_power_summary_routed.pb"/>
+  <File Type="REPORTS-TCL" Name="Pong_reports.tcl"/>
+  <File Type="OPT-RQA-PB" Name="Pong_rqa_opted.pb"/>
+  <File Type="BITSTR-MMI" Name="Pong.mmi"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="Pong_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="Pong_timing_summary_init.rpt"/>
-  <File Type="ROUTE-PWR-SUM" Name="Pong_power_summary_routed.pb"/>
-  <File Type="OPT-RQA-PB" Name="Pong_rqa_opted.pb"/>
-  <File Type="REPORTS-TCL" Name="Pong_reports.tcl"/>
   <File Type="OPT-TIMING" Name="Pong_timing_summary_opted.rpt"/>
   <File Type="OPT-DCP" Name="Pong_opt.dcp"/>
   <File Type="OPT-DRC" Name="Pong_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Pong.hwdef"/>
   <File Type="PWROPT-DCP" Name="Pong_pwropt.dcp"/>
   <File Type="PWROPT-DRC" Name="Pong_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="Pong_timing_summary_pwropted.rpt"/>
@@ -52,6 +51,7 @@
   <File Type="ROUTE-TIMING-RPX" Name="Pong_timing_summary_routed.rpx"/>
   <File Type="ROUTE-SIMILARITY" Name="Pong_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="Pong_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="Pong_bus_skew_routed.rpt"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="Pong_bus_skew_routed.pb"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="Pong_bus_skew_routed.rpx"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Pong_postroute_physopt.dcp"/>
@@ -65,7 +65,6 @@
   <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="Pong_bus_skew_postroute_physopted.rpx"/>
   <File Type="BITSTR-NKY" Name="Pong.nky"/>
   <File Type="BITSTR-BMM" Name="Pong_bd.bmm"/>
-  <File Type="BITSTR-MMI" Name="Pong.mmi"/>
   <File Type="PDI-FILE" Name="Pong.pdi"/>
   <File Type="BOOT-PDI-FILE" Name="Pong_boot.pdi"/>
   <File Type="PL-PDI-FILE" Name="Pong_pld.pdi"/>
@@ -179,6 +178,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/VGA_Sync_to_Count.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bgm.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
