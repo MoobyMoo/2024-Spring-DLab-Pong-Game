@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715755679" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Pong.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-3" LaunchTime="1715855451" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/Pong.dcp">
   <File Type="PA-TCL" Name="Pong.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="Pong_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="Pong_reports.tcl"/>
@@ -109,6 +109,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/bgm.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/button_debouncer.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -117,6 +124,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/clock_divider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/keypad_input.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -132,6 +146,14 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/Pong.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/keyboard_input.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Wed May 15 14:49:39 2024
-| Host         : MSI running 64-bit major release  (build 9200)
+| Date         : Thu May 16 18:33:00 2024
+| Host         : LAPTOP-KTP5C24J running 64-bit major release  (build 9200)
 | Command      : report_drc -file Pong_drc_opted.rpt -pb Pong_drc_opted.pb -rpx Pong_drc_opted.rpx
 | Design       : Pong
 | Device       : xc7a100tcsg324-3

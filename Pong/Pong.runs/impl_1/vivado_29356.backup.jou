@@ -3,12 +3,12 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu May 16 18:30:56 2024
-# Process ID: 9308
-# Current directory: D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1
-# Command line: vivado.exe -log Pong.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Pong.tcl
-# Log file: D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.vds
-# Journal file: D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1\vivado.jou
+# Start of session at: Thu May 16 18:32:25 2024
+# Process ID: 29356
+# Current directory: D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/impl_1
+# Command line: vivado.exe -log Pong.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source Pong.tcl -notrace
+# Log file: D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/impl_1/Pong.vdi
+# Journal file: D:/dig_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/impl_1\vivado.jou
 # Running On: LAPTOP-KTP5C24J, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 4, Host memory: 17002 MB
 #-----------------------------------------------------------
 source Pong.tcl -notrace
