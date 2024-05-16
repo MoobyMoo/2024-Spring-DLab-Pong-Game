@@ -1,0 +1,184 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date             : Thu May 16 17:56:38 2024
+| Host             : LAPTOP-KTP5C24J running 64-bit major release  (build 9200)
+| Command          : report_power -file Pong_power_routed.rpt -pb Pong_power_summary_routed.pb -rpx Pong_power_routed.rpx
+| Design           : Pong
+| Device           : xc7a100tcsg324-3
+| Design State     : routed
+| Grade            : extended
+| Process          : typical
+| Characterization : Production
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+----------------------------------+
+| Total On-Chip Power (W)  | 69.400 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                     |
+| Power Budget Margin (W)  | NA                               |
+| Dynamic (W)              | 68.603                           |
+| Device Static (W)        | 0.797                            |
+| Effective TJA (C/W)      | 4.6                              |
+| Max Ambient (C)          | 0.0                              |
+| Junction Temperature (C) | 125.0                            |
+| Confidence Level         | Low                              |
+| Setting File             | ---                              |
+| Simulation Activity File | ---                              |
+| Design Nets Matched      | NA                               |
++--------------------------+----------------------------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Slice Logic    |     3.124 |     1705 |       --- |             --- |
+|   LUT as Logic |     2.745 |      714 |     63400 |            1.13 |
+|   Register     |     0.205 |      596 |    126800 |            0.47 |
+|   CARRY4       |     0.138 |       81 |     15850 |            0.51 |
+|   BUFG         |     0.035 |        4 |        32 |           12.50 |
+|   F7/F8 Muxes  |    <0.001 |        3 |     63400 |           <0.01 |
+|   Others       |     0.000 |       77 |       --- |             --- |
+| Signals        |     3.222 |     1130 |       --- |             --- |
+| I/O            |    62.258 |       51 |       210 |           24.29 |
+| Static Power   |     0.797 |          |           |                 |
+| Total          |    69.400 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint    |       1.000 |     6.960 |       6.398 |      0.563 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     2.372 |       2.279 |      0.093 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |    17.611 |      17.607 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 4.6                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++---------------------------------+-----------+
+| Name                            | Power (W) |
++---------------------------------+-----------+
+| Pong                            |    68.603 |
+|   VGA_Sync_to_Count_wrap        |     0.250 |
+|   clock_debounce                |     0.150 |
+|   clock_div                     |     0.025 |
+|   debounce_change_mode          |     0.067 |
+|   debounce_p1_down              |     0.064 |
+|   debounce_p1_up                |     0.065 |
+|   debounce_p2_down              |     0.066 |
+|   debounce_p2_up                |     0.066 |
+|   debounce_start                |     0.065 |
+|   draw_wrap                     |     1.115 |
+|     Draw_Game_wrap              |     0.320 |
+|       Signal_Control_BB         |     0.094 |
+|       Signal_Control_BG         |     0.106 |
+|       Signal_Control_BR         |     0.110 |
+|     Draw_Mode_wrap              |     0.004 |
+|       Score_Display_Limit       |     0.004 |
+|     Draw_Over_wrap              |     0.302 |
+|       Face_Display_P1           |     0.004 |
+|       Face_Display_P2           |     0.004 |
+|       Score_Display_P1          |     0.014 |
+|       Score_Display_P2          |     0.058 |
+|       Signal_Control_B          |     0.078 |
+|       Signal_Control_G          |     0.061 |
+|       Signal_Control_R          |     0.084 |
+|     Draw_Start_wrap             |     0.071 |
+|     clock_ms                    |     0.195 |
+|     clock_sec                   |     0.222 |
+|   keypad_p1                     |     0.471 |
+|     refresh_counter_keypad_wrap |     0.068 |
+|   keypad_p2                     |     0.476 |
+|     refresh_counter_keypad_wrap |     0.093 |
+|   pong_fsm_wrap                 |     2.425 |
+|     ball_wrap                   |     1.172 |
+|     p1_paddle                   |     0.190 |
+|     p2_paddle                   |     0.176 |
+|   ssd_wrap                      |     0.529 |
+|   sync_porch                    |     0.198 |
+|     Sync_to_Count_wrap          |     0.138 |
+|   sync_pulse_gen                |     0.108 |
++---------------------------------+-----------+
+
+
