@@ -73,7 +73,7 @@ module Pong_FSM #(
     always @(posedge clock) begin
         hit_paddle = ((ball_x == 1) && 
                 ((ball_y < p2_paddle_y) || (ball_y > (p2_paddle_y + PADDLE_HEIGHT)))) ||
-                ((ball_x == GAME_WIDTH-2) &&
+                ((ball_x == GAME_WIDTH-1) &&
                 ((ball_y < p1_paddle_y) || (ball_y > (p1_paddle_y + PADDLE_HEIGHT))));
 
 

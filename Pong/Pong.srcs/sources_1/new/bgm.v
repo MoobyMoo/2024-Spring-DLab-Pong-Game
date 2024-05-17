@@ -8,10 +8,10 @@ module bgm (
 );
 
     reg [7:0] bps = 8'd2;
+    
     reg [7:0] bps_2 = 8'd1;
-    wire bump;
+    
     wire bump_2;
-    wire clk_10Hz;
     wire MODE_music;
     wire P1_SCORE_music;
     wire P2_SCORE_music;
@@ -48,7 +48,7 @@ module bgm (
         .bump(bump)
     );
 
-    bps bps_name_2(//bump per secone
+    bps bps2_name_2(//bump per secone
         .clk(clk_10Hz),
         .bps(bps_2),
         .bump(bump_2)
@@ -77,11 +77,11 @@ module bgm (
             voice_fre = P2_SCORE_music;
         else if(OVER_counter > 4'd0)
             voice_fre = OVER_music;
-        else if(hit_paddle_counter> 1'd0)
+        else if(hit_paddle_counter> 4'd0 && hit_wall == 1'd0)
             voice_fre = hit_paddle_music;
-        else if(hit_wall_counter > 1'd0)
+        else if(hit_wall_counter > 4'd0)
             voice_fre = hit_wall_music;
-        else if(change_mode_counter > 1'd0)
+        else if(change_mode_counter > 4'd0)
             voice_fre = change_mode_music;
         else
             voice_fre = 1'd0;
@@ -185,7 +185,7 @@ module fre_divider_inv(input clk,input [27:0] number,output reg clk_after);
         begin
             clk_after = 1'd1;
             counter = 28'd0;
-        end else if(counter < 28'd100000)
+        end else if(counter < 28'd110000)
         begin
             counter = counter + 28'd1;
             clk_after = 1'd1;

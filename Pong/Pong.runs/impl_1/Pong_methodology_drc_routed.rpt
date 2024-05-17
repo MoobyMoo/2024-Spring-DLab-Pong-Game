@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
-| Date         : Fri May 17 14:20:07 2024
+| Date         : Fri May 17 15:16:04 2024
 | Host         : Moo_Laptop running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Pong_methodology_drc_routed.rpt -pb Pong_methodology_drc_routed.pb -rpx Pong_methodology_drc_routed.rpx
 | Design       : Pong
@@ -3124,57 +3124,57 @@ Related violations: <none>
 
 TIMING-17#619 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_1/bump_reg/C is not reached by a timing clock
+The clock pin bgm_wrap/bps2_name_2/bump_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#620 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_1/counter_reg[0]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps2_name_2/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#621 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_1/counter_reg[1]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps2_name_2/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#622 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_1/counter_reg[2]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps2_name_2/counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#623 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_1/counter_reg[6]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps2_name_2/counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#624 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_1/counter_reg[7]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps_name_1/bump_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#625 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_2/bump_reg/C is not reached by a timing clock
+The clock pin bgm_wrap/bps_name_1/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#626 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_2/counter_reg[0]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps_name_1/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#627 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_2/counter_reg[1]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps_name_1/counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#628 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_2/counter_reg[6]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps_name_1/counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#629 Critical Warning
 Non-clocked sequential cell  
-The clock pin bgm_wrap/bps_name_2/counter_reg[7]/C is not reached by a timing clock
+The clock pin bgm_wrap/bps_name_1/counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#630 Critical Warning
