@@ -2,7 +2,7 @@ module bgm (
     input clk,
     input [2:0] state,
     input hit_wall,
-    input ball_x,
+    input [5:0] ball_x,
     input change_mode,
     output reg voice_fre
 );
@@ -28,8 +28,8 @@ module bgm (
     wire [3:0] P1_SCORE_counter;
     wire [3:0] P2_SCORE_counter;
     wire [3:0] OVER_counter;
-    wire hit_paddle_counter;
-    wire hit_wall_counter;
+    wire [3:0]hit_paddle_counter;
+    wire [3:0]hit_wall_counter;
     wire change_mode_counter;
 
     parameter INIT = 3'd0, MODE = 3'd1, RUNNING = 3'd2, 
@@ -54,8 +54,8 @@ module bgm (
     music_6 hit_wall_1(.bump(bump), .voice_fre(hit_wall_music),.counter(hit_wall_counter), .start(hit_wall), .clk(clk));
     music_7 change_mode_1(.bump(bump), .voice_fre(change_mode_music),.counter(change_mode_counter), .start(change_mode), .clk(clk));
 
-    always@(*)begin
-        if(ball_x >= 38 || ball_x <= 1 && (state == RUNNING || state == P1_SCORE || state == P2_SCORE))
+    always@(posedge clk)begin
+        if(ball_x >= 6'd38 || ball_x <= 6'd1 && (state == RUNNING || state == P1_SCORE || state == P2_SCORE))
             hit_paddle = 1'd1;
         else
             hit_paddle = 1'd0;
@@ -72,10 +72,10 @@ module bgm (
             voice_fre = OVER_music;
         else if(hit_wall_counter > 1'd0)
             voice_fre = hit_wall_music;
-        else if(hit_paddle_counter> 1'd0)
-            voice_fre = hit_paddle_music;
         else if(change_mode_counter > 1'd0)
             voice_fre = change_mode_music;
+        else if(hit_paddle_counter> 1'd0)
+            voice_fre = hit_paddle_music;
         else
             voice_fre = 1'd0;
             

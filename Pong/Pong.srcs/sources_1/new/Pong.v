@@ -6,6 +6,7 @@ module Pong (
     input p2_down_button,
     input start,
     input change_mode,
+    input solo_enable,
     input [2:0] p1_keypad_column,
     input [2:0] p2_keypad_column,
 
@@ -18,7 +19,8 @@ module Pong (
     output [3:0] out_Blue,
     output [7:0] ssd,
     output [7:0] anode,
-    output audio_output
+    output audio_output,
+    output solo_enable_debounced
     );
 
 
@@ -117,6 +119,13 @@ module Pong (
         .debounced_button(p2_down_debounced)
         );
 
+    button_debouncer debounce_solo(
+        .clock(debounce_clock),
+        .button(solo_enable),
+
+        .debounced_button(solo_enable_debounced)
+        );
+
     keypad_input #(
         .BLANK(BLANK),
         .UP(KEYPAD_UP),
@@ -181,6 +190,7 @@ module Pong (
         .p2_up(p2_up),
         .p2_down(p2_down),
         .change_mode(change_mode_debounced),
+        .solo_enable(solo_enable_debounced),
 
         .state(state),
         .score_limit(score_limit),
