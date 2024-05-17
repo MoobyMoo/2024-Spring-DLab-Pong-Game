@@ -247,18 +247,20 @@ module Pong (
         .OVER(OVER)
         ) draw_wrap (
         .clock(clock_25Mhz),
+        .Hsync(temp2_Hsync),
+        .Vsync(temp2_Vsync),
         .p1_paddle_y(p1_paddle_y),
         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
         .ball_y(ball_y),
-        //.hit_paddle(hit_paddle),
         .column_count(column_count[9:4]),
         .row_count(row_count[9:4]),
         .p1_score(p1_score),
         .p2_score(p2_score),
         .score_limit(score_limit),
         .state (state),
-        .ai_enable(ai_enable),
+        .p1_ai_enable(p1_ai_enable),
+        .p2_ai_enable(p2_ai_enable),
 
         .out_Red(temp_Red),
         .out_Green(temp_Green),

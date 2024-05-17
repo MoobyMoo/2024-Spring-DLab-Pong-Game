@@ -17,7 +17,10 @@ module Draw #(
     OVER = 3'd5
     ) (
     input clock,
-    //input hit_paddle,
+    input Hsync,
+    input Vsync,
+    input p1_ai_enable,
+    input p2_ai_enable,
     input [5:0] p1_paddle_y,
     input [5:0] p2_paddle_y,
     input [5:0] ball_x,
@@ -28,7 +31,6 @@ module Draw #(
     input [3:0] p2_score,
     input [3:0] score_limit,
     input [2:0] state,
-    input ai_enable,
 
     output [3:0] out_Red,
     output [3:0] out_Green,
@@ -40,7 +42,8 @@ module Draw #(
     wire [3:0] out_red_mode, out_green_mode, out_blue_mode;
     wire [3:0] out_red_game, out_green_game, out_blue_game;
     wire [3:0] out_red_over, out_green_over, out_blue_over;
-    wire sec, ms;
+    wire sec, ms, ai_enable;
+    assign ai_enable = p1_ai_enable | p2_ai_enable;
 
     // Divide the clock to get the second (used in Draw_Start.v)
     clock_divider #(
@@ -73,6 +76,8 @@ module Draw #(
 
     Draw_Mode Draw_Mode_wrap(
         .clock(clock),
+        .Hsync(Hsync),
+        .Vsync(Vsync),
         .column_count(column_count),
         .row_count(row_count),
         .score_limit(score_limit),
@@ -90,7 +95,8 @@ module Draw #(
         .RUNNING(RUNNING)
     ) Draw_Game_wrap (
         .clock(clock),
-        //.hit_paddle(hit_paddle),
+        .p1_ai_enable(p1_ai_enable),
+        .p2_ai_enable(p2_ai_enable),
         .p1_paddle_y(p1_paddle_y),
         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
@@ -98,7 +104,6 @@ module Draw #(
         .column_count(column_count),
         .row_count(row_count),
         .state (state),
-        .ai_enable(ai_enable),
 
         .out_Red(out_red_game),
         .out_Green(out_green_game),

@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
-| Date         : Fri May 17 15:16:04 2024
-| Host         : Moo_Laptop running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Fri May 17 22:45:12 2024
+| Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Pong_methodology_drc_routed.rpt -pb Pong_methodology_drc_routed.pb -rpx Pong_methodology_drc_routed.rpx
 | Design       : Pong
 | Device       : xc7a100tcsg324-3
@@ -4159,72 +4159,72 @@ Related violations: <none>
 
 TIMING-17#826 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#827 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#828 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#829 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#830 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/ten_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#831 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/draw_t_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#832 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/display_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/ten_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#833 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/draw_t_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#834 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/display_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#835 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#836 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#837 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#838 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#839 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[5]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#840 Critical Warning
@@ -4319,32 +4319,32 @@ Related violations: <none>
 
 TIMING-17#858 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[5]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/display_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#859 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/display_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/draw_s_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#860 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/draw_s_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#861 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#862 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#863 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#864 Critical Warning
