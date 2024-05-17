@@ -1,7 +1,7 @@
 -------------------------------------
-| Tool Version : Vivado v.2023.2.2
-| Date         : Thu May 16 22:15:05 2024
-| Host         : Moo_Laptop
+| Tool Version : Vivado v.2023.2
+| Date         : Fri May 17 11:26:37 2024
+| Host         : MSI
 | Design       : design_1
 | Device       : xc7a100t-csg324-3--
 -------------------------------------

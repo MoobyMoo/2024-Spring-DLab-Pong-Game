@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
-| Date         : Thu May 16 22:15:07 2024
-| Host         : Moo_Laptop running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Fri May 17 11:26:39 2024
+| Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Pong_control_sets_placed.rpt
 | Design       : Pong
 | Device       : xc7a100t
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    99 |
-|    Minimum number of control sets                        |    99 |
+| Total control sets                                       |    94 |
+|    Minimum number of control sets                        |    94 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |   392 |
+| Unused register locations in slices containing registers |   393 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,13 +39,13 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    99 |
-| >= 0 to < 4        |     7 |
-| >= 4 to < 6        |    29 |
+| Total control sets |    94 |
+| >= 0 to < 4        |     8 |
+| >= 4 to < 6        |    27 |
 | >= 6 to < 8        |     5 |
-| >= 8 to < 10       |     6 |
+| >= 8 to < 10       |     3 |
 | >= 10 to < 12      |     6 |
-| >= 12 to < 14      |     1 |
+| >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     1 |
 | >= 16              |    44 |
 +--------------------+-------+
@@ -58,120 +58,115 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             177 |           87 |
+| No           | No                    | No                     |             176 |           82 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             802 |          251 |
+| No           | Yes                   | No                     |             802 |          250 |
 | Yes          | No                    | No                     |              50 |           19 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             275 |           73 |
+| Yes          | Yes                   | No                     |             227 |           66 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
-|       Clock Signal       |                            Enable Signal                            |                           Set/Reset Signal                          | Slice Load Count | Bel Load Count | Bels / Slice |
-+--------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
-|  bgm_wrap/fre_1Hz/I209   |                                                                     |                                                                     |                1 |              1 |         1.00 |
-|  clock_25Mhz_BUFG        | keypad_p2/paddle_enable                                             |                                                                     |                1 |              1 |         1.00 |
-|  clock_25Mhz_BUFG        |                                                                     | sync_porch/Sync_to_Count_wrap/out_Vsync0                            |                1 |              1 |         1.00 |
-|  clock_25Mhz_BUFG        |                                                                     | sync_porch/Sync_to_Count_wrap/out_Hsync0                            |                1 |              1 |         1.00 |
-|  clock_25Mhz_BUFG        | keypad_p1/paddle_enable                                             |                                                                     |                1 |              1 |         1.00 |
-|  clock_IBUF_BUFG         |                                                                     | clock_div/clear                                                     |                1 |              2 |         2.00 |
-| ~draw_wrap/clock_sec/CLK |                                                                     |                                                                     |                2 |              3 |         1.50 |
-|  bgm_wrap/bps_1/CLK      |                                                                     | bgm_wrap/P1_SCORE_1/clear                                           |                2 |              4 |         2.00 |
-|  bgm_wrap/bps_1/CLK      |                                                                     | bgm_wrap/P2_SCORE_1/counter[3]_i_1__2_n_0                           |                2 |              4 |         2.00 |
-|  bgm_wrap/bps_1/CLK      |                                                                     | bgm_wrap/OVER_1/clear                                               |                2 |              4 |         2.00 |
-|  bgm_wrap/bps_1/CLK      |                                                                     | bgm_wrap/hit_paddle_1/counter[3]_i_1__3_n_0                         |                1 |              4 |         4.00 |
-|  bgm_wrap/bps_1/CLK      |                                                                     | bgm_wrap/hit_wall_1/counter[3]_i_1__4_n_0                           |                1 |              4 |         4.00 |
-|  bgm_wrap/bps_1/CLK      |                                                                     | bgm_wrap/change_mode_1/counter[3]_i_1__5_n_0                        |                1 |              4 |         4.00 |
-|  bgm_wrap/bps_1/CLK      |                                                                     | bgm_wrap/MODE_1/clear                                               |                2 |              4 |         2.00 |
-|  bgm_wrap/fre_1Hz/I209   |                                                                     | bgm_wrap/bps_1/bump_i_1_n_0                                         |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | debounce_p1_down/debounce_counter[3]_i_2__2_n_0                     | debounce_p1_down/debounce_counter[3]_i_1__2_n_0                     |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | debounce_change_mode/debounce_counter[3]_i_2__0_n_0                 | debounce_change_mode/debounce_counter[3]_i_1__0_n_0                 |                1 |              4 |         4.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_B/next_state                | draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO[3]_i_1_n_0     |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | debounce_p1_up/debounce_counter[3]_i_2__1_n_0                       | debounce_p1_up/debounce_counter[3]_i_1__1_n_0                       |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        |                                                                     | VGA_Sync_to_Count_wrap/row_count_reg[6]_2                           |                2 |              4 |         2.00 |
-|  debounce_clock_BUFG     | debounce_p2_up/debounce_counter[3]_i_2__3_n_0                       | debounce_p2_up/debounce_counter[3]_i_1__3_n_0                       |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | debounce_start/debounce_counter[3]_i_2_n_0                          | debounce_start/debounce_counter[3]_i_1_n_0                          |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | keypad_p2/temp[3]_i_1__0_n_0                                        |                                                                     |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        |                                                                     | VGA_Sync_to_Count_wrap/fixed_column_count1                          |                2 |              4 |         2.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_R/next_state                | draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO[3]_i_1_n_0     |                1 |              4 |         4.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_G/next_state                | draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO[3]_i_1_n_0     |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/FSM_onehot_state_reg_n_0_[3]                          | pong_fsm_wrap/init                                                  |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/FSM_onehot_state_reg_n_0_[4]                          | pong_fsm_wrap/init                                                  |                1 |              4 |         4.00 |
-|  clock_IBUF_BUFG         | pong_fsm_wrap/start_OVER                                            |                                                                     |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | keypad_p1/temp[3]_i_1_n_0                                           |                                                                     |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     | debounce_p2_down/debounce_counter[3]_i_2__4_n_0                     | debounce_p2_down/debounce_counter[3]_i_1__4_n_0                     |                1 |              4 |         4.00 |
-| ~clock_25Mhz_BUFG        | draw_wrap/Draw_Game_wrap/Signal_Control_BR/next_state               | draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_ZERO[3]_i_1_n_0    |                1 |              4 |         4.00 |
-| ~clock_25Mhz_BUFG        | draw_wrap/Draw_Game_wrap/Signal_Control_BG/next_state               | draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_ZERO[3]_i_1_n_0    |                1 |              4 |         4.00 |
-| ~clock_25Mhz_BUFG        | draw_wrap/Draw_Game_wrap/Signal_Control_BB/next_state               | draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_ZERO[3]_i_1__0_n_0 |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     |                                                                     | keypad_p1/digit0_n_0                                                |                1 |              4 |         4.00 |
-|  debounce_clock_BUFG     |                                                                     | keypad_p2/digit0_n_0                                                |                1 |              4 |         4.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_2_n_0                  | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_1_n_0                  |                2 |              6 |         3.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_2__0_n_0                      | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_1__0_n_0                      |                2 |              6 |         3.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/E[0]                                        |                                                                     |                3 |              6 |         2.00 |
-|  ms                      |                                                                     |                                                                     |                3 |              6 |         2.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_2_n_0                         | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_1_n_0                         |                2 |              6 |         3.00 |
-| ~clock_25Mhz_BUFG        | draw_wrap/Draw_Game_wrap/Signal_Control_BR/current_state[0]         | draw_wrap/Draw_Game_wrap/Signal_Control_BR/signal[3]_i_1__1_n_0     |                3 |              8 |         2.67 |
-| ~clock_25Mhz_BUFG        | draw_wrap/Draw_Game_wrap/Signal_Control_BG/current_state[1]         | draw_wrap/Draw_Game_wrap/Signal_Control_BG/signal[3]_i_1__2_n_0     |                2 |              8 |         4.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_R/current_state[0]          | draw_wrap/Draw_Over_wrap/Signal_Control_R/signal[3]_i_1__3_n_0      |                2 |              8 |         4.00 |
-| ~clock_25Mhz_BUFG        | draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_ZERO[3]_i_1__0_n_0 | draw_wrap/Draw_Game_wrap/Signal_Control_BB/signal0                  |                2 |              8 |         4.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO[3]_i_1_n_0     | draw_wrap/Draw_Over_wrap/Signal_Control_B/signal0                   |                2 |              8 |         4.00 |
-| ~ms                      | draw_wrap/Draw_Over_wrap/Signal_Control_G/current_state[1]          | draw_wrap/Draw_Over_wrap/Signal_Control_G/signal[3]_i_1__4_n_0      |                2 |              8 |         4.00 |
-|  clock_25Mhz_BUFG        | VGA_Sync_to_Count_wrap/row_count[9]_i_1__0_n_0                      |                                                                     |                4 |             10 |         2.50 |
-|  clock_25Mhz_BUFG        |                                                                     | sync_pulse_gen/p_0_in                                               |                3 |             10 |         3.33 |
-|  clock_25Mhz_BUFG        |                                                                     | sync_porch/Sync_to_Count_wrap/row_count_0                           |                4 |             10 |         2.50 |
-|  clock_25Mhz_BUFG        | sync_pulse_gen/p_0_in                                               |                                                                     |                3 |             10 |         3.33 |
-|  clock_25Mhz_BUFG        | sync_porch/Sync_to_Count_wrap/row_count_0                           |                                                                     |                4 |             10 |         2.50 |
-|  clock_25Mhz_BUFG        |                                                                     | VGA_Sync_to_Count_wrap/row_count[9]_i_1__0_n_0                      |                3 |             10 |         3.33 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/ball_x_reg[2]_0[0]                          | pong_fsm_wrap/SS[0]                                                 |                2 |             12 |         6.00 |
-|  clock_IBUF_BUFG         |                                                                     |                                                                     |               11 |             14 |         1.27 |
-|  clock_IBUF_BUFG         |                                                                     | clock_debounce/counter0_carry__0_n_1                                |                4 |             16 |         4.00 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_12/clk_after_i_1__11_n_0                        |                6 |             18 |         3.00 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_12/clk_after_i_1__10_n_0                        |                6 |             18 |         3.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/previous_ball_y                             | pong_fsm_wrap/ball_wrap/clear                                       |                6 |             18 |         3.00 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/P2_SCORE_1/fre_11/clk_after_i_1__28_n_0                    |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_10/clk_after_i_1__8_n_0                         |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_11/clk_after_i_1__9_n_0                         |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_10/clk_after_i_1__13_n_0                        |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_11/clk_after_i_1__12_n_0                        |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_6/clk_after_i_1__17_n_0                         |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_7/clk_after_i_1__16_n_0                         |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_8/clk_after_i_1__15_n_0                         |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_9/clk_after_i_1__14_n_0                         |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_5/clk_after_i_1__18_n_0                         |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/hit_paddle_1/fre_11/clk_after_i_1__29_n_0                  |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/P2_SCORE_1/fre_9/clk_after_i_1__26_n_0                     |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_5/clk_after_i_1__3_n_0                          |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_6/clk_after_i_1__4_n_0                          |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_7/clk_after_i_1__5_n_0                          |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_8/clk_after_i_1__6_n_0                          |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_9/clk_after_i_1__7_n_0                          |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/P1_SCORE_1/fre_10/clk_after_i_1__24_n_0                    |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/P1_SCORE_1/fre_11/clk_after_i_1__25_n_0                    |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/P1_SCORE_1/fre_9/clk_after_i_1__23_n_0                     |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/P2_SCORE_1/fre_10/clk_after_i_1__27_n_0                    |                6 |             19 |         3.17 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_1/clk_after_i_1__22_n_0                         |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_3/clk_after_i_1__1_n_0                          |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/change_mode_1/fre_1/clk_after_i_1__31_n_0                  |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/hit_wall_1/fre_1/clk_after_i_1__30_n_0                     |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_4/clk_after_i_1__19_n_0                         |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_3/clk_after_i_1__20_n_0                         |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/OVER_1/fre_2/clk_after_i_1__21_n_0                         |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_2/clk_after_i_1__0_n_0                          |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_1/clk_after_i_1_n_0                             |                6 |             20 |         3.33 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/MODE_1/fre_4/clk_after_i_1__2_n_0                          |                6 |             20 |         3.33 |
-|  clock_25Mhz_BUFG        |                                                                     | draw_wrap/clock_ms/counter0_carry__1_n_2                            |                6 |             21 |         3.50 |
-|  clock_25Mhz_BUFG        |                                                                     | draw_wrap/clock_sec/clear                                           |                6 |             24 |         4.00 |
-|  clock_IBUF_BUFG         |                                                                     | bgm_wrap/fre_1Hz/clk_10Hz_i_1_n_0                                   |                6 |             24 |         4.00 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/ball_wrap/ball_speed                                  | pong_fsm_wrap/ball_wrap/clear                                       |                8 |             29 |         3.62 |
-|  clock_25Mhz_BUFG        | keypad_p1/paddle_enable                                             | pong_fsm_wrap/p1_paddle/paddle_count[31]_i_1_n_0                    |                8 |             31 |         3.88 |
-|  clock_25Mhz_BUFG        | keypad_p2/paddle_enable                                             | pong_fsm_wrap/p2_paddle/paddle_count[31]_i_1__0_n_0                 |                8 |             31 |         3.88 |
-|  clock_25Mhz_BUFG        | pong_fsm_wrap/running                                               | pong_fsm_wrap/ball_wrap/ball_count                                  |                8 |             32 |         4.00 |
-|  debounce_clock_BUFG     |                                                                     |                                                                     |               21 |             49 |         2.33 |
-|  clock_25Mhz_BUFG        |                                                                     |                                                                     |               49 |            104 |         2.12 |
-+--------------------------+---------------------------------------------------------------------+---------------------------------------------------------------------+------------------+----------------+--------------+
++-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+--------------+
+|             Clock Signal            |                        Enable Signal                        |                         Set/Reset Signal                        | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+--------------+
+|  clock_25Mhz_BUFG                   | keypad_p1/paddle_enable                                     |                                                                 |                1 |              1 |         1.00 |
+|  bgm_wrap/fre_1Hz/I195              |                                                             |                                                                 |                1 |              1 |         1.00 |
+|  clock_25Mhz_BUFG                   |                                                             | sync_porch/Sync_to_Count_wrap/out_Hsync0                        |                1 |              1 |         1.00 |
+|  clock_25Mhz_BUFG                   |                                                             | sync_porch/Sync_to_Count_wrap/out_Vsync0                        |                1 |              1 |         1.00 |
+| ~clock_25Mhz_BUFG                   |                                                             |                                                                 |                1 |              1 |         1.00 |
+|  clock_25Mhz_BUFG                   | keypad_p2/paddle_enable                                     |                                                                 |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG                    |                                                             | clock_div/clear                                                 |                1 |              2 |         2.00 |
+| ~draw_wrap/clock_sec/CLK            |                                                             |                                                                 |                2 |              3 |         1.50 |
+|  bgm_wrap/bps_1/CLK                 |                                                             | bgm_wrap/hit_wall_1/counter[3]_i_1__5_n_0                       |                1 |              4 |         4.00 |
+|  bgm_wrap/bps_1/CLK                 |                                                             | bgm_wrap/change_mode_1/counter[3]_i_1__6_n_0                    |                1 |              4 |         4.00 |
+|  bgm_wrap/bps_1/CLK                 |                                                             | bgm_wrap/hit_paddle_1/counter[3]_i_1__4_n_0                     |                2 |              4 |         2.00 |
+|  bgm_wrap/bps_1/CLK                 |                                                             | bgm_wrap/P2_SCORE_1/counter[3]_i_1__3_n_0                       |                2 |              4 |         2.00 |
+|  bgm_wrap/bps_1/CLK                 |                                                             | bgm_wrap/OVER_1/clear                                           |                3 |              4 |         1.33 |
+|  bgm_wrap/fre_1Hz/I195              |                                                             | bgm_wrap/bps_1/bump_i_1_n_0                                     |                1 |              4 |         4.00 |
+|  clock_25Mhz_BUFG                   |                                                             | VGA_Sync_to_Count_wrap/row_count_reg[6]_1                       |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                | debounce_start/debounce_counter[3]_i_2_n_0                  | debounce_start/debounce_counter[3]_i_1_n_0                      |                1 |              4 |         4.00 |
+|  clock_25Mhz_BUFG                   |                                                             | VGA_Sync_to_Count_wrap/fixed_column_count1                      |                1 |              4 |         4.00 |
+|  pong_fsm_wrap/ball_wrap/hit_paddle |                                                             |                                                                 |                1 |              4 |         4.00 |
+| ~ms                                 | draw_wrap/Draw_Over_wrap/Signal_Control_B/next_state        | draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO[3]_i_1_n_0 |                1 |              4 |         4.00 |
+| ~ms                                 | draw_wrap/Draw_Over_wrap/Signal_Control_G/next_state        | draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO[3]_i_1_n_0 |                1 |              4 |         4.00 |
+| ~ms                                 | draw_wrap/Draw_Over_wrap/Signal_Control_R/next_state        | draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO[3]_i_1_n_0 |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                | debounce_p2_down/debounce_counter[3]_i_2__4_n_0             | debounce_p2_down/debounce_counter[3]_i_1__4_n_0                 |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                | keypad_p2/temp[3]_i_1__0_n_0                                |                                                                 |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                | keypad_p1/temp[3]_i_1_n_0                                   |                                                                 |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                | debounce_p2_up/debounce_counter[3]_i_2__3_n_0               | debounce_p2_up/debounce_counter[3]_i_1__3_n_0                   |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                | debounce_p1_down/debounce_counter[3]_i_2__2_n_0             | debounce_p1_down/debounce_counter[3]_i_1__2_n_0                 |                2 |              4 |         2.00 |
+|  debounce_clock_BUFG                | debounce_p1_up/debounce_counter[3]_i_2__1_n_0               | debounce_p1_up/debounce_counter[3]_i_1__1_n_0                   |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                | debounce_change_mode/debounce_counter[3]_i_2__0_n_0         | debounce_change_mode/debounce_counter[3]_i_1__0_n_0             |                1 |              4 |         4.00 |
+|  debounce_clock_BUFG                |                                                             | keypad_p2/digit0_n_0                                            |                1 |              4 |         4.00 |
+|  bgm_wrap/bps_1/CLK                 |                                                             | bgm_wrap/MODE_1/clear                                           |                1 |              4 |         4.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/FSM_onehot_state_reg_n_0_[4]                  | pong_fsm_wrap/init                                              |                1 |              4 |         4.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/FSM_onehot_state_reg_n_0_[3]                  | pong_fsm_wrap/init                                              |                2 |              4 |         2.00 |
+|  clock_IBUF_BUFG                    | pong_fsm_wrap/start_OVER                                    |                                                                 |                2 |              4 |         2.00 |
+|  debounce_clock_BUFG                |                                                             | keypad_p1/digit0_n_0                                            |                1 |              4 |         4.00 |
+|  bgm_wrap/bps_1/CLK                 |                                                             | bgm_wrap/P1_SCORE_1/clear                                       |                2 |              4 |         2.00 |
+|  ms                                 |                                                             |                                                                 |                3 |              6 |         2.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_2_n_0                 | pong_fsm_wrap/p1_paddle/paddle_y[5]_i_1_n_0                     |                2 |              6 |         3.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_2_n_0          | pong_fsm_wrap/ball_wrap/previous_ball_x[2]_i_1_n_0              |                2 |              6 |         3.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/ball_wrap/E[0]                                |                                                                 |                2 |              6 |         3.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_2__0_n_0              | pong_fsm_wrap/p2_paddle/paddle_y[5]_i_1__0_n_0                  |                2 |              6 |         3.00 |
+| ~ms                                 | draw_wrap/Draw_Over_wrap/Signal_Control_G/current_state[1]  | draw_wrap/Draw_Over_wrap/Signal_Control_G/signal[3]_i_1__0_n_0  |                1 |              8 |         8.00 |
+| ~ms                                 | draw_wrap/Draw_Over_wrap/Signal_Control_B/signal[3]_i_2_n_0 | draw_wrap/Draw_Over_wrap/Signal_Control_B/signal[3]_i_1__1_n_0  |                2 |              8 |         4.00 |
+| ~ms                                 | draw_wrap/Draw_Over_wrap/Signal_Control_R/sel               | draw_wrap/Draw_Over_wrap/Signal_Control_R/clear                 |                3 |              8 |         2.67 |
+|  clock_25Mhz_BUFG                   |                                                             | sync_pulse_gen/p_0_in                                           |                2 |             10 |         5.00 |
+|  clock_25Mhz_BUFG                   |                                                             | VGA_Sync_to_Count_wrap/row_count[9]_i_1__0_n_0                  |                3 |             10 |         3.33 |
+|  clock_25Mhz_BUFG                   | sync_pulse_gen/p_0_in                                       |                                                                 |                3 |             10 |         3.33 |
+|  clock_25Mhz_BUFG                   | VGA_Sync_to_Count_wrap/row_count[9]_i_1__0_n_0              |                                                                 |                5 |             10 |         2.00 |
+|  clock_25Mhz_BUFG                   | sync_porch/Sync_to_Count_wrap/row_count_0                   |                                                                 |                3 |             10 |         3.33 |
+|  clock_25Mhz_BUFG                   |                                                             | sync_porch/Sync_to_Count_wrap/row_count_0                       |                5 |             10 |         2.00 |
+|  clock_IBUF_BUFG                    |                                                             |                                                                 |               12 |             14 |         1.17 |
+|  clock_IBUF_BUFG                    |                                                             | clock_debounce/counter0_carry__0_n_1                            |                4 |             16 |         4.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/ball_wrap/previous_ball_y                     | pong_fsm_wrap/ball_wrap/clear                                   |                9 |             18 |         2.00 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_12/clk_after_i_1__11_n_0                    |                6 |             18 |         3.00 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_12/clk_after_i_1__10_n_0                    |                6 |             18 |         3.00 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/P2_SCORE_1/fre_9/clk_after_i_1__26_n_0                 |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/P2_SCORE_1/fre_10/clk_after_i_1__27_n_0                |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_5/clk_after_i_1__3_n_0                      |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/P1_SCORE_1/fre_9/clk_after_i_1__23_n_0                 |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_8/clk_after_i_1__15_n_0                     |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/P1_SCORE_1/fre_11/clk_after_i_1__25_n_0                |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_7/clk_after_i_1__16_n_0                     |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_11/clk_after_i_1__12_n_0                    |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/P1_SCORE_1/fre_10/clk_after_i_1__24_n_0                |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_9/clk_after_i_1__14_n_0                     |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_6/clk_after_i_1__17_n_0                     |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_9/clk_after_i_1__7_n_0                      |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_5/clk_after_i_1__18_n_0                     |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_8/clk_after_i_1__6_n_0                      |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_7/clk_after_i_1__5_n_0                      |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_6/clk_after_i_1__4_n_0                      |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_10/clk_after_i_1__13_n_0                    |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/hit_paddle_1/fre_11/clk_after_i_1__29_n_0              |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_11/clk_after_i_1__9_n_0                     |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/P2_SCORE_1/fre_11/clk_after_i_1__28_n_0                |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_10/clk_after_i_1__8_n_0                     |                6 |             19 |         3.17 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_4/clk_after_i_1__2_n_0                      |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_4/clk_after_i_1__19_n_0                     |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_3/clk_after_i_1__20_n_0                     |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_1/clk_after_i_1__22_n_0                     |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_1/clk_after_i_1_n_0                         |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/hit_wall_1/fre_1/clk_after_i_1__30_n_0                 |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/change_mode_1/fre_1/clk_after_i_1__31_n_0              |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_3/clk_after_i_1__1_n_0                      |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/MODE_1/fre_2/clk_after_i_1__0_n_0                      |                6 |             20 |         3.33 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/OVER_1/fre_2/clk_after_i_1__21_n_0                     |                6 |             20 |         3.33 |
+|  clock_25Mhz_BUFG                   |                                                             | draw_wrap/clock_ms/counter0_carry__1_n_2                        |                6 |             21 |         3.50 |
+|  clock_25Mhz_BUFG                   |                                                             | draw_wrap/clock_sec/clear                                       |                6 |             24 |         4.00 |
+|  clock_IBUF_BUFG                    |                                                             | bgm_wrap/fre_1Hz/clk_10Hz_i_1_n_0                               |                6 |             24 |         4.00 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/ball_wrap/ball_speed                          | pong_fsm_wrap/ball_wrap/clear                                   |                8 |             29 |         3.62 |
+|  clock_25Mhz_BUFG                   | keypad_p1/paddle_enable                                     | pong_fsm_wrap/p1_paddle/paddle_count[31]_i_1_n_0                |                8 |             31 |         3.88 |
+|  clock_25Mhz_BUFG                   | keypad_p2/paddle_enable                                     | pong_fsm_wrap/p2_paddle/paddle_count[31]_i_1__0_n_0             |                8 |             31 |         3.88 |
+|  clock_25Mhz_BUFG                   | pong_fsm_wrap/running                                       | pong_fsm_wrap/ball_wrap/ball_count                              |                8 |             32 |         4.00 |
+|  debounce_clock_BUFG                |                                                             |                                                                 |               18 |             49 |         2.72 |
+|  clock_25Mhz_BUFG                   |                                                             |                                                                 |               44 |             98 |         2.23 |
++-------------------------------------+-------------------------------------------------------------+-----------------------------------------------------------------+------------------+----------------+--------------+
 
 
