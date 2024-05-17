@@ -228,7 +228,6 @@ module Pong (
         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),
         .ball_y(ball_y),
-        //.hit_paddle(hit_paddle),
         .column_count(column_count[9:4]),
         .row_count(row_count[9:4]),
         .p1_score(p1_score),

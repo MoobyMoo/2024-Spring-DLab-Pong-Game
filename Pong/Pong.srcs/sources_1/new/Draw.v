@@ -88,7 +88,6 @@ module Draw #(
         .RUNNING(RUNNING)
     ) Draw_Game_wrap (
         .clock(clock),
-        //.hit_paddle(hit_paddle),
         .p1_paddle_y(p1_paddle_y),
         .p2_paddle_y(p2_paddle_y),
         .ball_x(ball_x),

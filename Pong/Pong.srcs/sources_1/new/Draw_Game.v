@@ -26,7 +26,7 @@ module Draw_Game #(
     // Draw determines whether the current position needs color
     wire draw, hit_paddle;
     wire [3:0] temp_R, temp_G, temp_B;
-    //reg [3:0] ball_R = 4'b1111, ball_G = 4'b1111, ball_B = 4'b1111;
+        //reg [3:0] ball_R = 4'b1111, ball_G = 4'b1111, ball_B = 4'b1111;
     assign draw_paddle = draw_paddle_p1 | draw_paddle_p2;
     assign hit_paddle = (ball_x == P1_PADDLE_X | ball_x == P2_PADDLE_X)? 1 : 0;
 
@@ -59,41 +59,42 @@ module Draw_Game #(
         .out_Green(temp_G),
         .out_Blue(temp_B)
     );
-    /*
-    Signal_Control #(
-        .INITIAL_STATE(2'd1),
-        .INITIAL_VALUE(4'b1111)
-    ) Signal_Control_BR (
-        .clock(clock),
 
-        .signal(temp_R)
-    );
+        /*
+        Signal_Control #(
+            .INITIAL_STATE(2'd1),
+            .INITIAL_VALUE(4'b1111)
+        ) Signal_Control_BR (
+            .clock(clock),
 
-    Signal_Control #(
-        .INITIAL_STATE(2'd0),
-        .INITIAL_VALUE(4'b0000)
-    ) Signal_Control_BG (
-        .clock(clock),
+            .signal(temp_R)
+        );
 
-        .signal(temp_G)
-    );
+        Signal_Control #(
+            .INITIAL_STATE(2'd0),
+            .INITIAL_VALUE(4'b0000)
+        ) Signal_Control_BG (
+            .clock(clock),
 
-    Signal_Control #(
-        .INITIAL_STATE(2'd2),
-        .INITIAL_VALUE(4'b0000)
-    ) Signal_Control_BB (
-        .clock(clock),
+            .signal(temp_G)
+        );
 
-        .signal(temp_B)
-    );
-    */
-    /*
-    always @(posedge clock) begin
-        ball_R <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_R : ball_R;
-        ball_G <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_G : ball_G;
-        ball_B <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_B : ball_B;
-    end
-    */
+        Signal_Control #(
+            .INITIAL_STATE(2'd2),
+            .INITIAL_VALUE(4'b0000)
+        ) Signal_Control_BB (
+            .clock(clock),
+
+            .signal(temp_B)
+        );
+        */
+        /*
+        always @(posedge clock) begin
+            ball_R <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_R : ball_R;
+            ball_G <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_G : ball_G;
+            ball_B <= (state != RUNNING) ? 4'b1111 : (ball_x == P1_PADDLE_X || ball_x == P2_PADDLE_X) ? temp_B : ball_B;
+        end
+        */
 
     // Assign white when the paddles or ball is in current position 
     assign out_Red   = (draw_paddle) ? 4'b1111 : (draw_ball) ? temp_R : 4'b0000;
