@@ -9,7 +9,8 @@ module Pong_Paddle_Control #(
     input clock,
     input up, down,
     input init,
-    input solo_enable,
+    input ai_enable,
+    input player,
     input [5:0] ball_x,
     input [5:0] ball_y,
 
@@ -27,8 +28,12 @@ module Pong_Paddle_Control #(
     integer paddle_count = 0;
     wire paddle_enable;
     wire [5:0] paddle_center;
+    wire [5:0] location;
+    wire ai_move;
     assign paddle_enable = up ^ down;
     assign paddle_center = paddle_y + PADDLE_HEIGHT/2;
+    assign location = (player) ? GAME_WIDTH/3 - 1 : GAME_WIDTH*2/3 - 1;
+    assign ai_move = (player) ? (ball_x >= location) : (ball_x <= location);
 
     // Update the paddle location based on paddle_count and paddle_y location 
     // Only update when paddle_count reaches PADDLE_SPEED
@@ -38,9 +43,9 @@ module Pong_Paddle_Control #(
             paddle_y <= GAME_HEIGHT/2-1 - PADDLE_HEIGHT/2;
         end
 
-        if (solo_enable) begin
+        if (ai_enable) begin
             paddle_count <= (paddle_count == PADDLE_SPEED_AI) ? 0 : paddle_count + 1;
-            if (ball_x >= GAME_WIDTH/3 - 1) begin
+            if (ai_move) begin
                 if (ball_y < paddle_center && 
                     paddle_y != 0 && 
                     paddle_count == PADDLE_SPEED_AI) begin

@@ -6,7 +6,8 @@ module Pong (
     input p2_down_button,
     input start,
     input change_mode,
-    input solo_enable,
+    input p1_ai_enable,
+    input p2_ai_enable, 
     input [2:0] p1_keypad_column,
     input [2:0] p2_keypad_column,
 
@@ -20,7 +21,8 @@ module Pong (
     output [7:0] ssd,
     output [7:0] anode,
     output audio_output,
-    output solo_enable_debounced
+    output p1_ai_enable_debounced,
+    output p2_ai_enable_debounced
     );
 
 
@@ -55,11 +57,14 @@ module Pong (
     wire [2:0] state;
 
     wire hit_wall, hit_paddle;
+
+    wire ai_enable;
     
     assign p1_up = p1_up_debounced ^ p1_up_keypad;
     assign p1_down = p1_down_debounced ^ p1_down_keypad;
     assign p2_up = p2_up_debounced ^ p2_up_keypad;
     assign p2_down = p2_down_debounced ^ p2_down_keypad;
+    assign ai_enable = p1_ai_enable_debounced | p2_ai_enable_debounced;
 
     clock_divider #(
         .DIVISOR(4)
@@ -119,11 +124,18 @@ module Pong (
         .debounced_button(p2_down_debounced)
         );
 
-    button_debouncer debounce_solo(
+    button_debouncer debounce_p1_ai(
         .clock(debounce_clock),
-        .button(solo_enable),
+        .button(p1_ai_enable),
 
-        .debounced_button(solo_enable_debounced)
+        .debounced_button(p1_ai_enable_debounced)
+        );
+
+    button_debouncer debounce_p2_ai(
+        .clock(debounce_clock),
+        .button(p2_ai_enable),
+
+        .debounced_button(p2_ai_enable_debounced)
         );
 
     keypad_input #(
@@ -190,7 +202,8 @@ module Pong (
         .p2_up(p2_up),
         .p2_down(p2_down),
         .change_mode(change_mode_debounced),
-        .solo_enable(solo_enable_debounced),
+        .p1_ai_enable(p1_ai_enable_debounced),
+        .p2_ai_enable(p2_ai_enable_debounced),
 
         .state(state),
         .score_limit(score_limit),
@@ -245,6 +258,7 @@ module Pong (
         .p2_score(p2_score),
         .score_limit(score_limit),
         .state (state),
+        .ai_enable(ai_enable),
 
         .out_Red(temp_Red),
         .out_Green(temp_Green),

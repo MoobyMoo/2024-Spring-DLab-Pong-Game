@@ -19,7 +19,8 @@ module Pong_FSM #(
     input p2_up,
     input p2_down,
     input change_mode,
-    input solo_enable,
+    input p1_ai_enable,
+    input p2_ai_enable,
 
     output reg [2:0] state = 0,
     output reg [3:0] score_limit = 5,
@@ -101,9 +102,10 @@ module Pong_FSM #(
         .up(p1_up),
         .down(p1_down),
         .init(init),
-        .solo_enable(0),
+        .ai_enable(p1_ai_enable),
         .ball_x(ball_x),
         .ball_y(ball_y),
+        .player(0),
 
         .paddle_y(p1_paddle_y)
         );
@@ -116,9 +118,10 @@ module Pong_FSM #(
         .up(p2_up),
         .down(p2_down),
         .init(init),
-        .solo_enable(solo_enable),
+        .ai_enable(p2_ai_enable),
         .ball_x(ball_x),
         .ball_y(ball_y),
+        .player(1),
 
         .paddle_y(p2_paddle_y)
         );

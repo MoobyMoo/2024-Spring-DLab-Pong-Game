@@ -15,6 +15,7 @@ module Draw_Game #(
     input [5:0] column_count,
     input [5:0] row_count,
     input [2:0] state,
+    input ai_enable,
 
     output [3:0] out_Red,
     output [3:0] out_Green,

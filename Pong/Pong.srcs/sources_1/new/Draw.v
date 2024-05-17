@@ -28,6 +28,7 @@ module Draw #(
     input [3:0] p2_score,
     input [3:0] score_limit,
     input [2:0] state,
+    input ai_enable,
 
     output [3:0] out_Red,
     output [3:0] out_Green,
@@ -75,6 +76,7 @@ module Draw #(
         .column_count(column_count),
         .row_count(row_count),
         .score_limit(score_limit),
+        .ai_enable(ai_enable),
 
         .out_Red(out_red_mode),
         .out_Green(out_green_mode),
@@ -96,6 +98,7 @@ module Draw #(
         .column_count(column_count),
         .row_count(row_count),
         .state (state),
+        .ai_enable(ai_enable),
 
         .out_Red(out_red_game),
         .out_Green(out_green_game),

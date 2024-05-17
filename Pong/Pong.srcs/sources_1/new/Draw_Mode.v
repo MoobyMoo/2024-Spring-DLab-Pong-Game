@@ -4,6 +4,7 @@ module Draw_Mode(
     input [5:0] column_count,
     input [5:0] row_count,
     input [3:0] score_limit,
+    input ai_enable,
 
     output [3:0] out_Red,
     output [3:0] out_Green,

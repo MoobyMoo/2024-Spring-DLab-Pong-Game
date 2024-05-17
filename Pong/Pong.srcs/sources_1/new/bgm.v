@@ -7,8 +7,10 @@ module bgm (
     output reg voice_fre
 );
 
-    reg [7:0] bps = 8'd1;
+    reg [7:0] bps = 8'd2;
+    reg [7:0] bps_2 = 8'd1;
     wire bump;
+    wire bump_2;
     wire clk_10Hz;
     wire MODE_music;
     wire P1_SCORE_music;
@@ -40,19 +42,24 @@ module bgm (
         .clk_10Hz(clk_10Hz)
     );
 
-    bps bps_1(//bump per secone
+    bps bps_name_1(//bump per secone
         .clk(clk_10Hz),
         .bps(bps),
         .bump(bump)
     );
 
+    bps bps_name_2(//bump per secone
+        .clk(clk_10Hz),
+        .bps(bps_2),
+        .bump(bump_2)
+    );
     music_1 MODE_1(.bump(bump), .voice_fre(MODE_music),.counter(MODE_counter), .start(start_MODE), .clk(clk));
     music_2 P1_SCORE_1(.bump(bump), .voice_fre(P1_SCORE_music),.counter(P1_SCORE_counter), .start(start_P1_SCORE), .clk(clk));
     music_3 P2_SCORE_1(.bump(bump), .voice_fre(P2_SCORE_music),.counter(P2_SCORE_counter), .start(start_P2_SCORE), .clk(clk));
     music_4 OVER_1(.bump(bump), .voice_fre(OVER_music),.counter(OVER_counter), .start(start_OVER), .clk(clk));
-    music_5 hit_paddle_1(.bump(bump), .voice_fre(hit_paddle_music),.counter(hit_paddle_counter), .start(hit_paddle), .clk(clk));
-    music_6 hit_wall_1(.bump(bump), .voice_fre(hit_wall_music),.counter(hit_wall_counter), .start(hit_wall), .clk(clk));
-    music_7 change_mode_1(.bump(bump), .voice_fre(change_mode_music),.counter(change_mode_counter), .start(change_mode), .clk(clk));
+    music_5 hit_paddle_1(.bump(bump_2), .voice_fre(hit_paddle_music),.counter(hit_paddle_counter), .start(hit_paddle), .clk(clk));
+    music_6 hit_wall_1(.bump(bump_2), .voice_fre(hit_wall_music),.counter(hit_wall_counter), .start(hit_wall), .clk(clk));
+    music_7 change_mode_1(.bump(bump_2), .voice_fre(change_mode_music),.counter(change_mode_counter), .start(change_mode), .clk(clk));
 
     always@(posedge clk)begin
         if(ball_x >= 6'd38 || ball_x <= 6'd1 && (state == RUNNING || state == P1_SCORE || state == P2_SCORE))
@@ -70,12 +77,12 @@ module bgm (
             voice_fre = P2_SCORE_music;
         else if(OVER_counter > 4'd0)
             voice_fre = OVER_music;
+        else if(hit_paddle_counter> 1'd0)
+            voice_fre = hit_paddle_music;
         else if(hit_wall_counter > 1'd0)
             voice_fre = hit_wall_music;
         else if(change_mode_counter > 1'd0)
             voice_fre = change_mode_music;
-        else if(hit_paddle_counter> 1'd0)
-            voice_fre = hit_paddle_music;
         else
             voice_fre = 1'd0;
             
@@ -622,7 +629,7 @@ module fre_divider (
     reg [27:0] counter = 28'd0;
 
     always @(posedge clk) begin
-        if (counter >= 28'd10000000)begin//10000000
+        if (counter >= 28'd4000000)begin//10000000
             counter <= 28'd0; // Divide the clock frequency by 100000
             clk_10Hz <= 1'd1;
         end
@@ -672,6 +679,10 @@ module music_5 (
         begin
             case (counter)
                 8'd1:
+                begin
+                    voice_fre = voice_fre_11;
+                end
+                8'd2:
                 begin
                     voice_fre = voice_fre_11;
                 end
@@ -731,6 +742,10 @@ module music_6 (
                 begin
                     voice_fre = voice_fre_1;
                 end
+                8'd2:
+                begin
+                    voice_fre = voice_fre_1;
+                end
                 default:
                 begin
                     voice_fre = 1'd0;
@@ -784,6 +799,10 @@ module music_7 (
         begin
             case (counter)
                 8'd1:
+                begin
+                    voice_fre = voice_fre_1;
+                end
+                8'd2:
                 begin
                     voice_fre = voice_fre_1;
                 end
