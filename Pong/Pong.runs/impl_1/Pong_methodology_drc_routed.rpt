@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
-| Date         : Thu May 16 22:15:39 2024
-| Host         : Moo_Laptop running 64-bit major release  (build 9200)
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Fri May 17 11:27:15 2024
+| Host         : MSI running 64-bit major release  (build 9200)
 | Command      : report_methodology -file Pong_methodology_drc_routed.rpt -pb Pong_methodology_drc_routed.pb -rpx Pong_methodology_drc_routed.rpx
 | Design       : Pong
 | Device       : xc7a100tcsg324-3
@@ -3994,1042 +3994,1042 @@ Related violations: <none>
 
 TIMING-17#793 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/FSM_sequential_current_state_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/Signal_Select_wrap/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#794 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/FSM_sequential_current_state_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/Signal_Select_wrap/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#795 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/signal_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/Signal_Select_wrap/counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#796 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/signal_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/Signal_Select_wrap/counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#797 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/signal_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/draw_ball_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#798 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/signal_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/draw_paddle_p1_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#799 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_ZERO_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/draw_paddle_p2_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#800 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_ZERO_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Game_wrap/state_change_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#801 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_ZERO_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/display_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#802 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_ZERO_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/draw_s_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#803 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#804 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#805 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#806 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BB/timer_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#807 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/FSM_sequential_current_state_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#808 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/FSM_sequential_current_state_reg[1]_inv/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#809 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/signal_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#810 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/signal_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#811 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/signal_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/ten_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#812 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/signal_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Mode_wrap/draw_t_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#813 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_ZERO_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/display_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#814 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_ZERO_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#815 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_ZERO_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#816 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_ZERO_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#817 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#818 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#819 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#820 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BG/timer_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#821 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/FSM_sequential_current_state_reg[0]_inv/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#822 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/FSM_sequential_current_state_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#823 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/signal_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#824 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/signal_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#825 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/signal_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#826 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/signal_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/display_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#827 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_ZERO_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/draw_f_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#828 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_ZERO_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#829 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_ZERO_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#830 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_ZERO_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#831 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#832 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#833 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#834 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/Signal_Control_BR/timer_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#835 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_B_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#836 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_B_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#837 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_B_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#838 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_B_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#839 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_G_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#840 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_G_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/display_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#841 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_G_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/draw_s_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#842 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_G_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#843 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_R_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#844 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_R_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#845 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_R_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#846 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/ball_R_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#847 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/draw_ball_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#848 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/draw_paddle_p1_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#849 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Game_wrap/draw_paddle_p2_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/ten_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#850 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/display_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/display_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#851 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/draw_s_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/draw_s_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#852 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#853 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#854 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#855 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_column_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#856 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#857 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#858 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#859 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/fixed_row_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#860 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/Score_Display_Limit/ten_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#861 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Mode_wrap/draw_t_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/ten_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#862 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/display_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/FSM_sequential_current_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#863 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/draw_f_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/FSM_sequential_current_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#864 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#865 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#866 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#867 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#868 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#869 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_column_count_reg[5]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#870 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#871 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#872 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#873 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#874 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P1/fixed_row_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#875 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/display_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#876 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/draw_f_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/FSM_sequential_current_state_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#877 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/FSM_sequential_current_state_reg[1]_inv/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#878 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#879 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#880 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#881 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#882 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_column_count_reg[5]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#883 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#884 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#885 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#886 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#887 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#888 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Face_Display_P2/fixed_row_count_reg[5]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#889 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/display_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#890 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/draw_s_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state_reg[0]_inv/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#891 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#892 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#893 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_column_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#894 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#895 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#896 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#897 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/fixed_row_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#898 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P1/ten_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#899 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/display_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#900 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/draw_s_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#901 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#902 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#903 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#904 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Over_wrap/draw_t_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#905 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_column_count_reg[5]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#906 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#907 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/draw_b_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#908 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/draw_change_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#909 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/fixed_row_count_reg[4]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/draw_g_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#910 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Score_Display_P2/ten_reg/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/draw_r_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#911 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/FSM_sequential_current_state_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/draw_s_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#912 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/FSM_sequential_current_state_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/Draw_Start_wrap/draw_t_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#913 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#914 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#915 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#916 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/signal_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#917 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#918 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#919 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#920 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_ZERO_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#921 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#922 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#923 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#924 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_B/timer_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#925 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/FSM_sequential_current_state_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#926 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/FSM_sequential_current_state_reg[1]_inv/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#927 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#928 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#929 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#930 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/signal_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#931 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#932 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#933 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/counter_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#934 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_ZERO_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_ms/out_clock_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#935 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#936 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#937 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#938 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_G/timer_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#939 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state_reg[0]_inv/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#940 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/FSM_sequential_current_state_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#941 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#942 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#943 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#944 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/signal_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#945 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#946 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#947 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[20]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#948 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_ZERO_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[21]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#949 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[22]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#950 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[23]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#951 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[2]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#952 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/Signal_Control_R/timer_reg[3]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#953 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Over_wrap/draw_t_reg/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[4]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#954 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/counter_reg[0]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[5]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#955 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/counter_reg[1]/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[6]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#956 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/draw_b_reg/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[7]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#957 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/draw_change_reg/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[8]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#958 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/draw_g_reg/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/counter_reg[9]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#959 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/draw_r_reg/C is not reached by a timing clock
+The clock pin draw_wrap/clock_sec/out_clock_reg/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#960 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/draw_s_reg/C is not reached by a timing clock
+The clock pin keypad_p1/digit_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#961 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/Draw_Start_wrap/draw_t_reg/C is not reached by a timing clock
+The clock pin keypad_p1/digit_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#962 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[0]/C is not reached by a timing clock
+The clock pin keypad_p1/digit_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#963 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[10]/C is not reached by a timing clock
+The clock pin keypad_p1/digit_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#964 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[11]/C is not reached by a timing clock
+The clock pin keypad_p1/refresh_counter_keypad_wrap/refresh_counter_keypad_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#965 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[12]/C is not reached by a timing clock
+The clock pin keypad_p1/refresh_counter_keypad_wrap/refresh_counter_keypad_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#966 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[13]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#967 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[14]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[0]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#968 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[15]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#969 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[16]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[1]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#970 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[17]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#971 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[18]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[2]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#972 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[19]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#973 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[1]/C is not reached by a timing clock
+The clock pin keypad_p1/row_reg[3]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#974 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[20]/C is not reached by a timing clock
+The clock pin keypad_p1/still_pressed_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#975 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[2]/C is not reached by a timing clock
+The clock pin keypad_p1/still_pressed_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#976 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[3]/C is not reached by a timing clock
+The clock pin keypad_p1/still_pressed_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#977 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[4]/C is not reached by a timing clock
+The clock pin keypad_p1/still_pressed_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#978 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[5]/C is not reached by a timing clock
+The clock pin keypad_p1/temp_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#979 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[6]/C is not reached by a timing clock
+The clock pin keypad_p1/temp_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#980 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[7]/C is not reached by a timing clock
+The clock pin keypad_p1/temp_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#981 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[8]/C is not reached by a timing clock
+The clock pin keypad_p1/temp_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#982 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/counter_reg[9]/C is not reached by a timing clock
+The clock pin keypad_p2/digit_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#983 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_ms/out_clock_reg/C is not reached by a timing clock
+The clock pin keypad_p2/digit_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#984 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[0]/C is not reached by a timing clock
+The clock pin keypad_p2/digit_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#985 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[10]/C is not reached by a timing clock
+The clock pin keypad_p2/digit_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#986 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[11]/C is not reached by a timing clock
+The clock pin keypad_p2/refresh_counter_keypad_wrap/refresh_counter_keypad_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#987 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[12]/C is not reached by a timing clock
+The clock pin keypad_p2/refresh_counter_keypad_wrap/refresh_counter_keypad_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#988 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[13]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#989 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[14]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[0]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#990 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[15]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#991 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[16]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[1]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#992 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[17]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#993 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[18]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[2]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#994 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[19]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#995 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[1]/C is not reached by a timing clock
+The clock pin keypad_p2/row_reg[3]_lopt_replica/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#996 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[20]/C is not reached by a timing clock
+The clock pin keypad_p2/still_pressed_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#997 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[21]/C is not reached by a timing clock
+The clock pin keypad_p2/still_pressed_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#998 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[22]/C is not reached by a timing clock
+The clock pin keypad_p2/still_pressed_reg[2]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#999 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[23]/C is not reached by a timing clock
+The clock pin keypad_p2/still_pressed_reg[3]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#1000 Critical Warning
 Non-clocked sequential cell  
-The clock pin draw_wrap/clock_sec/counter_reg[2]/C is not reached by a timing clock
+The clock pin keypad_p2/temp_reg[0]/C is not reached by a timing clock
 Related violations: <none>
 
 

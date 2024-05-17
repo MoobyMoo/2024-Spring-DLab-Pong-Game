@@ -1,8 +1,8 @@
-Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2023.2.2 (win64) Build 4126759 Thu Feb  8 23:53:51 MST 2024
-| Date                      : Thu May 16 22:15:07 2024
-| Host                      : Moo_Laptop running 64-bit major release  (build 9200)
+| Tool Version              : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date                      : Fri May 17 11:26:39 2024
+| Host                      : MSI running 64-bit major release  (build 9200)
 | Command                   : report_io -file Pong_io_placed.rpt
 | Design                    : Pong
 | Device                    : xc7a100t
