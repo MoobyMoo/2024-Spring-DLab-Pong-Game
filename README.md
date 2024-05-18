@@ -99,3 +99,24 @@ The first player to reach a set number of points wins.
 * End screen now includes rgb breathing light smiley face icon to indicate winner.
 * Changed the winning score in endscreen to be yellow.
 * Now includes the MODE selection screen, the number displayed indicates the score required to win.
+
+
+
+## [1.0.5](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-16)
+
+> Description: Add keypad input and the gaming sound
+
+### New Feature 
+* Let the players can use keypad to control the paddles.
+* Use a speaker to output sound.
+
+
+
+## [1.1.0](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-17)
+
+> Description: Add auto playing mode and the corresponding screen display. 
+
+### New Feature 
+* Let both paddles can be turned into auto playing mode respectivily at any time.
+* The auto playing paddle will turn to orange.
+* When auto playing mode is on for any player, the background will become white and the title will become black in the "mode" screen
