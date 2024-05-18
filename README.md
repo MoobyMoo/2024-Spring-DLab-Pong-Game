@@ -102,13 +102,23 @@ The first player to reach a set number of points wins.
 
 
 
-## [1.0.5](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-16)
+## [1.0.5](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-12)
+
+> Description: Add the screen for mode and ball color changing. 
+
+### New Feature 
+* Added the screen for players to choose the winning score (MODE)
+* Let the ball change its color after hitting the paddles
+
+
+
+## [1.0.6](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-16)
 
 > Description: Add keypad input and the gaming sound
 
 ### New Feature 
 * Let the players can use keypad to control the paddles.
-* Use a speaker to output sound.
+* Used a speaker to output sound.
 
 
 
