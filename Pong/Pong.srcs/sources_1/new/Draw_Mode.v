@@ -1,6 +1,8 @@
 
 module Draw_Mode(
     input clock,
+    input Hsync,
+    input Vsync,
     input [5:0] column_count,
     input [5:0] row_count,
     input [3:0] score_limit,
@@ -13,7 +15,12 @@ module Draw_Mode(
 
     reg draw_t = 0;
     wire draw_s;
-
+    wire [3:0] title, background;
+    wire Inactive;
+    
+    assign Inactive = ~(Hsync & Vsync);
+    assign title = (ai_enable) ? 4'b0000 : 4'b1111;
+    assign background = (Inactive | ~ai_enable) ? 4'b0000 : 4'b1111;
     always @(posedge clock) begin
         //##########    Title    ##########//
         if ((row_count >= 6'd4 & row_count <= 6'd11) & (column_count >= 6'd3 & column_count <= 6'd36)) begin
@@ -90,7 +97,7 @@ module Draw_Mode(
         .draw_s(draw_s)
     );
 
-    assign out_Red = (draw_s | draw_t) ? 4'b1111 : 4'b0000;
-    assign out_Green = (draw_s | draw_t) ? 4'b1111 : 4'b0000;
-    assign out_Blue = (draw_s | draw_t) ? 4'b1111 : 4'b0000;
+    assign out_Red   = (draw_s | draw_t) ? title : background;
+    assign out_Green = (draw_s | draw_t) ? title : background;
+    assign out_Blue  = (draw_s | draw_t) ? title : background;
 endmodule

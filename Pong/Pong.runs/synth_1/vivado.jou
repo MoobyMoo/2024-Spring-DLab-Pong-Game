@@ -1,14 +1,14 @@
 #-----------------------------------------------------------
-# Vivado v2023.2.2 (64-bit)
-# SW Build 4126759 on Thu Feb  8 23:53:51 MST 2024
-# IP Build 4126054 on Fri Feb  9 11:39:09 MST 2024
-# SharedData Build 4115275 on Tue Jan 30 00:40:57 MST 2024
-# Start of session at: Fri May 17 15:14:22 2024
-# Process ID: 5300
-# Current directory: C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri May 17 22:42:37 2024
+# Process ID: 25028
+# Current directory: C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1
 # Command line: vivado.exe -log Pong.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Pong.tcl
-# Log file: C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.vds
-# Journal file: C:/Users/asian/Desktop/School/D_lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1\vivado.jou
-# Running On: Moo_Laptop, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 16, Host memory: 16366 MB
+# Log file: C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1/Pong.vds
+# Journal file: C:/Users/Chien/College/Logic_Design_Lab/2024-Spring-DLab-Pong-Game/Pong/Pong.runs/synth_1\vivado.jou
+# Running On: MSI, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 16866 MB
 #-----------------------------------------------------------
 source Pong.tcl -notrace
