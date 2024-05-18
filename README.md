@@ -118,5 +118,5 @@ The first player to reach a set number of points wins.
 
 ### New Feature 
 * Let both paddles can be turned into auto playing mode respectivily at any time.
-* The auto playing paddle will turn to orange.
+* The auto playing paddle will turn orange.
 * When auto playing mode is on for any player, the background will become white and the title will become black in the "mode" screen
