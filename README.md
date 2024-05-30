@@ -114,19 +114,23 @@ The first player to reach a set number of points wins.
 
 ## [1.0.6](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-16)
 
-> Description: Add keypad input and the gaming sound
+> Description: Added keypad input and the bugged gaming sound effects
 
 ### New Feature 
-* Let the players can use keypad to control the paddles.
-* Used a speaker to output sound.
+* Players can now use keypad to control the movement of the paddles, before only the switches were allowed
+* Added a speaker for sound outputs.
+
+### Bugs Need Addressing
+* When the ball hit the paddle right after the wall, the sound effects for hitting the paddle no longer work.
 
 
 
 ## [1.1.0](https://github.com/andreasonny83/twilio-remote-cli/compare/v0.0.1...v0.0.2) (2024-05-17)
 
-> Description: Add auto playing mode and the corresponding screen display. 
+> Description: Added auto playing mode and the corresponding screen display. 
 
 ### New Feature 
-* Let both paddles can be turned into auto playing mode respectivily at any time.
-* The auto playing paddle will turn orange.
-* When auto playing mode is on for any player, the background will become white and the title will become black in the "mode" screen
+* Auto playing mode for both players can be turned on at any time, the color of the padddle will turn orange to indicate this, and the color for mode selection screen will invert
+
+### Bug Fixes
+* The sound effects for the ball hitting the wall and paddle now work fine.
